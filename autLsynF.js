@@ -6,6 +6,7 @@ getPF = function() {
 	if (typeof urlPF != 'undefined') {
 		return urlPF
 	} else {
-		return 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/'
+		//return 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/'
+		return 'https://raw.githubusercontent.com/SyzraelGithub/Today16/master/'
 	}
 }
