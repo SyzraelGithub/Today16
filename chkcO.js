@@ -1,10 +1,15 @@
+var dfnc = '';
+var dfn$ = '';
+
 if (!cO) {
-  alert('cO == undefined');
+  dfnc = 'cO == undefined';
 } else {
-  alert('cO == defined');
+  dfnc = 'cO == defined';
 }
 if (!$) {
-  alert('$ == undefined');
+  dfn$ = '$ == undefined';
 } else {
-  alert('$ == defined');
+  dfn$ = '$ == defined';
 }
+
+alert(dfnc + '|' + dfn$);
