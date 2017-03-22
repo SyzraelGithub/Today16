@@ -3,8 +3,8 @@ var urlPF = 'https://rawgit.com/SyzraelGithub/Today16/master/';
 
 var scrArr = [
 	'https://code.jquery.com/jquery-1.12.0.min.js',
-	'chkJQ',
 	'cssObj',
+	'chkJQ',
 	'hov',
 	'GenDec',
 	'ProtoT_getWeek',
