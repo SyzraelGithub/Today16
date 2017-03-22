@@ -1,6 +1,1 @@
-if (!cO) {
-  alert('cO == undefined');
-} else {
-  alert('cO == defined');
-}
-
+alert('chkJQ.js loaded');
