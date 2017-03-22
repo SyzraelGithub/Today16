@@ -3,3 +3,8 @@ if (!cO) {
 } else {
   alert('cO == defined');
 }
+if (!$) {
+  alert('$ == undefined');
+} else {
+  alert('$ == defined');
+}
