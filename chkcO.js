@@ -1,12 +1,12 @@
 var dfnc = '';
 var dfn$ = '';
 
-if (!cO) {
+if (typeof cO != 'undefined') {
   dfnc = 'cO == undefined';
 } else {
   dfnc = 'cO == defined';
 }
-if (!$) {
+if (typeof $ != 'undefined') {
   dfn$ = '$ == undefined';
 } else {
   dfn$ = '$ == defined';
