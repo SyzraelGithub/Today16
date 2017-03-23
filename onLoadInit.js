@@ -42,16 +42,7 @@ cnvUrl = function(txt) {
 scrArr = scrArr.map(cnvUrl);
 
 createScripts = function(){
-	waitJQuery = function(scriptMethod) {
-		if (typeof $ == 'function') {
-			scriptMethod();
-		} else {
-			setTimeout(function() {waitJQuery(scriptMethod)},50);
-		}
-	}
-	waitJQuery(function(){
-		while (scrArr.length) {createScript(scrArr.shift())}
-	});
+	while (scrArr.length) {createScript(scrArr.shift())}
 }
 
 createScript = function(src,id,parent,type) {
@@ -71,7 +62,7 @@ createScript = function(src,id,parent,type) {
 }
 
 createScript(scrArr.shift());
-createScripts();
+setTimeout(createScripts,500);
 
 isiOS = function() {
 	var iDevices = [
