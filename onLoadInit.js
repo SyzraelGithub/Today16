@@ -74,18 +74,15 @@ createScriptRecursive = function(src,id,parent,type) {
 	} 
 }
 
-createScripts = function(){
-	while (scrArr.length) {createScript(scrArr.shift())}
-}
-
 startScripts = function() {
 	createScript(scrArr.shift());
 }
 
-//createScripts();
-//startScripts();
+continueScripts = function () {
+	createScriptRecursive(scrArr.shift());
+}
 
-createScript(scrArr.shift());
+startScripts();
 
 wait$ = function(scriptMethod) {
 	if (typeof $ == 'function') {
@@ -115,6 +112,3 @@ isiOS = function() {
 	}
 	return false;
 }
-
-
-
