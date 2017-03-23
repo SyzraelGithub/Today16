@@ -45,6 +45,10 @@ createScripts = function(){
 	while (scrArr.length) {createScript(scrArr.shift())}
 }
 
+startScripts = function() {
+	createScript(scrArr.shift());
+}
+
 createScript = function(src,id,parent,type) {
 	var newScript = document.getElementById(id);
 	if (!newScript) {
@@ -54,6 +58,7 @@ createScript = function(src,id,parent,type) {
 		console.log('id = ' + newScript.id + ' started'); //github inner redirection delay?
 		newScript.onload = function () { //onreadystatechange for IE
 			console.log('id = ' + newScript.id + ' loaded');
+			while (scrArr.length) {createScript(scrArr.shift())}
 		}
 		newScript.src = src;
 		parent = parent || document.head;
@@ -61,7 +66,8 @@ createScript = function(src,id,parent,type) {
 	} 
 }
 
-createScripts();
+//createScripts();
+startScripts();
 
 isiOS = function() {
 	var iDevices = [
