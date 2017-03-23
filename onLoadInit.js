@@ -86,8 +86,10 @@ startScripts();
 
 wait$ = function(scriptMethod) {
 	if (typeof $ == 'function') {
+		console.log('$ is function');
 		scriptMethod();
 	} else {
+		console.log('$ is not function');
 		setTimeout(function(){ // dnm
 			wait$(scriptMethod);
 		},50);
