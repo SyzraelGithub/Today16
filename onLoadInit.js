@@ -91,7 +91,7 @@ wait$ = function(scriptMethod) {
 	if (typeof $ == 'function') {
 		scriptMethod();
 	} else {
-		setTimeout(function(){
+		setTimeout(function(){ // dnm
 			wait$(scriptMethod);
 		},50);
 	}
