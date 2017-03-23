@@ -94,7 +94,7 @@ wait$ = function(scriptMethod) {
 	}
 }
 
-wait$(createScriptRecursive(scrArr.shift()));
+wait$(continueScripts);
 
 isiOS = function() {
 	var iDevices = [
