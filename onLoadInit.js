@@ -91,7 +91,7 @@ wait$ = function(scriptMethod) {
 	if (typeof $ == 'function') {
 		scriptMethod();
 	} else {
-		setTimeOut(function(){
+		setTimeout(function(){
 			wait$(scriptMethod);
 		},50);
 	}
