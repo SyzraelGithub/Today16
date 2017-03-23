@@ -54,6 +54,7 @@ createScript = function(src,id,parent,type) {
 		newScript.onreadystatechange = function () {
 			if (this.readyState == 'complete') {
 				console.log('id = ' + newScript.id + ' complete');
+				alert('id = ' + newScript.id + ' complete');
 			}
 		}
 		newScript.src = src;
