@@ -49,9 +49,14 @@ createScript = function(src,id,parent,type) {
 	var newScript = document.getElementById(id);
 	if (!newScript) {
 		newScript = document.createElement('script');
-		newScript.src = src;
-		if (!!id) {newScript.id=id} else {newScript.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
 		if (!!type) {newScript.type = type}
+		if (!!id) {newScript.id=id} else {newScript.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
+		newScript.onreadystatechange = function () {
+			if (this.readyState == 'complete') {
+				console.log('id = ' + newScript.id=id + ' complete');
+			}
+		}
+		newScript.src = src;
 		parent = parent || document.head;
 		parent.appendChild(newScript);
 	} 
