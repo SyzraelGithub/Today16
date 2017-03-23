@@ -53,7 +53,7 @@ createScript = function(src,id,parent,type) {
 		if (!!id) {newScript.id=id} else {newScript.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
 		newScript.onreadystatechange = function () {
 			if (this.readyState == 'complete') {
-				console.log('id = ' + newScript.id + ' complete');
+				console.log('id = ' + newScript.id+ ' complete');
 			}
 		}
 		newScript.src = src;
