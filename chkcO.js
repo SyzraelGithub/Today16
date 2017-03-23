@@ -12,4 +12,4 @@ if (typeof $ != 'undefined') {
   dfn$ = '$ == defined';
 }
 
-alert(dfnc + '|' + dfn$);
+console.log(dfnc + '|' + dfn$);
