@@ -42,7 +42,16 @@ cnvUrl = function(txt) {
 scrArr = scrArr.map(cnvUrl);
 
 createScripts = function(){
-	while (scrArr.length) {createScript(scrArr.shift())}
+	waitJQuery = function(scriptMethod) {
+		if (typeof $ == 'function') {
+			scriptMethod();
+		} else {
+			setTimeout(function() {waitJQuery(scriptMethod)},50);
+		}
+	}
+	waitJQuery(function(){
+		while (scrArr.length) {createScript(scrArr.shift())}
+	});
 }
 
 createScript = function(src,id,parent,type) {
