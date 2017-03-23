@@ -52,8 +52,8 @@ createScript = function(src,id,parent,type) {
 		if (!!type) {newScript.type = type}
 		if (!!id) {newScript.id=id} else {newScript.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
 		newScript.onreadystatechange = function () {
+			console.log('id = ' + newScript.id + ' complete');
 			if (this.readyState == 'complete') {
-				console.log('id = ' + newScript.id + ' complete');
 				alert('id = ' + newScript.id + ' complete');
 			}
 		}
