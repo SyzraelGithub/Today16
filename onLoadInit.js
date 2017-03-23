@@ -53,6 +53,10 @@ createScript = function(src,id,parent,type) {
 		if (!!id) {newScript.id=id} else {newScript.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
 		if (!!type) {newScript.type = type}
 		parent = parent || document.head;
+		console.log(newScript.id + ' started');
+		newScript.onload = function () {
+			console.log(newScript.id + ' loaded');
+		}
 		parent.appendChild(newScript);
 	} 
 }
