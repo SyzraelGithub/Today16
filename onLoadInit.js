@@ -57,6 +57,7 @@ createScript = function(src,id,parent,type) {
 	} 
 }
 
+createScript(scrArr.shift());
 createScripts();
 
 isiOS = function() {
