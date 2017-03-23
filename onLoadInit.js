@@ -52,7 +52,7 @@ createScript = function(src,id,parent,type) {
 		if (!!type) {newScript.type = type}
 		if (!!id) {newScript.id=id} else {newScript.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
 		newScript.onreadystatechange = function () {
-			console.log('id = ' + newScript.id + ' complete');
+			console.log('id = ' + newScript.id + ' complete'); //github inner redirection delay?
 			if (this.readyState == 'complete') {
 				alert('id = ' + newScript.id + ' complete');
 			}
