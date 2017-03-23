@@ -41,15 +41,23 @@ cnvUrl = function(txt) {
 
 scrArr = scrArr.map(cnvUrl);
 
-createScripts = function(){
-	while (scrArr.length) {createScript(scrArr.shift())}
-}
-
-startScripts = function() {
-	createScript(scrArr.shift());
-}
-
 createScript = function(src,id,parent,type) {
+	var newScript = document.getElementById(id);
+	if (!newScript) {
+		newScript = document.createElement('script');
+		if (!!type) {newScript.type = type}
+		if (!!id) {newScript.id=id} else {newScript.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
+		console.log('id = ' + newScript.id + ' started');
+		newScript.onload = function () { //onreadystatechange for IE
+			console.log('id = ' + newScript.id + ' loaded');
+		}
+		newScript.src = src;
+		parent = parent || document.head;
+		parent.appendChild(newScript);
+	} 
+}
+
+createScriptRecursive = function(src,id,parent,type) {
 	var newScript = document.getElementById(id);
 	if (!newScript) {
 		newScript = document.createElement('script');
@@ -58,7 +66,7 @@ createScript = function(src,id,parent,type) {
 		console.log('id = ' + newScript.id + ' started'); //github inner redirection delay?
 		newScript.onload = function () { //onreadystatechange for IE
 			console.log('id = ' + newScript.id + ' loaded');
-			while (scrArr.length) {createScript(scrArr.shift())}
+			while (scrArr.length) {createScriptRecursive(scrArr.shift())}
 		}
 		newScript.src = src;
 		parent = parent || document.head;
@@ -66,8 +74,30 @@ createScript = function(src,id,parent,type) {
 	} 
 }
 
+createScripts = function(){
+	while (scrArr.length) {createScript(scrArr.shift())}
+}
+
+startScripts = function() {
+	createScript(scrArr.shift());
+}
+
 //createScripts();
-startScripts();
+//startScripts();
+
+createScript(scrArr.shift());
+
+wait$ = function(scriptMethod) {
+	if (typeof $ == 'function') {
+		scriptMethod();
+	} else {
+		setTimeOut(function(){
+			wait$(scriptMethod);
+		},50);
+	}
+}
+
+wait$(createScriptRecursive(scrArr.shift()));
 
 isiOS = function() {
 	var iDevices = [
