@@ -47,9 +47,9 @@ createScript = function(src,id,parent,type) {
 		newScript = document.createElement('script');
 		if (!!type) {newScript.type = type}
 		if (!!id) {newScript.id=id} else {newScript.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
-		console.log('id = ' + newScript.id + ' started');
+		console.log('id = jQ started');
 		newScript.onload = function () { //onreadystatechange for IE
-			console.log('id = ' + newScript.id + ' loaded');
+			console.log('id = jQ loaded');
 		}
 		newScript.src = src;
 		parent = parent || document.head;
