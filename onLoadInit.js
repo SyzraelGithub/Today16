@@ -40,14 +40,6 @@ cnvUrl = function(txt) {
 
 scrArr = scrArr.map(cnvUrl);
 
-createScripts = function(){
-	while (scrArr.length) {createScript(scrArr.shift())}
-}
-
-createScriptQue = function(){
-	createScript(scrArr.shift());
-}
-
 createScript = function(src,id,parent,type) {
 	var newScript = document.getElementById(id);
 	if (!newScript) {
@@ -66,7 +58,6 @@ createScript = function(src,id,parent,type) {
 }
 
 createScript(scrArr.shift());
-//setTimeout(createScripts,1500); // Değişiklik
 
 isiOS = function() {
 	var iDevices = [
