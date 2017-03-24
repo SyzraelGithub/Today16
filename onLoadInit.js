@@ -60,7 +60,7 @@ createScript = function(src,id,parent,type) {
 		console.log(newScript.id + ' started');
 		newScript.onload = function () {
 			console.log(newScript.id + ' loaded');
-			if (scrArr.length) {setTimeout(createScriptQue,1500)}
+			if (scrArr.length) {setTimeout(createScriptQue,2000)}
 			//if (scrArr.length) {createScript(scrArr.shift())}
 			//while (scrArr.length) {createScript(scrArr.shift())}
 		}
