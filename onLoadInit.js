@@ -3,7 +3,6 @@ var urlPF = 'https://rawgit.com/SyzraelGithub/Today16/master/';
 
 var scrArr = [
 	'https://code.jquery.com/jquery-1.12.0.min.js',
-	'chkcO',
 	'cssObj',
 	'hov',
 	'GenDec',
@@ -32,7 +31,7 @@ switchElinArr = function(arr,x,y) {
 scrArr = switchElinArr(scrArr,0,1);
 
 isUrl = function(url) {
-  return url.startsWith('http')
+	return url.startsWith('http')
 }
 
 cnvUrl = function(txt) {
@@ -60,9 +59,7 @@ createScript = function(src,id,parent,type) {
 		console.log(newScript.id + ' started');
 		newScript.onload = function () {
 			console.log(newScript.id + ' loaded');
-			if (scrArr.length) {setTimeout(createScriptQue,20)}
-			//if (scrArr.length) {createScript(scrArr.shift())}
-			//while (scrArr.length) {createScript(scrArr.shift())}
+			if (scrArr.length) {createScript(scrArr.shift())}
 		}
 		parent.appendChild(newScript);
 	} 
