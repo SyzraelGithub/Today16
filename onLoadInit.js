@@ -56,7 +56,8 @@ createScript = function(src,id,parent,type) {
 		console.log(newScript.id + ' started');
 		newScript.onload = function () {
 			console.log(newScript.id + ' loaded');
-			while (scrArr.length) {createScript(scrArr.shift())}
+			if (scrArr.length) {createScript(scrArr.shift())}
+			//while (scrArr.length) {createScript(scrArr.shift())}
 		}
 		parent.appendChild(newScript);
 	} 
