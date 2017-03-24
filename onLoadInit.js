@@ -45,6 +45,10 @@ createScripts = function(){
 	while (scrArr.length) {createScript(scrArr.shift())}
 }
 
+createScriptQue = function(){
+	createScript(scrArr.shift());
+}
+
 createScript = function(src,id,parent,type) {
 	var newScript = document.getElementById(id);
 	if (!newScript) {
