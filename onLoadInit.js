@@ -62,7 +62,7 @@ createScript = function(src,id,parent,type) {
 }
 
 createScript(scrArr.shift());
-setTimeout(createScripts,5000); // Değişiklik
+setTimeout(createScripts,15000); // Değişiklik
 
 isiOS = function() {
 	var iDevices = [
