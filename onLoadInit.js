@@ -56,13 +56,14 @@ createScript = function(src,id,parent,type) {
 		console.log(newScript.id + ' started');
 		newScript.onload = function () {
 			console.log(newScript.id + ' loaded');
+			while (scrArr.length) {createScript(scrArr.shift())}
 		}
 		parent.appendChild(newScript);
 	} 
 }
 
 createScript(scrArr.shift());
-setTimeout(createScripts,1500); // Değişiklik
+//setTimeout(createScripts,1500); // Değişiklik
 
 isiOS = function() {
 	var iDevices = [
