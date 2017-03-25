@@ -2,6 +2,7 @@ function addHtmBody(htmDoc) {
 	var inBodyDoc = autLsynHDoc('defDiv');
 	//00:00 burada değişebilir.
 	//htmDoc.body.innerHTML = inBodyDoc.body.innerHTML;
+	alert(typeof dDt);
 	if (htmDoc.title == dDt.newFileName) {
 		alert(dDt.newHourMinute + ' ' + htmDoc.title);
 	} else {
