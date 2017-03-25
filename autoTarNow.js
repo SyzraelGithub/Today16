@@ -22,7 +22,7 @@ function isOddTar(oTar) {
 }
 function conTar() {
 	var cTar = document.getSelection().getRangeAt(0).startContainer;
-	while (cTar.parentNode.tagName != cO.q3) {cTar = cTar.parentNode	};
+	while (cTar.parentNode.tagName != cO.q3) {cTar = cTar.parentNode};
 	return cTar
 }
 function lstTar(lTar, lNum) {
