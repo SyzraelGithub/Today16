@@ -5,5 +5,5 @@ function creDoc(innerText,fldLCur,isView) {
 	var htmDoc = creHtmDoc();
 	htmDoc = preHtmDoc(htmDoc);
 	newDoc.SetHtml(htmDoc.documentElement.outerHTML);
-	if (isView || dDt.dDate.toLocaleDateString() == new Date().toLocaleDateString()) {vieDoc(newDoc.GUID)}
+	if (isView || innerText == dDt.newFileName) {vieDoc(newDoc.GUID)}
 }
