@@ -3,7 +3,7 @@ function addHtmBody(htmDoc) {
 	//00:00 burada değişebilir.
 	//htmDoc.body.innerHTML = inBodyDoc.body.innerHTML;
 	if (dDt.dDate.toLocaleDateString() == new Date().toLocaleDateString()) {
-		alert(dDt.newHourMinute);
+		alert(dDt.newHourMinute + ' ' + htmDoc.title);
 	} else {
 		alert('11:11');
 	}
