@@ -5,5 +5,5 @@ function creDoc(innerText,fldLCur,isView) {
 	var htmDoc = creHtmDoc();
 	htmDoc = preHtmDoc(htmDoc);
 	newDoc.SetHtml(htmDoc.documentElement.outerHTML);
-	if (isView) {vieDoc(newDoc.GUID)}
+	if (isView/* || dDt.dDate == new Date*/) {vieDoc(newDoc.GUID)}
 }
