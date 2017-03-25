@@ -8,7 +8,7 @@ getdDt = function(varDate) {
 		this.dWay = twoDigit(dDate.getDay());
 		this.dHour = twoDigit(dDate.getHours());
 		this.dMinute = twoDigit(dDate.getMinutes());
-		if (dWay == 0 /*|| dWay == 6*/) {
+		if (dWay == 0 || dWay == 6) {
 			dWeek-=1;
 			dWeek = twoDigit(dWeek);
 		};
