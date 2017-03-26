@@ -1,13 +1,12 @@
 function addHtmBody(htmDoc) {
 	var inBodyDoc = autLsynHDoc('defDiv');
-	//00:00 burada değişebilir.
-	//htmDoc.body.innerHTML = inBodyDoc.body.innerHTML;
-	alert(typeof htmDoc);
-	alert(htmDoc.title + ' =!= ' + dDt.newFileName);
 	if (htmDoc.title == dDt.newFileName) {
-		alert(dDt.newHourMinute + ' ' + htmDoc.title);
-	} else {
-		alert('99:99' + '     ' + htmDoc.title);
+		if (htmDoc.getElementsByTagName('span').length > 0) {
+			var spn = htmDoc.getElementsByTagName('span')[0];
+			if (spn.innerHTML.indexOf('00:00') != -1) {
+				spn.innerHTML = spn.innerHTML.replace('00:00',dDt.newHourMinute);
+			}
+		}
 	}
 	htmDoc.body.innerHTML = Array(9).join(inBodyDoc.body.innerHTML);
 	//Eski Today.html Satır: 649
