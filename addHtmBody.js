@@ -3,7 +3,7 @@ function addHtmBody(htmDoc) {
 	//00:00 burada değişebilir.
 	//htmDoc.body.innerHTML = inBodyDoc.body.innerHTML;
 	alert(typeof dDt);
-	alert(typeof dDt.newFileName);
+	alert(dDt.newFileName);
 	if (htmDoc.title == dDt.newFileName) {
 		alert(dDt.newHourMinute + ' ' + htmDoc.title);
 	} else {
