@@ -13,4 +13,3 @@ function addHtmBody(htmDoc) {
 	//Eski Today.html Satır: 649
 	return htmDoc;
 }
-.newFileName 
