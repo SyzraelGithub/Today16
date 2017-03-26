@@ -3,6 +3,7 @@ function addHtmBody(htmDoc) {
 	alert('if döngüsü start');
 	if (htmDoc.title == dDt.newFileName) {
 		alert('htmDoc.title == dDt.newFileName imiş.');
+		alert('span adedi yani htmDoc.getElementsByTagName('span').length = ' + htmDoc.getElementsByTagName('span').length);
 		if (htmDoc.getElementsByTagName('span').length > 0) {
 			alert('span adedi 0 değil');
 			var spn = htmDoc.getElementsByTagName('span')[0];
