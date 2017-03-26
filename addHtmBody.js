@@ -7,7 +7,7 @@ function addHtmBody(htmDoc) {
 	if (htmDoc.title == dDt.newFileName) {
 		alert(dDt.newHourMinute + ' ' + htmDoc.title);
 	} else {
-		alert('11:11' + '     ' + htmDoc.title);
+		alert('99:99' + '     ' + htmDoc.title);
 	}
 	htmDoc.body.innerHTML = Array(9).join(inBodyDoc.body.innerHTML);
 	//Eski Today.html Satır: 649
