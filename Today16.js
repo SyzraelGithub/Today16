@@ -9,4 +9,3 @@ autLsynJS('twoDigit');
 autLsynJS('GenDec_dDt');
 autLsynJS('varLoadF');
 autLsynJS('OnTodayBtnClicked16');
-// deneme 
