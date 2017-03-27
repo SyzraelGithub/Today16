@@ -6,5 +6,5 @@ function creDoc(innerText,fldLCur,isView) {
 	htmDoc.title = innerText;
 	htmDoc = preHtmDoc(htmDoc);
 	newDoc.SetHtml(htmDoc.documentElement.outerHTML);
-	if (isView || innerText == dDt.newFileName) {vieDoc(newDoc.GUID)}
+	if (isView && innerText == dDt.newFileName) {vieDoc(newDoc.GUID)}
 }
