@@ -1,3 +1,4 @@
+alert('OnTodayBtnClicked16.js start');
 with(__global__.strObj){
 	pluginPath = objApp.GetPluginPathByScriptFileName(jsFileName);
 	helperFileName = pluginPath + helperFilePart;
@@ -18,3 +19,4 @@ with(__global__.strObj){
 		objWindow.ShowSelectorWindow(helperFileName, arr0_2, arr1_3, 270, 230, '');
 	}
 }
+alert('OnTodayBtnClicked16.js end');
