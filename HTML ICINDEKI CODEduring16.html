@@ -1,4 +1,4 @@
-<script id="jQempty001" class="jQempty"></script>
+<script id="jQ001_empty" class="jQ001e"></script>
 <!--<< onlineXHR VASITASI İLE YÜKLENDİ/1605180943 >>-->
 
 <!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script-->
@@ -72,7 +72,15 @@
 	ciddi miktarda yabancılaşırsa, yaz.gun içindeki kodun ne işe yaradığını anlamakta güçlük çekebilirim. 
 -->
 <script id="jQ001_001">
+debugger;
 var Tar, TarSib, oldTar;
+var cssObj = {};
+cssObj.colors = {};
+cssObj.colors.default = 'LightGray';
+cssObj.colors.current = cssObj.colors.default
+cssObj.colors.WiNcapable = 'LightYellow';
+cssObj.colors.enteringParam = 'Pink';
+cssObj.colors.finishedParam = 'PaleGreen';
 /*
 	141008 'den sonraki HTML ICINDEKI CODE.html içinden geldi.Mihenk kabul edilebilir.
 	---
@@ -89,7 +97,6 @@ var Tar, TarSib, oldTar;
 	bu hazırlıklara başlamadan da cmdArr ile XHR arasında çalışma başlatılabilir. 
 	İki durum da kafama yatıyor. 
 */
-var col1 = 'lightgray';
 // Arama Yaparken 'WiNj' diye ara
 /*
 	Ben Sakıncası Yoksa Fonsiyonları içerikten ayırmak istiyorum artık. Bakalım Çalışacak mı? Deneyelim.
@@ -129,7 +136,12 @@ function fncKayParHar(fncParam) {
 	function creNewNote() {
 		var newNote = '';
 		var docType = true;
-		var docTypeStr = ' PUBLIC \"-\/\/W3C\/\/DTD HTML 4.01 Transitional\/\/EN\" \"http:\/\/www.w3c.org\/TR\/1999\/REC-html401-19991224\/loose.dtd\"';
+		/*			1607211741 docType String kismini Array 'den olusturmaya karar verdim		*/
+		var docTypeStrArr =[39,32,80,85,66,76,73,67,32,92,34,45,92,47,92,47,87,51,67,92,47,92,47,68,84,68,32,72,84,77,76,32,52,46,48,49,32,84,114,97,110,115,105,116,105,111,110,97,108,92,47,92,47,69,78,92,34,32,92,34,104,116,116,112,58,92,47,92,47,119,119,119,46,119,51,99,46,111,114,103,92,47,84,82,92,47,49,57,57,57,92,47,82,69,67,45,104,116,109,108,52,48,49,45,49,57,57,57,49,50,50,52,92,47,108,111,111,115,101,46,100,116,100,92,34,399];
+		var docTypeStr = '';
+		for (var docTypeStri = 0; docTypeStri < docTypeStrArr.length - 1; docTypeStri++) {
+			docTypeStr += String.fromCharCode(docTypeStrArr[docTypeStri]);
+		}
 		if (docType) {
 			newNote /*00*/ = '<!DOCTYPE html' + docTypeStr + '>';
 		} else {
@@ -307,6 +319,42 @@ function fncWiNjsloadjs(fncParam) {
 	}
 	return true;
 }
+var elOut;		//Bunlar Silinecek
+var thOut;		//Bunlar Silinecek
+var elSibOut;	//Bunlar Silinecek
+function fncDivAdd(fncParam) {
+	/*
+		mesela 17:23,4 girildi. Öncelikle 17:23 diye geçen bir div var mı? Onu bulacak.
+	*/
+	var divAdded = false;
+	$.each($('body > div'), function(i, el){
+		var elSib = getSib(el);
+		/* 1607301205 getSib 'e fonksiyonalize oldu
+		var elChildNodeIndex = 0; 
+		if (el.childNodes[elChildNodeIndex].nodeType == 3) {
+			elChildNodeIndex++;
+		}
+		if (el.childNodes[elChildNodeIndex].color == '#0000ff') {
+			elSib = el.childNodes[elChildNodeIndex].childNodes[elChildNodeIndex].childNodes[elChildNodeIndex];
+		} else {
+			elSib = el.childNodes[elChildNodeIndex].childNodes[elChildNodeIndex];
+		}
+		*/
+		if (elSib.innerText.substring(0,5) == fncParam[0]) {
+			if (!divAdded) {
+				divAdded = true;
+				elOut = el;
+				thisOut = thOut;
+				elSibOut = elSib;
+				var dHourExt = elSib.innerText.substring(0,5).substring(0,2);
+				var dMinuteExt = elSib.innerText.substring(0,5).substring(3,5);
+				var defDivExt = '\n\t<div>\n\t\t<font face=\"Segoe UI\" color=\"#0000ff\">\n\t\t\t<b>\n\t\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">' + dHourExt + ':' + dMinuteExt + ' A...<\/span>\n\t\t\t<\/b>\n\t\t<\/font>\n\t<\/div>\n\t<div>\n\t\t<font face=\"Segoe UI\">\n\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">a...<\/span>\n\t\t<\/font>\n\t<\/div>';
+				$(el).next()[0].outerHTML += Array(parseInt(fncParam[1])+1).join(defDivExt);
+			}
+		}
+	});
+	return divAdded;
+}
 var cmdArr = [
 	/*
 		Burada bir detaydan bahsetmek istiyorum. Eğer istenirse sadece parametre adedini değil aynı zamanda parametrenin ne olduğunu da ekleyebiliriz.
@@ -338,7 +386,8 @@ var cmdArr = [
 	'Font.Size', [1, fncFontSize], 
 	'Yap.Bil', [4, fncYapBil], 
 	'Kay.Par.Har', [3, fncKayParHar], 
-	'WiNjs.loadjs', [1, fncWiNjsloadjs]
+	'WiNjs.loadjs', [1, fncWiNjsloadjs],
+	'Div.Add', [2, fncDivAdd]
 	/*
 		Ortak fnc olayı bence birçok ihtiyacı giderir. Ortak fnc 'nın amacı şu, diyelim ki herhangi yeni cmdPhrase ekleyeceğim. Hatta diyelim ki,
 		birden fazla ekleyeceğim. Bunların hepsinin işleyişi ise basit anlamda kayıt tutmak olsun mesela. Örneğin, içtiğin sigara gibi veya mbtus gibi.
@@ -768,34 +817,35 @@ $(document).bind('keyup click', function (e) {
 	Tar = getTar();
 	setoldTar();
 	setTar();
-
+	TarSib = getSib(Tar);
+	/* 1607301205 getSib 'e fonksiyonalize oldu
 	var childNodeIndex = 0; //ilki textNode ise sonrakine bak
 	if (Tar.childNodes[childNodeIndex].nodeType == 3) {
 		childNodeIndex++;
 	}
-	/*
-		1507130900
-		if (Tar.childNodes[childNodeIndex].color == '#0000ff') {
-		gibi bir if clause eklemek zorundayım. Yoksa
-			Uncaught TypeError: Cannot read property 'length' of undefined 
-		hatası geliyor. 
-	*/
+	//
+		//1507130900
+		//if (Tar.childNodes[childNodeIndex].color == '#0000ff') {
+		//gibi bir if clause eklemek zorundayım. Yoksa
+			//Uncaught TypeError: Cannot read property 'length' of undefined 
+		//hatasi geliyor. 
+	//
 	
 	if (Tar.childNodes[childNodeIndex].color == '#0000ff') {
 		TarSib = Tar.childNodes[childNodeIndex].childNodes[childNodeIndex].childNodes[childNodeIndex];
 	} else {
 		TarSib = Tar.childNodes[childNodeIndex].childNodes[childNodeIndex];
 	}
-	
+	*/
 	if (TarSib.innerText.length == 10 || TarSib.innerText.length == 9) {
-		col1 = 'lightgray';
+		cssObj.colors.current = cssObj.colors.default;
 		autoNow()
 	} else {
 		//if (typeof window.external == 'object') {
 		if (WiNcapable) {
 			// Uncaught TypeError: Object [object Object] has no method 'DoEvents' 
 			// window.external.DoEvents();  //duzgun calismiyor
-			col1 = 'lightyellow' /*1602091036 yellow dan değiştirdim*/; //Normalde LightYellow 'du (Büyük harf küçük harf önemli mi bilmiyorum ama sanmıyorum)
+			cssObj.colors.current = cssObj.colors.WiNcapable; /*1602091036 yellow dan değiştirdim*/; //Normalde LightYellow 'du (Büyük harf küçük harf önemli mi bilmiyorum ama sanmıyorum)
 			/*
 				LightYellow 'u kabul etmeyen yellow 'u kabul ediyor. Çok da üstelemeyeceğim şimdilik. 
 			*/
@@ -938,7 +988,7 @@ function cmdTxtJob(locTarSib) {
 				cmdTxt[5][cmdTxt[4]].length neden işe yaramayacaktı? Normalde, birer arayla sırayı bozmadan txt değerleri
 				içine matrislemekten başka ne işe yarıyordu ki cmdTxt[5]?
 			*/
-			console.log('Daha yeni cmdInstance komutu tamamlandı.');
+			console.log('Daha yeni cmdInstance komutu tamamlandi.');
 			enteringParamAra = false; //Parametre giriliyor olamaz cmdInstance daha yeni tamamlandı ise
 			enteringParamSon = false;
 			locTarSib.innerText += '(' + veriAyirac;
@@ -974,7 +1024,7 @@ function cmdTxtJob(locTarSib) {
 					de aramıştım. keyup 'ın enter tuşu release olduktan sonra fire olduğunu farkedince anlamını yitirdi gibi..
 			*/
 		} 
-		col1 = 'Pink';
+		cssObj.colors.current = cssObj.colors.enteringParam;
 		var paramAdet = cmdArr[cmdTxt[4]+1][0];
 		/*
 			cmdTxt[2] 'den split '(' yapınca boşluktan sonrasını almıyor. Bundan dolayı aklıma gelen ilk çözüm
@@ -996,7 +1046,7 @@ function cmdTxtJob(locTarSib) {
 			buraya koymayı düşünüyorum. 
 		*/
 		if (cmdTxt[6].length > paramAdet * 2) {
-			col1 = 'PaleGreen';
+			cssObj.colors.current = cssObj.colors.finishedParam;
 			enteringParamAra = false; //Tüm tırnaklar tamamlandıysa da Parametre giriliyor olamaz.
 			enteringParamSon = false; //tüm ara false olan yere son false eklenmeli mi
 			cmdTxt[7] = [];
@@ -1126,7 +1176,7 @@ function cmdArrRet(fncRet, loc2TarSib) {
 		//if (typeof window.external == 'object') {
 		//console.log('if (WiNcapable) içine girilecek');
 		if (WiNcapable) {
-			console.log('if (WiNcapable) içine true ile girildi');
+			console.log('if (WiNcapable) icine true ile girildi');
 			TarSibSibId = WiNcapStr[0] + '_' + WiNcapStr[1]; //WiNcapable_true
 			/*
 				Bunları buradan elle değiştirme bence. Globale bir değişken atayalım. Tüm programlar ona baksın ona göre çalışsın. 
@@ -1136,7 +1186,7 @@ function cmdArrRet(fncRet, loc2TarSib) {
 			*/
 			TarSibSibText = WiNcapStr[3] + ' ' + WiNcapStr[4] + ' ' + WiNcapStr[5] + ' ' + WiNcapStr[6]; //'Not Processed created Win';		
 		} else {
-			console.log('if (WiNcapable) içine false ile girildi');
+			console.log('if (WiNcapable) icine false ile girildi');
 			/*
 				
 			*/
@@ -1156,7 +1206,7 @@ function cmdArrRet(fncRet, loc2TarSib) {
 		*/
 		//console.log('if (typeof..) içine girilecek');
 		if (typeof $(loc2TarSib).find('.' + WiNcapStr[8] /* eski adı => '.lateProcess'*/)[0] == 'object') {
-			console.log('if (typeof..) içine true ile girildi');
+			console.log('if (typeof..) icine true ile girildi');
 			TarSibSib = $(loc2TarSib).find('.' + WiNcapStr[8] /* eski adı => '.lateProcess'*/)[0];
 			TarSibSib.style.backgroundColor = 'yellow'; //Debug amaçlı. Sonradan silebilirsin.
 			/*
@@ -1243,6 +1293,11 @@ function autoNow() {
 			}
 		}
 	} else {
+		cssObj.colors.default = 'DarkGray';
+		cssObj.colors.current = cssObj.colors.default;
+		cssObj.colors.WiNcapable = 'DarkGoldenRod ';
+		cssObj.colors.enteringParam = 'Purple';
+		cssObj.colors.finishedParam = 'DarkGreen';
 	};
 }
 
@@ -1261,7 +1316,7 @@ function getTar() {
 		if (/*1507130900 hata düzeldi*/yerTar/*Tar yerine yerTar yaptım*/.childNodes[childNodeIndex].nodeType == 3) {
 			childNodeIndex++;
 		}
-		
+		// 1607301205 getSib 'e fonksiyonalize olaMAdi
 		if (yerTar.childNodes[childNodeIndex].color == "#0000ff") {
 			/*
 				Bazen neden bilmiyorum ama bu başarısız oluyor. Bundan dolayı bence bir kod daha eklemek lazım. Daha doğrusu bu kodu değiştirmek lazım.
@@ -1325,16 +1380,37 @@ function setoldTar() {
 
 function setTar() {
 	$(Tar).css('border', '1px dashed gray');
-	$(Tar).css('background-color', col1);
+	$(Tar).css('background-color', cssObj.colors.current);
 	var childNodeIndex = 0; //ilki textNode ise sonrakine bak
 	if (Tar.childNodes[childNodeIndex].nodeType == 3) {
 		childNodeIndex++;
 	}
+	// 1607301205 getSib 'e fonksiyonalize olaMAdi
 	if (Tar.childNodes[childNodeIndex].color == '#0000ff') {
 		$(Tar).find('span').animate({fontSize: setTar_fontSize + 'px'}, 100);
 	} else {
 		$(Tar).find('span').animate({fontSize: (setTar_fontSize * 0.875) + 'px'}, 100);
 	};
+}
+
+function getSib(parSib) {
+	/*
+		getSib 'e fonksiyonalize olabilenler TarSib 'i isteyenler. (2 yerde)
+		Renk e göre bool isteyenler aynen devam etti. (bu da 2 yerde)
+		(Toplam 4 yerde kullanılmış bu mantık)
+		Zaten bu olay birinde b tag var ya. birinde iç içe 3 eleman var
+		Birinde iç içe 2 eleman var. Zaten font deprached oldu ya
+		Komple bunlar değişse de olur
+	*/
+	var childNodeIndex = 0;
+	if (parSib.childNodes[childNodeIndex].nodeType == 3) {
+		childNodeIndex++;
+	}
+	if (parSib.childNodes[elChildNodeIndex].color == '#0000ff') {
+		return parSib.childNodes[elChildNodeIndex].childNodes[elChildNodeIndex].childNodes[elChildNodeIndex];
+	} else {
+		return parSib.childNodes[elChildNodeIndex].childNodes[elChildNodeIndex];
+	}
 }
 
 </script>
