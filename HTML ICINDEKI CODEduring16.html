@@ -1,76 +1,7 @@
 <script id="jQ001_empty" class="jQ001e"></script>
 <!--<< onlineXHR VASITASI İLE YÜKLENDİ/1607301227 >>-->
 
-<!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script-->
-<!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script-->
-<!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script-->
-<!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script-->
-<!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script-->
-<!--
-	http://code.jquery.com/jquery-latest.js
-	ile 
-	http://code.jquery.com/jquery-1.11.1.js
-	birebir aynı ve 286 KB (293,072 bayt)
-	http://code.jquery.com/jquery-2.1.1.min.js
-	ise hem daha yeni hem de 82.2 KB (84,247 bayt)
-	
-	Ancak gördüğüm kadarıyla, iOS iPad 'de 2.1.1.min sorun çıkarıyor. (Tam denemedim)
--->
-<!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script-->
-<!--
-	1412141755_En azından Bir Süreliğine jquery-latest.js yerine jquery-1.11.1.min.js kullanmayı düşünüyorum
-	Denemeyi yaptım. iPhone iOS WizNote 'da sayfa yükleme hızı gerçekten ciddi miktarda artıyor.
-	Ancak contenteditable = 'true' iken yani edit modunda iken jQuery aktif olamıyor.
-	PC ortamında bu sorun geçerli değil. Sadece iOS ortamında. 
-	Bundan dolayı ben şimdilik tekrar latest 'dan devam etmeyi düşünüyorum. 
-	---
-	Tekrar kontrol ettiğimde bu problemin kendiliğinden çözüldüğünü gördüm. iPhone 'lardan beyaz olan
-	problemsiz çalıştırdı. Geri dönüp siyaha baktığımda onun da düzeldiğini gördüm.
-	Bundan dolayı, tekrar 1.11.1.min 'e geçmeyi düşünüyorum latest 'dan
-	---
-	Acaba bu problem yerelleştirmeden kaynaklanmış olabilir mi? Yani jQuery dosyasını yerel klasöre kopyalayınca
-	bu problem çözülmüş olabilir mi? 
-	4452d88c-bd8b-4d4c-a839-c4d7237c5c4b_128_files/jquery-latest[1].js gibi
-	---
-	Bu arada hiç diğer alternatifleri denemedim. Bunu da belirteyim. Mesela bir de jQuery Mobile opsiyonu var.
-	Onun dışında Selective jQuery var. Bunları da hesaba katmak gerebilir ileride. 
--->
 <script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-<!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script-->
-<!--
-	Bazen devre dışı kalıyor ya program tamamiyle, işte sanırım tesadüfen bile olsa, bunun nedeni
-	jquery 'e refer eden script 'in yerelleştirilmiş linki kırılıyor. Bu tür durumları çözmenin bence
-	en mantıklı yolu, jQ001 adıyla geçen link eğer kırık ise, bunu kontrol eden bir program bu sorunu
-	çözer. 
--->
-<!--
-	Harici Yükleme
-	Hem Online Hem Offline Çalışma
-	gDrive veya başka ortak paylaşım dosyaları ile çalışma.
-	Direk Harddisk 'e eklediğim dosyaların burada uzak link olarak gelmesi meselesi
-	Komut Matrisi
-	başka aklıma gelirse buraya yazacağım. 
--->
-<!--
-	Çeşitli gerekçelerle ki, şimdi burada bahsetmeyeceğim,
-	eğer komut matrisini geliştirmek birinci önceliğe gelmiş ise, ve bunun için de, eğer matrisi çok boyutlu hale getirmek 
-	seçeneğini seçmeyi düşünüyorsam, Bu durumda yapılacak bazı konular var. Bunlardan bahsetmek lazım.
-	Şimdi öncelikle komut matrisini çok boyutlu hale getirmeyi düşünüyorsam gerçekten, ikinci parametre ne olmalı bunu düşünmek lazım.
-	Acaba kodun tamamını mı barındırması lazım. Eğer bunu yaparsak, o zaman her aşamada tüm kodlar yüklenecek. 
-	Bunun çok da mantığı yok aslına bakarsan. 
-	Eğer kodun tamamını matriste bulundurmak istemezsek, o zaman birkaç seçenek var.
-	Mesela bir web sitesinden, örneğin bizim siteden, veya google drive 'dan veri gelebilir. 
-	Google Drive 'dan gelmesinin bazı artıları var. Direk yaptığın değişikliğin devreye girme şansı var.
-	Bundan dolayı bu mantığı doğru buluyorum.
--->
-<!--
-	Tüm Comment 'leri hem Html hem js, hem singleline hem de multiline tek seferde silen ve kodu daha sadeleştiren bir 
-	yöntem varsa, uygulamayı düşünüyorum. Ancak;
-	Eğer yükleme hızının yavaşlamasının esas nedeni commentler değilse, esas yavaşlama nedeninin aslan payı
-	yani %90 lık pay jQuery 'den veya başka gerekçelerden kaynaklanıyorsa, bu durumda, boş yere bununla uğraşmanın mantığı yok.
-	Çünkü ileride belki o commentlerin varlığı da yaz.gun içinde işe yarabilir. Bir süre sonra eğer eski code mevcut OHIC.html 'den
-	ciddi miktarda yabancılaşırsa, yaz.gun içindeki kodun ne işe yaradığını anlamakta güçlük çekebilirim. 
--->
 <script id="jQ001_001">
 var objApp,objWizDoc,objDatabase,objWindow,objDoc,objDocHtm;
 var WiNcapable = false;
@@ -209,19 +140,22 @@ function getTar() {
 					return 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/'
 				}
 			}
-			urlF = getPF()+ 'defDivOld' + '.htm';
+			autLasyHDoc = function(urlLF,cbFnc) {
+				urlF = getPF()+ urlLF + '.htm';
+				autLsynF(urlF,cbFnc);
+			}
 			cbFncDnm = function () {
-				var docF = document.implementation.createHTMLDocument('');
-				docF.documentElement.innerHTML = this.responseText;
-				with (docF.getElementsByTagName('span')[0]){
+				var inBodyDoc = document.implementation.createHTMLDocument('');
+				inBodyDoc.documentElement.innerHTML = this.responseText;
+				with (inBodyDoc.getElementsByTagName('span')[0]){
 					innerText = innerText.replace('00',dHourExt);
 					innerText = innerText.replace('00',dMinuteExt);
 				}
-				$('body').append(docF.documentElement.innerHTML);
+				$('body').append(inBodyDoc.documentElement.innerHTML);
 			}
-			autLasyF(urlF,cbFncDnm);
+			autLasyF('defDivOld',cbFncDnm);
 		}
-	};
+	}
 	return yerTar;
 }
 function setoldTar() {
