@@ -1336,7 +1336,7 @@ function isToday() {
 	var retGen = retGenDec_dDt();
 	return (titleDay == retGen) 
 }
-var defDivExtYeniUsul; //istersen true yap dışarıdan alsın(Yaptım 1611291338)
+var defDivExtYeniUsul = true; //istersen true yap dışarıdan alsın(Yaptım 1611291338)
 function getTar() {
 	//*1507130900*/console.log('function getTar() {started}');
 	var yerTar /*yerelTar*/ = document.getSelection().getRangeAt(0).startContainer;
@@ -1412,6 +1412,10 @@ function getTar() {
 					return docF;
 				}
 				var inBodyDoc = autLsynHDoc('defDivOld');
+				with (inBodyDoc.getElementsByTagName('span')[0]){
+					innerText = innerText.replace('00',dHourExt);
+					innerText = innerText.replace('00',dMinuteExt);
+				}
 				defDivExt = inBodyDoc.body.innerHTML;
 				//Daha bitmedi dHourExt ve dMinute Ext 'i de alacak. Replace ilk Occurance 'ı alıyorsa,
 				//Burada sırayla çalışır.
