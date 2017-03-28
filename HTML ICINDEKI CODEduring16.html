@@ -3,6 +3,34 @@
 
 <script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script id="jQ001_001">
+function cssObj() {
+	this.b0 = 'border';
+	this.b1 = '1px dashed gray';
+	this.b2 = '1px dotted Silver';
+	this.b3 = 'none';
+	this.c0 = 'background-color';
+	this.c1 = 'LightGray';
+	this.c2 = 'WhiteSmoke';
+	this.c3 = 'White';
+	this.c4 = 'rgb(0, 0, 255)';
+	with (this) {
+		this.a1 = [[c0,c1],[b0,b1]];
+		this.a2 = [[c0,c2],[b0,b2]];
+		this.a3 = [[c0,c3],[b0,b3]];
+		this.a0 = [a1,a2,a3];
+	}
+	this.t0 = 'span';
+	this.q0 = 'body>div';
+	this.q1 = 'html, body';
+	this.q2 = 'keyup click';
+	this.q3 = 'BODY';
+	this.f0 = 'defDiv';
+	this.r0 = 2;
+	this.r1 = 1.5;
+	this.n0 = 7;
+	this.n1 = 12
+}
+var cO = new cssObj();
 var Tar, TarSib, oldTar;
 hovCA = function(_this,cssArr) {
 	while (cssArr.length) {hovCa(_this,cssArr.pop())}
@@ -11,22 +39,22 @@ hovCa = function(_this,cssArr) {
 	$(_this).css(cssArr[0], cssArr[1]);
 }
 hovIf = function(_bool, _cHov, _cArr) {
-	(_bool==($(this).get(0).style.border=='1px dashed gray'))?_cHov(this,_cArr):null
+	(_bool==($(this).get(0).style.border==cO.b1))?_cHov(this,_cArr):null
 }
 hovSt = function() {
-	hovIf.call(this,true,hovCA,[['background-color','White'],['border','none']])
+	hovIf.call(this,true,hovCA,cO.a3)
 }
 hovIn = function() {
-	hovIf.call(this,false,hovCA,[['background-color','WhiteSmoke'],['border','1px dotted Silver']])
+	hovIf.call(this,false,hovCA,cO.a2)
 }
 hovOu = function() {
-	hovIf.call(this,false,hovCA,[['background-color','White'],['border','none']])
+	hovIf.call(this,false,hovCA,cO.a3)
 }
 hovOE = function(el, tN, pX, t) {
 	$(el).find(tN).animate({fontSize:pX+'px'},t);
 }
 hovOe = function(el, k, t) {
-	k=k||1;t=t||100;hovOE(el,'span',12*k,t);
+	k=k||1;t=t||100;hovOE(el,cO.t0,12*k,t);
 }
 hovEA = function(el, t, k){
 	t=t||100;k=k||1;(Tar!=el)?hovOe(el, k, t):null
@@ -38,13 +66,13 @@ hovEa = function(i, el){
 	hoveA(i, el, 100);
 }
 $(document).ready(function () {
-	$('body>div').hover(hovIn, hovOu);
-	$('body>div').each(hovSt);
-	$.each($('body>div'), hovEa);
-	$('html, body').animate({ scrollTop: $(document).height() }, 1000);
+	$(cO.q0).hover(hovIn, hovOu);
+	$(cO.q0).each(hovSt);
+	$.each($(cO.q0), hovEa);
+	$(cO.q1).animate({ scrollTop: $(document).height() }, 1000);
 });
-$(document).on({mouseenter: hovIn, mouseleave: hovOu}, 'body>div');
-$(document).on('keyup click', function (e) {
+$(document).on({mouseenter: hovIn, mouseleave: hovOu}, cO.q0);
+$(document).on(cO.q2, function (e) {
 	autoTar();
 	autoNow()
 });
@@ -67,33 +95,33 @@ function autoNow() {
 function isOddTar(oTar) {
 	var cNI= 0;
 	if (oTar.childNodes[cNI].nodeType == 3) {cNI++}
-	return (oTar.childNodes[cNI].style.color == 'rgb(0, 0, 255)')
+	return (oTar.childNodes[cNI].style.color == cO.c4)
 }
 function conTar() {
 	var cTar = document.getSelection().getRangeAt(0).startContainer;
-	while (cTar.parentNode.tagName != 'BODY') {cTar = cTar.parentNode	};
+	while (cTar.parentNode.tagName != cO.q3) {cTar = cTar.parentNode	};
 	return cTar
 }
 function lstTar(lTar, lNum) {
-	if ($('body>div').length - $(lTar).index() < lNum) {
-		(isOddTar(lTar))?autLasyHDoc('defDiv',cbFncCur):null
+	if ($(cO.q0).length - $(lTar).index() < lNum) {
+		(isOddTar(lTar))?autLasyHDoc(cO.f0,cbFncCur):null
 	}
 }
 function getTar() {
 	var yerTar = conTar();
-	lstTar(yerTar,7);
+	lstTar(yerTar,cO.n0);
 	return yerTar;
 }
 function setoldTar() {
-	hovCA(oldTar, [['background-color', 'White'],['border', 'none']]);
+	hovCA(oldTar, cO.a3);
 	hovEA(oldTar);
 	oldTar=Tar
 }
 function setTar() {
-	hovCA(Tar, [['background-color', 'LightGray'],['border', '1px dashed gray']]);
-	hovOe(Tar, (isOddTar(Tar)?2:1.5));
+	hovCA(Tar, cO.a1);
+	hovOe(Tar, (isOddTar(Tar)?cO.r0:cO.r1));
 }
 function getSib(parSib) {
-	return parSib.getElementsByTagName('span')[0];
+	return parSib.getElementsByTagName(cO.t0)[0];
 }
 </script>
