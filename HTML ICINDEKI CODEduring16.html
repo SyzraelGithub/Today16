@@ -13,6 +13,10 @@ function tarCssW__(_this) {
 	$(_this).css('background-color', 'White');
 	$(_this).css('border', 'none');	
 }
+function tarCssWsd(_this) {
+	$(_this).css('background-color', 'WhiteSmoke');
+	$(_this).css('border', '1px dotted Silver');
+}
 $(document).ready(function () {
 	$('body>div').hover(hovIn, hovOu);
 	$('body>div').each(tarCssNrm);
@@ -29,8 +33,7 @@ $(window).load(function() {
 });
 function hovIn() {
 	if ($(this).get(0).style.border != '1px dashed gray') {
-		$(this).css('background-color', 'WhiteSmoke');
-		$(this).css('border', '1px dotted Silver');
+		tarCssWsd(this)
 	}
 }
 function hovOu() {
