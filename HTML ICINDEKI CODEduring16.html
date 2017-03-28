@@ -74,13 +74,30 @@
 <script id="jQ001_001">
 debugger;
 var Tar, TarSib, oldTar;
-var cssObj = {};
-cssObj.colors = {};
-cssObj.colors.default = 'LightGray';
-cssObj.colors.current = cssObj.colors.default
-cssObj.colors.WiNcapable = 'LightYellow';
-cssObj.colors.enteringParam = 'Pink';
-cssObj.colors.finishedParam = 'PaleGreen';
+var cssObj;
+function getcssObj(defCol,WiNCol,entCol,finCol) {
+	var newcssObj = {};
+	newcssObj.colors = {};
+	newcssObj.colors.default = defCol;
+	newcssObj.colors.current = this.colors.default;
+	newcssObj.colors.WiNcapable = WiNCol;
+	newcssObj.colors.enteringParam = entCol;
+	newcssObj.colors.finishedParam = finCol;
+	return newcssObj;
+}
+ProtoT_getWeek(); //Yukarı da alsan aşağı da alsan çalışıyor. Demek ki her türlü Sub/Function erken okunuyor.
+/*
+	1607301316
+	Evet, ProtoT_getWeek 'ı yukarı alsan da, aşağı alsan da çalışıyor olabilir.
+	Fakat, isToday, retGenDec_dDt 'i kullanıyor. 
+	retGenDec_dDt ise getWeek kullanıyor. Onun için 
+	getWeek 'in prototype 'a eklenmesi gerekiyor. 
+*/
+if (isToday()) {
+	cssObj = getcssObj('LightGray','LightYellow','Pink','PaleGreen');
+} else {
+	cssObj = getcssObj('DarkGray','DarkGoldenRod','Purple','DarkGreen');
+}
 /*
 	141008 'den sonraki HTML ICINDEKI CODE.html içinden geldi.Mihenk kabul edilebilir.
 	---
@@ -495,7 +512,6 @@ function ProtoT_getWeek() {
 		return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()+1)/7);
 	} 
 }
-ProtoT_getWeek(); //Yukarı da alsan aşağı da alsan çalışıyor. Demek ki her türlü Sub/Function erken okunuyor.
 
 function twoDigit(digit) {
 	digit = '' + digit;
@@ -1278,9 +1294,7 @@ function cmdArrRet(fncRet, loc2TarSib) {
 }
 
 function autoNow() {
-	var titleDay = document.title.substring(0, document.title.indexOf(" ") - 4);
-	var retGen = retGenDec_dDt();
-	if (titleDay == retGen) {
+	if (isToday()) {
 		if (TarSib.innerText.length == 10 || TarSib.innerText.length == 9) {
 			var myRepeat = TarSib.innerText.length - 6;
 			if (TarSib.innerText.substring(7,10) == '...' || TarSib.innerText.substring(7,9) == '..') {
@@ -1293,12 +1307,13 @@ function autoNow() {
 			}
 		}
 	} else {
-		cssObj.colors.default = 'DarkGray';
-		cssObj.colors.current = cssObj.colors.default;
-		cssObj.colors.WiNcapable = 'DarkGoldenRod ';
-		cssObj.colors.enteringParam = 'Purple';
-		cssObj.colors.finishedParam = 'DarkGreen';
 	};
+}
+
+function isToday() {
+	var titleDay = document.title.substring(0, document.title.indexOf(" ") - 4);
+	var retGen = retGenDec_dDt();
+	return (titleDay == retGen) 
 }
 
 function getTar() {
