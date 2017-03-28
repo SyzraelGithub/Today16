@@ -3,6 +3,13 @@
 
 <script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script id="jQ001_001">
+function twoDigit(digit) {
+	digit = '' + digit;
+	if (digit.length < 2) {
+		digit = '0' + digit;
+	}
+	return digit;
+}
 var Tar, TarSib, oldTar;
 var dDate;
 function ProtoT_getWeek() {
@@ -11,13 +18,6 @@ function ProtoT_getWeek() {
 		return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()+1)/7);
 	} 
 }ProtoT_getWeek();
-function twoDigit(digit) {
-	digit = '' + digit;
-	if (digit.length < 2) {
-		digit = '0' + digit;
-	}
-	return digit;
-}
 function retGenDec_dDt() {
 	dDate = new Date();
 	var dYear = twoDigit(dDate.getYear()-100);
