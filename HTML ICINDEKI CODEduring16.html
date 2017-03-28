@@ -1509,7 +1509,7 @@ function setTar() {
 		childNodeIndex++;
 	}
 	// 1607301205 getSib 'e fonksiyonalize olaMAdi
-	if (Tar.childNodes[childNodeIndex].color == '#0000ff') {
+	if (Tar.childNodes[childNodeIndex].style.color == 'rgb(0, 0, 255)') {
 		$(Tar).find('span').animate({fontSize: setTar_fontSize + 'px'}, 100);
 	} else {
 		$(Tar).find('span').animate({fontSize: (setTar_fontSize * 0.875) + 'px'}, 100);
