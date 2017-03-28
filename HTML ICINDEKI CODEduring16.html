@@ -134,15 +134,15 @@ $(document).ready(function () {
 	$.each($('body > div'), function(i, el){
 		setTimeout(function(){
 			if (Tar != el) {
-				$(el).find('span').animate({fontSize: "12px"}, 100);
+				$(el).find('span').animate({fontSize: '12px'}, 100);
 			} else {
-				$(el).find('span').animate({fontSize: "15px"}, 100);
+				$(el).find('span').animate({fontSize: '15px'}, 100);
 			}
 		},100 + ( i * 100 ));
 	});
 });
 $(window).load(function() {
-	$("html, body").animate({ scrollTop: $(document).height() }, 1000);
+	$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 });
 function hovIn() {
 	if ($(this).get(0).style.border != '1px dashed gray') {
@@ -212,7 +212,7 @@ function getTar() {
 				innerText = innerText.replace('00',dMinuteExt);
 			}
 			var defDivExt = inBodyDoc.body.innerHTML;
-			$("body").append(defDivExt);
+			$('body').append(defDivExt);
 		}
 	};
 	return yerTar;
@@ -221,7 +221,7 @@ function setoldTar() {
 	$(oldTar).css('border', 'none');
 	$(oldTar).css('background-color', 'White');
 	if (oldTar != Tar) {
-		$(oldTar).find('span').animate({fontSize: "12px"}, 100);
+		$(oldTar).find('span').animate({fontSize: '12px'}, 100);
 	};
 	oldTar = Tar;
 }
@@ -233,9 +233,9 @@ function setTar() {
 		childNodeIndex++;
 	}
 	if (Tar.childNodes[childNodeIndex].style.color == 'rgb(0, 0, 255)') {
-		$(Tar).find('span').animate({fontSize: setTar_fontSize + 'px'}, 100);
+		$(Tar).find('span').animate({fontSize: '24px'}, 100);
 	} else {
-		$(Tar).find('span').animate({fontSize: (setTar_fontSize * 0.875) + 'px'}, 100);
+		$(Tar).find('span').animate({fontSize: '21px'}, 100);
 	};
 }
 function getSib(parSib) {
