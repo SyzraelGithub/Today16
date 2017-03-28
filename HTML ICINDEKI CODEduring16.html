@@ -38,6 +38,7 @@ hovEa = function(i, el){
 	hoveA(i, el, 100);
 }
 $(document).ready(function () {
+	$('body>div').hover(hovIn, hovOu);
 	$('body>div').each(hovSt);
 	$.each($('body>div'), hovEa);
 });
