@@ -41,8 +41,6 @@ $(document).ready(function () {
 	$('body>div').hover(hovIn, hovOu);
 	$('body>div').each(hovSt);
 	$.each($('body>div'), hovEa);
-});
-$(window).load(function() {
 	$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 });
 $(document).on({mouseenter: hovIn, mouseleave: hovOu}, 'body>div');
