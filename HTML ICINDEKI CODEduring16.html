@@ -1,5 +1,5 @@
 <script id="jQempty001" class="jQempty"></script>
-<!--<< onlineXHR VASITASI İLE YÜKLENDİ/1602201612 >>-->
+<!--<< onlineXHR VASITASI İLE YÜKLENDİ/1602221325 >>-->
 
 <!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script-->
 <!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script-->
@@ -551,6 +551,23 @@ $(document).ready(function () {
 			}
 		},100 + ( i * 100 ));
 	});
+	
+	/*
+		1602202006
+		---
+		Aynı code window.load içinde olmasına rağmen problem olacağına inandığım için,
+		scrollDown code 'unu buraya da yazacağım. Böylece nereden tetiklenirse tetiklense en az bir defa
+		Denk gelme ihtimalini arttıracağım. Ancak, bunu yapmadan önce, bir yerlere nereden tetiklendiğini
+		yazmasını isteyebilirim. Veya mümkünse beep gibi bir fnc veya bunun dışında şu da olabilir.
+		ilk div arka plan rengini değiştirebilirim mesela. Veya daha güzeli aktif olan div de olabilir.
+		---
+		Şimdilik sadece değişiklik scrollDown hızını düşürmekle belli olsun.
+		---
+		1602212109
+		Sonradan kaldırdım o kodu. $(window).load( ile başlayan animate code unu buradan kaldırdım.
+	*/
+	
+	
 });
 
 $(window).load(function() {
@@ -560,6 +577,16 @@ $(window).load(function() {
 	*/
 	$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 });
+
+window.scrollTo(0,document.body.scrollHeight);
+
+/*
+	1602221320
+	Aslında bu scrollDown olayı çok da iyi bir çözüm ile bağlanmadı. Palyatif bir çözüm ile bağlandı.
+	Bundan dolayı ileride problem yaratırsa ve tekrar çözüm gerekirse, jQuery e ihtiyaç duymayan bir code olmalı
+	setInterval içerebilir. içerse iyi olur. Bunun dışında, bir de editMode a yani contentEditable a ve
+	WiNcapable a bağlı olsa yani onları kontrol edip ona göre çalışsa daha iyi olur diye düşünüyorum.
+*/
 
 /*
 	Eğer ileride Sayfa yeni açıldığında mevcut cmdArr var ise sayfada, önceden yazılmış olan, 
