@@ -1,5 +1,5 @@
 <script id="jQempty001" class="jQempty"></script>
-<!--<< onlineXHR VASITASI İLE YÜKLENDİ/1605180928 >>-->
+<!--<< onlineXHR VASITASI İLE YÜKLENDİ/1605180939 >>-->
 
 <!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script-->
 <!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script-->
@@ -578,8 +578,11 @@ $(window).load(function() {
 	$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 });
 
-if (document.body.scrollHeight) {
-	window.scrollTo(0,document.body.scrollHeight);
+try {
+    window.scrollTo(0,document.body.scrollHeight);
+}
+catch(err) {
+    'Buraya birşey yazmayacağım.
 }
 
 /*
