@@ -67,18 +67,6 @@ function getTar() {
 		}
 		if	(yerTar.childNodes[childNodeIndex].style.color == 'rgb(0, 0, 255)') {
 			var dDt = new getdDt(new Date());
-			autLasyF = function(urlF,cbFnc) {
-				with (new XMLHttpRequest()) {
-					onreadystatechange = function() {
-						if (readyState == 4 && status == 200) {
-							if (typeof cbFnc == 'function') {
-								cbFnc.apply(this)
-							}
-						}
-					}
-					open('GET',urlF,true);send()
-				}
-			}
 			getPF = function() {
 				if (typeof urlPF != 'undefined') {
 					return urlPF
