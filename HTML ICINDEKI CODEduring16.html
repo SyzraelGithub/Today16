@@ -73,8 +73,28 @@
 -->
 <script id="jQ001_001">
 //debugger;
+var objApp,objWizDoc/*Sonradan Eklendi*/,objDatabase,objWindow,objDoc,objDocHtm;
+var WiNcapable = false;
+function GenDecIfTypeOf() { //WizDocument eklendi
+	objApp = window.external;
+	if (typeof objApp == 'object') { //editMode anlaşılabilir objWizDoc 'tan
+		WiNcapable = true; 
+		if (typeof objApp.Database == 'object') {
+			objDatabase = objApp.Database;
+			objWindow = objApp.Window;
+			if (typeof objWindow == 'object') {
+				objDoc = objWindow.CurrentDocument;
+				objDocHtm = objWindow.CurrentDocumentHtmlDocument;
+				WiNcapable = true;
+			}
+		} else {
+			objWizDoc = objApp.WizDocument;
+			objDatabase = objWizDoc.Database
+		}
+	}
+};	GenDecIfTypeOf();
+
 var Tar, TarSib, oldTar;
-ProtoT_getWeek(); //Yukarı da alsan aşağı da alsan çalışıyor. Demek ki her türlü Sub/Function erken okunuyor.
 /*
 	161206 1612061013
 	isToday() ile ilgili herşeyi kaldırdım.
@@ -506,38 +526,17 @@ var setTar_fontSize = 24;
 */
 var dDate;
 
-var objApp,objWizDoc/*Sonradan Eklendi*/,objDatabase,objWindow,objDoc,objDocHtm;
-var WiNcapable = false;
 var WiNcapStr = ['WiNcapable', 'true', 'false', 'Not', 'Processed', 'created', 'Win', 'iOS', 'ltPrcS01S'];
 
 var TarSibOut; //Geçici Kontrol Değişkenleri (Sonra Sil!) (veya Commentle!)
 var elProcOut; //Geçici Kontrol Değişkenleri (Sonra Sil!) (veya Commentle!)
-
-function GenDecIfTypeOf() { //WizDocument eklendi
-	objApp = window.external;
-	if (typeof objApp == 'object') { //editMode anlaşılabilir objWizDoc 'tan
-		WiNcapable = true; 
-		if (typeof objApp.Database == 'object') {
-			objDatabase = objApp.Database;
-			objWindow = objApp.Window;
-			if (typeof objWindow == 'object') {
-				objDoc = objWindow.CurrentDocument;
-				objDocHtm = objWindow.CurrentDocumentHtmlDocument;
-				WiNcapable = true;
-			}
-		} else {
-			objWizDoc = objApp.WizDocument;
-			objDatabase = objWizDoc.Database
-		}
-	}
-};	GenDecIfTypeOf();
 
 function ProtoT_getWeek() {
 	Date.prototype.getWeek = function() {
 		var onejan = new Date(this.getFullYear(),0,1);
 		return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()+1)/7);
 	} 
-}
+}ProtoT_getWeek(); //Yukarı da alsan aşağı da alsan çalışıyor. Demek ki her türlü Sub/Function erken okunuyor.
 
 function twoDigit(digit) {
 	digit = '' + digit;
