@@ -4,6 +4,18 @@
 <script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script id="jQ001_001">
 var Tar, TarSib, oldTar;
+function tarCssW__(_this) {
+	$(_this).css('background-color', 'White');
+	$(_this).css('border', 'none');	
+}
+function tarCssWsd(_this) {
+	$(_this).css('background-color', 'WhiteSmoke');
+	$(_this).css('border', '1px dotted Silver');
+}
+function tarCssGlD(_this) {
+	$(_this).css('background-color', 'LightGray');
+	$(_this).css('border', '1px dashed gray');
+}
 function hovSt() {
 	if ($(this).get(0).style.border == '1px dashed gray') {
 		tarCssW__(this)
@@ -18,14 +30,6 @@ function hovOu() {
 	if ($(this).get(0).style.border != '1px dashed gray') {
 		tarCssW__(this)
 	}
-}
-function tarCssW__(_this) {
-	$(_this).css('background-color', 'White');
-	$(_this).css('border', 'none');	
-}
-function tarCssWsd(_this) {
-	$(_this).css('background-color', 'WhiteSmoke');
-	$(_this).css('border', '1px dotted Silver');
 }
 $(document).ready(function () {
 	$('body>div').hover(hovIn, hovOu);
@@ -111,16 +115,14 @@ function getTar() {
 	return yerTar;
 }
 function setoldTar() {
-	$(oldTar).css('border', 'none');
-	$(oldTar).css('background-color', 'White');
+	tarCssW__(oldTar);
 	if (oldTar != Tar) {
 		$(oldTar).find('span').animate({fontSize: '12px'}, 100);
 	};
 	oldTar = Tar;
 }
 function setTar() {
-	$(Tar).css('border', '1px dashed gray');
-	$(Tar).css('background-color', 'LightGray');
+	tarCssGlD(Tar);
 	var childNodeIndex = 0;
 	if (Tar.childNodes[childNodeIndex].nodeType == 3) {
 		childNodeIndex++;
