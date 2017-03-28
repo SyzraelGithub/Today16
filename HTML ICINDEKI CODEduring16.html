@@ -37,19 +37,20 @@ $(window).load(function() {
 	$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 });
 $(document).bind('keyup click', function (e) {
+	autoTar();
+	autoNow()
+});
+function autoTar() {
 	Tar = getTar();
 	setoldTar();
 	setTar();
 	TarSib = getSib(Tar);
-	autoNow()
-});
+}
 function autoNow() {
 	if (TarSib.innerText.length == 10 || TarSib.innerText.length == 9) {
 		var myRepeat = TarSib.innerText.length - 6;
 		if (TarSib.innerText.substring(7,10) == '...' || TarSib.innerText.substring(7,9) == '..') {
-			var dDt = new getdDt(new Date());
-			var newTime = dDt.dHour + ':' + dDt.dMinute;
-			TarSib.innerText = newTime + ' A' + Array(myRepeat).join('.');
+			TarSib.innerText = new getdDt(new Date()).newHourMinute + ' A' + Array(myRepeat).join('.');
 			var sel = document.getSelection();
 			sel.collapse(TarSib,1);
 		}
