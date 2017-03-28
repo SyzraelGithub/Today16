@@ -4,9 +4,19 @@
 <script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script id="jQ001_001">
 var Tar, TarSib, oldTar;
-function tarCssNrm() {
+function hovSt() {
 	if ($(this).get(0).style.border == '1px dashed gray') {
-		tarCssW__(this);
+		tarCssW__(this)
+	}
+}
+function hovIn() {
+	if ($(this).get(0).style.border != '1px dashed gray') {
+		tarCssWsd(this)
+	}
+}
+function hovOu() {
+	if ($(this).get(0).style.border != '1px dashed gray') {
+		tarCssW__(this)
 	}
 }
 function tarCssW__(_this) {
@@ -19,7 +29,7 @@ function tarCssWsd(_this) {
 }
 $(document).ready(function () {
 	$('body>div').hover(hovIn, hovOu);
-	$('body>div').each(tarCssNrm);
+	$('body>div').each(hovSt);
 	$.each($('body>div'), function(i, el){
 		setTimeout(function(){
 			if (Tar != el) {
@@ -31,17 +41,7 @@ $(document).ready(function () {
 $(window).load(function() {
 	$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 });
-function hovIn() {
-	if ($(this).get(0).style.border != '1px dashed gray') {
-		tarCssWsd(this)
-	}
-}
-function hovOu() {
-	if ($(this).get(0).style.border != '1px dashed gray') {
-		$(this).css('background-color', 'White');
-		$(this).css('border', 'none');
-	}
-}
+
 $(document).bind('keyup click', function (e) {
 	Tar = getTar();
 	setoldTar();
