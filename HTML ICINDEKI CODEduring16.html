@@ -1,5 +1,5 @@
 <script id="jQempty001" class="jQempty"></script>
-<!--<< onlineXHR VASITASI İLE YÜKLENDİ/1602201458 >>-->
+<!--<< onlineXHR VASITASI İLE YÜKLENDİ/1602201612 >>-->
 
 <!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script-->
 <!--script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script-->
@@ -502,6 +502,11 @@ $(document).ready(function () {
 			//
 			//	Eğer Tar ise el yani şuan cursor o div üzerindeyse, onu ufaltmamalı.
 			//	Ayrıca o div 'in zaten 12 punto olması halinde code 'un çalışmaması gerekir.
+			//
+			
+			//	1602201612
+			//	normalde 100 ms de çalışıyor. Ancak, benim ScrollTop ile çatışma yaşadığına dair şüphem var.
+			//	bunu 10 ms ye düşürmeyi düşünüyorum.
 			//
 		},100 + ( i * 100 ));
 	});
