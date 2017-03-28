@@ -56,17 +56,18 @@ function autoNow() {
 		}
 	}
 }
+function isOddTar(oTar) {
+	var cNI= 0;
+	if (oTar.childNodes[cNI].nodeType == 3) {cNI++}
+	if (oTar.childNodes[cNI].style.color == 'rgb(0, 0, 255)') {return true} else {return false}
+}
 function getTar() {
 	var yerTar = document.getSelection().getRangeAt(0).startContainer;
 	while (yerTar.parentNode.tagName != 'BODY') {
 		yerTar = yerTar.parentNode;
 	};
 	if ($('body>div').length - $(yerTar).index() < 7) {
-		var childNodeIndex = 0;
-		if (yerTar.childNodes[childNodeIndex].nodeType == 3) {
-			childNodeIndex++;
-		}
-		if	(yerTar.childNodes[childNodeIndex].style.color == 'rgb(0, 0, 255)') {
+		if (isOddTar(yerTar)) {
 			autLasyHDoc('defDiv',cbFncCur);
 		}
 	}
@@ -81,15 +82,11 @@ function setoldTar() {
 }
 function setTar() {
 	hovCA(Tar, [['background-color', 'LightGray'],['border', '1px dashed gray']]);
-	var childNodeIndex = 0;
-	if (Tar.childNodes[childNodeIndex].nodeType == 3) {
-		childNodeIndex++;
-	}
-	if (Tar.childNodes[childNodeIndex].style.color == 'rgb(0, 0, 255)') {
+	if (isOddTar(Tar)) {
 		$(Tar).find('span').animate({fontSize: '24px'}, 100);
 	} else {
 		$(Tar).find('span').animate({fontSize: '21px'}, 100);
-	};
+	}
 }
 function getSib(parSib) {
 	return parSib.getElementsByTagName('span')[0];
