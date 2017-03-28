@@ -23,13 +23,16 @@ hovOu = function() {
 	hovIf.call(this, false, hovCA, [['background-color', 'White'],['border', 'none']])
 }
 hovOe = function(el) {
-	hovOE(el,'span',12,100);
+	hovOE(el, 'span', 12, 100);
 }
-hovOE = function(el,tN,pX,t) {
+hovOE = function(el, tN, pX, t) {
 	$(el).find(tN).animate({fontSize: pX + 'px'}, t);
 }
 hovEa = function(i, el){
-	setTimeout(hovEA,100 + ( i * 100 ),el);
+	hoveA(i, el, 100);
+}
+hoveA = function(i, el, t) {
+	setTimeout(hovEA, t+(i*t), el);
 }
 hovEA = function(el){
 	if (Tar != el) {
@@ -97,11 +100,7 @@ function setoldTar() {
 }
 function setTar() {
 	hovCA(Tar, [['background-color', 'LightGray'],['border', '1px dashed gray']]);
-	if (isOddTar(Tar)) {
-		$(Tar).find('span').animate({fontSize: '24px'}, 100);
-	} else {
-		$(Tar).find('span').animate({fontSize: '18px'}, 100);
-	}
+	$(Tar).find('span').animate({fontSize: (isOddTar(Tar)?24:18)'px'}, 100);
 }
 function getSib(parSib) {
 	return parSib.getElementsByTagName('span')[0];
