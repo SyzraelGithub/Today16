@@ -1487,7 +1487,7 @@ function setTar() {
 		$(Tar).find('span').animate({fontSize: (setTar_fontSize * 0.875) + 'px'}, 100);
 	};
 }
-
+var getSibYeniUsul = true;
 function getSib(parSib) {
 	/*
 		getSib 'e fonksiyonalize olabilenler TarSib 'i isteyenler. (2 yerde)
@@ -1497,14 +1497,22 @@ function getSib(parSib) {
 		Birinde iç içe 2 eleman var. Zaten font deprached oldu ya
 		Komple bunlar değişse de olur
 	*/
-	var childNodeIndex = 0;
-	if (parSib.childNodes[childNodeIndex].nodeType == 3) {
-		childNodeIndex++;
-	}
-	if (parSib.childNodes[childNodeIndex].color == '#0000ff') {
-		return parSib.childNodes[childNodeIndex].childNodes[childNodeIndex].childNodes[childNodeIndex];
+	/*
+		161204 1612041339
+		Yeni Usul 'de SPAN buluncaya kadar derinleşir. İçeriği değiştirmeye daha müsait.
+	*/
+	if (getSibYeniUsul) {
+		return parSib.getElementsByTagName('span')[0];
 	} else {
-		return parSib.childNodes[childNodeIndex].childNodes[childNodeIndex];
+		var childNodeIndex = 0;
+		if (parSib.childNodes[childNodeIndex].nodeType == 3) {
+			childNodeIndex++;
+		}
+		if (parSib.childNodes[childNodeIndex].color == '#0000ff') {
+			return parSib.childNodes[childNodeIndex].childNodes[childNodeIndex].childNodes[childNodeIndex];
+		} else {
+			return parSib.childNodes[childNodeIndex].childNodes[childNodeIndex];
+		}	
 	}
 }
 
