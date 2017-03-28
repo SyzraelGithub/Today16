@@ -72,7 +72,7 @@
 	ciddi miktarda yabancılaşırsa, yaz.gun içindeki kodun ne işe yaradığını anlamakta güçlük çekebilirim. 
 -->
 <script id="jQ001_001">
-debugger;
+//debugger;
 var Tar, TarSib, oldTar;
 var cssObj;
 function getcssObj(defCol,WiNCol,entCol,finCol, hoICol, hoOCol) {
@@ -99,7 +99,21 @@ if (isToday()) {
 	cssObj = getcssObj('LightGray','LightYellow','Pink','PaleGreen','WhiteSmoke','White');
 } else {
 	cssObj = getcssObj('DarkGray','DarkGoldenRod','Purple','DarkGreen','Silver','WhiteSmoke');
-	document.body.style.backgroundColor = cssObj.colors.hovOuColor; //'WhiteSmoke';
+	if (document.body) {
+		document.body.style.backgroundColor = cssObj.colors.hovOuColor; //'WhiteSmoke';
+	}	else {
+		/*
+			Bu noktada document.body demek ki yok. 
+		*/
+		console.log('document.body == null vermiş');
+		document.addEventListener("DOMContentLoaded", function(event) {
+			console.log('document.body == null vermiş (eventlistener içinde)');
+			if (document.body) {
+				console.log('document.body == null verMEmiş (eventlistener içinde 2. deneme)');
+				document.body.style.backgroundColor = cssObj.colors.hovOuColor; //'WhiteSmoke';
+			}
+		});
+	}
 	var allDivs = document.getElementsByTagName('div');
 	for (var allDivsi = 0; allDivsi < allDivs.length; allDivsi++) {
 		allDivs[allDivsi].style.backgroundColor = cssObj.colors.hovOuColor; //'WhiteSmoke';
