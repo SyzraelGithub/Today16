@@ -75,14 +75,16 @@
 debugger;
 var Tar, TarSib, oldTar;
 var cssObj;
-function getcssObj(defCol,WiNCol,entCol,finCol) {
+function getcssObj(defCol,WiNCol,entCol,finCol, hoICol, hoOCol) {
 	var newcssObj = {};
 	newcssObj.colors = {};
 	newcssObj.colors.default = defCol;
-	newcssObj.colors.current = this.colors.default;
+	newcssObj.colors.current = newcssObj.colors.default;
 	newcssObj.colors.WiNcapable = WiNCol;
 	newcssObj.colors.enteringParam = entCol;
 	newcssObj.colors.finishedParam = finCol;
+	newcssObj.colors.hovInColor = hoICol;
+	newcssObj.colors.hovOuColor = hoOCol;
 	return newcssObj;
 }
 ProtoT_getWeek(); //Yukarı da alsan aşağı da alsan çalışıyor. Demek ki her türlü Sub/Function erken okunuyor.
@@ -94,9 +96,14 @@ ProtoT_getWeek(); //Yukarı da alsan aşağı da alsan çalışıyor. Demek ki h
 	getWeek 'in prototype 'a eklenmesi gerekiyor. 
 */
 if (isToday()) {
-	cssObj = getcssObj('LightGray','LightYellow','Pink','PaleGreen');
+	cssObj = getcssObj('LightGray','LightYellow','Pink','PaleGreen','WhiteSmoke','White');
 } else {
-	cssObj = getcssObj('DarkGray','DarkGoldenRod','Purple','DarkGreen');
+	cssObj = getcssObj('DarkGray','DarkGoldenRod','Purple','DarkGreen','Silver','WhiteSmoke');
+	document.body.style.backgroundColor = cssObj.colors.hovOuColor; //'WhiteSmoke';
+	var allDivs = document.getElementsByTagName('div');
+	for (var allDivsi = 0; allDivsi < allDivs.length; allDivsi++) {
+		allDivs[allDivsi].style.backgroundColor = cssObj.colors.hovOuColor; //'WhiteSmoke';
+	}
 }
 /*
 	141008 'den sonraki HTML ICINDEKI CODE.html içinden geldi.Mihenk kabul edilebilir.
@@ -548,7 +555,7 @@ $(document).ready(function () {
 	$('div').each(function () {/*Burada Selector olarak direk Body > Div denebilirdi. O zaman parentNode == Body sorgusuna gerek kalmazdı*/
 		if ($(this).get(0).parentNode.nodeName == 'BODY' && 
 			$(this).get(0).style.border == '1px dashed gray') {
-			$(this).css('background-color', 'White');
+			$(this).css('background-color', cssObj.colors.hovOuColor);
 			$(this).css('border', 'none');
 		}
 	});
@@ -677,14 +684,14 @@ $(window).load(function() {
 
 function hovIn() {
 	if ($(this).get(0).style.border != '1px dashed gray') {
-		$(this).css('background-color', 'WhiteSmoke');
+		$(this).css('background-color', cssObj.colors.hovInColor);
 		$(this).css('border', '1px dotted Silver');
 	}
 }
 
 function hovOu() {
 	if ($(this).get(0).style.border != '1px dashed gray') {
-		$(this).css('background-color', 'White');
+		$(this).css('background-color', cssObj.colors.hovOuColor);
 		$(this).css('border', 'none');
 	}
 }
@@ -1386,7 +1393,7 @@ function setTar() {
 
 function setoldTar() {
 	$(oldTar).css('border', 'none');
-	$(oldTar).css('background-color', 'White');
+	$(oldTar).css('background-color', cssObj.colors.hovOuColor);
 	if (oldTar != Tar) {
 		$(oldTar).find('span').animate({fontSize: "12px"}, 100);
 	};
