@@ -100,7 +100,7 @@ function setoldTar() {
 }
 function setTar() {
 	hovCA(Tar, [['background-color', 'LightGray'],['border', '1px dashed gray']]);
-	$(Tar).find('span').animate({fontSize: (isOddTar(Tar)?24:18)'px'}, 100);
+	$(Tar).find('span').animate({fontSize: (isOddTar(Tar)?24:18) + 'px'}, 100);
 }
 function getSib(parSib) {
 	return parSib.getElementsByTagName('span')[0];
