@@ -4,32 +4,23 @@
 <script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script id="jQ001_001">
 var Tar, TarSib, oldTar;
-tarCssW__ = function(_this) {
-	$(_this).css('background-color', 'White');
-	$(_this).css('border', 'none');	
+hovCA = function(_this,cssArr) {
+	$(_this).css(cssArr[0][0], cssArr[0][1]);
+	$(_this).css(cssArr[1][0], cssArr[1][1]);
 }
-tarCssWsd = function(_this) {
-	$(_this).css('background-color', 'WhiteSmoke');
-	$(_this).css('border', '1px dotted Silver');
-}
-tarCssGlD = function(_this) {
-	$(_this).css('background-color', 'LightGray');
-	$(_this).css('border', '1px dashed gray');
+hovIf = function(_bool, _cHov, _cArr) {
+	if (_bool == ($(this).get(0).style.border == '1px dashed gray')) {
+		_cHov(this,_cArr)
+	}
 }
 hovSt = function() {
-	if ($(this).get(0).style.border == '1px dashed gray') {
-		tarCssW__(this)
-	}
+	hovIf.call(this, true, hovCA, [['background-color', 'White'],['border', 'none']])
 }
 hovIn = function() {
-	if ($(this).get(0).style.border != '1px dashed gray') {
-		tarCssWsd(this)
-	}
+	hovIf.call(this, false, hovCA, [['background-color', 'WhiteSmoke'],['border', '1px dotted Silver']])
 }
 hovOu = function() {
-	if ($(this).get(0).style.border != '1px dashed gray') {
-		tarCssW__(this)
-	}
+	hovIf.call(this, false, hovCA, [['background-color', 'White'],['border', 'none']])
 }
 $(document).ready(function () {
 	$('body>div').hover(hovIn, hovOu);
@@ -114,14 +105,14 @@ function getTar() {
 	return yerTar;
 }
 function setoldTar() {
-	tarCssW__(oldTar);
+	hovCA(Tar, [['background-color', 'White'],['border', 'none']]);
 	if (oldTar != Tar) {
 		$(oldTar).find('span').animate({fontSize: '12px'}, 100);
 	};
 	oldTar = Tar;
 }
 function setTar() {
-	tarCssGlD(Tar);
+	hovCA(Tar, [['background-color', 'LightGray'],['border', '1px dashed gray']]);
 	var childNodeIndex = 0;
 	if (Tar.childNodes[childNodeIndex].nodeType == 3) {
 		childNodeIndex++;
