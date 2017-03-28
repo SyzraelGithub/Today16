@@ -29,9 +29,7 @@ hovOe = function(el, t) {
 	hovOE(el, 'span', 12, t);
 }
 hovEA = function(el, t){
-	if (Tar != el) {
-		hovOe(el, t);
-	}
+	(Tar!=el)?hovOe(el, t):null
 }
 hoveA = function(i, el, t) {
 	setTimeout(hovEA, t+(i*t), el, t);
@@ -74,16 +72,12 @@ function isOddTar(oTar) {
 }
 function conTar() {
 	var cTar = document.getSelection().getRangeAt(0).startContainer;
-	while (cTar.parentNode.tagName != 'BODY') {
-		cTar = cTar.parentNode;
-	};
+	while (cTar.parentNode.tagName != 'BODY') {cTar = cTar.parentNode	};
 	return cTar
 }
 function lstTar(lTar, lNum) {
 	if ($('body>div').length - $(lTar).index() < lNum) {
-		if (isOddTar(lTar)) {
-			autLasyHDoc('defDiv',cbFncCur);
-		}
+		(isOddTar(lTar))?autLasyHDoc('defDiv',cbFncCur):null
 	}
 }
 function getTar() {
