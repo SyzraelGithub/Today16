@@ -4,22 +4,6 @@
 <script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script id="jQ001_001">
 var Tar, TarSib, oldTar;
-var dDate;
-function retGenDec_dDt() {
-	dDate = new Date();
-	var dYear = twoDigit(dDate.getYear()-100);
-	var dMonth = twoDigit(dDate.getMonth() + 1);
-	var dWeek = twoDigit(dDate.getWeek());
-	var dDay = twoDigit(dDate.getDate());
-	var dWay = twoDigit(dDate.getDay());
-	var dHour = twoDigit(dDate.getHours());
-	var dMinute = twoDigit(dDate.getMinutes());
-	if (dWay == 0 || dWay == 6) {
-		dWeek-=1;
-		dWeek = twoDigit(dWeek);
-	}; 
-	return dYear + dMonth + dWeek + dDay;
-}retGenDec_dDt();
 $(document).ready(function () {
 	$('div').hover(hovIn, hovOu);
 	$('div').each(function () {
@@ -65,9 +49,8 @@ function autoNow() {
 	if (TarSib.innerText.length == 10 || TarSib.innerText.length == 9) {
 		var myRepeat = TarSib.innerText.length - 6;
 		if (TarSib.innerText.substring(7,10) == '...' || TarSib.innerText.substring(7,9) == '..') {
-			var dHour = twoDigit(dDate.getHours());
-			var dMinute = twoDigit(dDate.getMinutes());
-			var newTime = dHour + ':' + dMinute;
+			var dDt = new getdDt(new Date());
+			var newTime = dDt.dHour + ':' + dDt.dMinute;
 			TarSib.innerText = newTime + ' A' + Array(myRepeat).join('.');
 			var sel = document.getSelection();
 			sel.collapse(TarSib,1);
@@ -85,9 +68,7 @@ function getTar() {
 			childNodeIndex++;
 		}
 		if	(yerTar.childNodes[childNodeIndex].style.color == 'rgb(0, 0, 255)') {
-			dDate = new Date();
-			var dHourExt = twoDigit(dDate.getHours());
-			var dMinuteExt = twoDigit(dDate.getMinutes());
+			var dDt = new getdDt(new Date());
 			autLasyF = function(urlF,cbFnc) {
 				with (new XMLHttpRequest()) {
 					onreadystatechange = function() {
@@ -115,8 +96,8 @@ function getTar() {
 				var inBodyDoc = document.implementation.createHTMLDocument('');
 				inBodyDoc.documentElement.innerHTML = this.responseText;
 				with (inBodyDoc.getElementsByTagName('span')[0]){
-					innerText = innerText.replace('00',dHourExt);
-					innerText = innerText.replace('00',dMinuteExt);
+					innerText = innerText.replace('00',dDt.dHour);
+					innerText = innerText.replace('00',dDt.dMinute);
 				}
 				$('body').append(inBodyDoc.documentElement.innerHTML);
 			}
