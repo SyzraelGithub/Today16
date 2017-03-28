@@ -74,20 +74,21 @@
 <script id="jQ001_001">
 //debugger;
 var Tar, TarSib, oldTar;
-var cssObj;
-function getcssObj(defCol,WiNCol,entCol,finCol, hoICol, hoOCol) {
-	var newcssObj = {};
-	newcssObj.colors = {};
-	newcssObj.colors.default = defCol;
-	newcssObj.colors.current = newcssObj.colors.default;
-	newcssObj.colors.WiNcapable = WiNCol;
-	newcssObj.colors.enteringParam = entCol;
-	newcssObj.colors.finishedParam = finCol;
-	newcssObj.colors.hovInColor = hoICol;
-	newcssObj.colors.hovOuColor = hoOCol;
-	return newcssObj;
-}
 ProtoT_getWeek(); //Yukarı da alsan aşağı da alsan çalışıyor. Demek ki her türlü Sub/Function erken okunuyor.
+/*
+	161206 1612061013
+	isToday() ile ilgili herşeyi kaldırdım.
+	---
+	Gerekçe:
+			Moduler mantık gereği, newNote.ziw 'in DropBox 'daki kopyadan yükleme yaptığımdan beri,
+		document.title '' veya undefined (anlamadım tam orasını) geliyor.
+		Eski USUL 'de yok böyle bir problem. Ancak sırf bunun için tekrar html 'i
+		inline yükleme yoluna gitmeyi seçmem.
+			Zaten kod biraz incelsin kısalsın istiyordum. Moduler olmaya başlamadan önce,
+		çok avantaj getirmeyen code ların kellesi daha bi ince geliyordu gözüme. Bundan dolayı,
+		rahatlıkla sildim isToday 'i. Şimdi, bunun üzerine ne kaybettik? Aslında hiçbirşey.
+			Çok gerekli görürsem, başka şekilde eklerim bu opsiyonu.
+*/
 /*
 	1607301316
 	Evet, ProtoT_getWeek 'ı yukarı alsan da, aşağı alsan da çalışıyor olabilir.
@@ -95,30 +96,6 @@ ProtoT_getWeek(); //Yukarı da alsan aşağı da alsan çalışıyor. Demek ki h
 	retGenDec_dDt ise getWeek kullanıyor. Onun için 
 	getWeek 'in prototype 'a eklenmesi gerekiyor. 
 */
-if (isToday()) {
-	cssObj = getcssObj('LightGray','LightYellow','Pink','PaleGreen','WhiteSmoke','White');
-} else {
-	cssObj = getcssObj('DarkGray','DarkGoldenRod','Purple','DarkGreen','Silver','WhiteSmoke');
-	if (document.body) {
-		document.body.style.backgroundColor = cssObj.colors.hovOuColor; //'WhiteSmoke';
-	}	else {
-		/*
-			Bu noktada document.body demek ki yok. 
-		*/
-		console.log('document.body == null vermiş');
-		document.addEventListener("DOMContentLoaded", function(event) {
-			console.log('document.body == null vermiş (eventlistener içinde)');
-			if (document.body) {
-				console.log('document.body == null verMEmiş (eventlistener içinde 2. deneme)');
-				document.body.style.backgroundColor = cssObj.colors.hovOuColor; //'WhiteSmoke';
-			}
-		});
-	}
-	var allDivs = document.getElementsByTagName('div');
-	for (var allDivsi = 0; allDivsi < allDivs.length; allDivsi++) {
-		allDivs[allDivsi].style.backgroundColor = cssObj.colors.hovOuColor; //'WhiteSmoke';
-	}
-}
 /*
 	141008 'den sonraki HTML ICINDEKI CODE.html içinden geldi.Mihenk kabul edilebilir.
 	---
@@ -597,7 +574,7 @@ $(document).ready(function () {
 	$('div').each(function () {/*Burada Selector olarak direk Body > Div denebilirdi. O zaman parentNode == Body sorgusuna gerek kalmazdı*/
 		if ($(this).get(0).parentNode.nodeName == 'BODY' && 
 			$(this).get(0).style.border == '1px dashed gray') {
-			$(this).css('background-color', cssObj.colors.hovOuColor);
+			$(this).css('background-color', 'White');
 			$(this).css('border', 'none');
 		}
 	});
@@ -665,7 +642,6 @@ $(document).ready(function () {
 			}
 		},100 + ( i * 100 ));
 	});
-	
 	/*
 		1602202006
 		---
@@ -680,8 +656,6 @@ $(document).ready(function () {
 		1602212109
 		Sonradan kaldırdım o kodu. $(window).load( ile başlayan animate code unu buradan kaldırdım.
 	*/
-	
-	
 });
 
 $(window).load(function() {
@@ -726,14 +700,14 @@ $(window).load(function() {
 
 function hovIn() {
 	if ($(this).get(0).style.border != '1px dashed gray') {
-		$(this).css('background-color', cssObj.colors.hovInColor);
+		$(this).css('background-color', 'WhiteSmoke');
 		$(this).css('border', '1px dotted Silver');
 	}
 }
 
 function hovOu() {
 	if ($(this).get(0).style.border != '1px dashed gray') {
-		$(this).css('background-color', cssObj.colors.hovOuColor);
+		$(this).css('background-color', 'White');
 		$(this).css('border', 'none');
 	}
 }
@@ -903,14 +877,13 @@ $(document).bind('keyup click', function (e) {
 	}
 	*/
 	if (TarSib.innerText.length == 10 || TarSib.innerText.length == 9) {
-		cssObj.colors.current = cssObj.colors.default;
 		autoNow()
 	} else {
 		//if (typeof window.external == 'object') {
 		if (WiNcapable) {
 			// Uncaught TypeError: Object [object Object] has no method 'DoEvents' 
 			// window.external.DoEvents();  //duzgun calismiyor
-			cssObj.colors.current = cssObj.colors.WiNcapable; /*1602091036 yellow dan değiştirdim*/; //Normalde LightYellow 'du (Büyük harf küçük harf önemli mi bilmiyorum ama sanmıyorum)
+			/*1602091036 yellow dan değiştirdim*/; //Normalde LightYellow 'du (Büyük harf küçük harf önemli mi bilmiyorum ama sanmıyorum)
 			/*
 				LightYellow 'u kabul etmeyen yellow 'u kabul ediyor. Çok da üstelemeyeceğim şimdilik. 
 			*/
@@ -1089,7 +1062,6 @@ function cmdTxtJob(locTarSib) {
 					de aramıştım. keyup 'ın enter tuşu release olduktan sonra fire olduğunu farkedince anlamını yitirdi gibi..
 			*/
 		} 
-		cssObj.colors.current = cssObj.colors.enteringParam;
 		var paramAdet = cmdArr[cmdTxt[4]+1][0];
 		/*
 			cmdTxt[2] 'den split '(' yapınca boşluktan sonrasını almıyor. Bundan dolayı aklıma gelen ilk çözüm
@@ -1111,7 +1083,6 @@ function cmdTxtJob(locTarSib) {
 			buraya koymayı düşünüyorum. 
 		*/
 		if (cmdTxt[6].length > paramAdet * 2) {
-			cssObj.colors.current = cssObj.colors.finishedParam;
 			enteringParamAra = false; //Tüm tırnaklar tamamlandıysa da Parametre giriliyor olamaz.
 			enteringParamSon = false; //tüm ara false olan yere son false eklenmeli mi
 			cmdTxt[7] = [];
@@ -1343,27 +1314,19 @@ function cmdArrRet(fncRet, loc2TarSib) {
 }
 
 function autoNow() {
-	if (isToday()) {
-		if (TarSib.innerText.length == 10 || TarSib.innerText.length == 9) {
-			var myRepeat = TarSib.innerText.length - 6;
-			if (TarSib.innerText.substring(7,10) == '...' || TarSib.innerText.substring(7,9) == '..') {
-				var dHour = twoDigit(dDate.getHours());
-				var dMinute = twoDigit(dDate.getMinutes());
-				var newTime = dHour + ':' + dMinute;
-				TarSib.innerText = newTime + ' A' + Array(myRepeat).join('.'); //Çalışırsa eğer A... veya A.. duruma göre yerleştircek
-				var sel = document.getSelection();
-				sel.collapse(TarSib,1); //TarSib objesinin 1 ise sonuna 0 ise başına cursor 'ü sürükler
-			}
+	if (TarSib.innerText.length == 10 || TarSib.innerText.length == 9) {
+		var myRepeat = TarSib.innerText.length - 6;
+		if (TarSib.innerText.substring(7,10) == '...' || TarSib.innerText.substring(7,9) == '..') {
+			var dHour = twoDigit(dDate.getHours());
+			var dMinute = twoDigit(dDate.getMinutes());
+			var newTime = dHour + ':' + dMinute;
+			TarSib.innerText = newTime + ' A' + Array(myRepeat).join('.'); //Çalışırsa eğer A... veya A.. duruma göre yerleştircek
+			var sel = document.getSelection();
+			sel.collapse(TarSib,1); //TarSib objesinin 1 ise sonuna 0 ise başına cursor 'ü sürükler
 		}
-	} else {
-	};
+	}
 }
 
-function isToday() {
-	var titleDay = document.title.substring(0, document.title.indexOf(" ") - 4);
-	var retGen = retGenDec_dDt();
-	return (titleDay == retGen) 
-}
 var defDivExtYeniUsul = true; //istersen true yap dışarıdan alsın(Yaptım 1611291338)
 function getTar() {
 	//*1507130900*/console.log('function getTar() {started}');
@@ -1494,7 +1457,7 @@ function setTar() {
 
 function setoldTar() {
 	$(oldTar).css('border', 'none');
-	$(oldTar).css('background-color', cssObj.colors.hovOuColor);
+	$(oldTar).css('background-color', 'White');
 	if (oldTar != Tar) {
 		$(oldTar).find('span').animate({fontSize: "12px"}, 100);
 	};
@@ -1503,7 +1466,7 @@ function setoldTar() {
 
 function setTar() {
 	$(Tar).css('border', '1px dashed gray');
-	$(Tar).css('background-color', cssObj.colors.current);
+	$(Tar).css('background-color', 'LightGray');
 	var childNodeIndex = 0; //ilki textNode ise sonrakine bak
 	if (Tar.childNodes[childNodeIndex].nodeType == 3) {
 		childNodeIndex++;
