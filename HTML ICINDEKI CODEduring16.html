@@ -23,7 +23,7 @@ hovOu = function() {
 	hovIf.call(this, false, hovCA, [['background-color', 'White'],['border', 'none']])
 }
 $(document).ready(function () {
-	$('body>div').hover(hovIn, hovOu);
+	$(document).on({mouseenter: hovIn, mouseleave: hovOu}, 'body>div');
 	$('body>div').each(hovSt);
 	$.each($('body>div'), function(i, el){
 		setTimeout(function(){
