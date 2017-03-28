@@ -67,17 +67,6 @@ function getTar() {
 		}
 		if	(yerTar.childNodes[childNodeIndex].style.color == 'rgb(0, 0, 255)') {
 			var dDt = new getdDt(new Date());
-			getPF = function() {
-				if (typeof urlPF != 'undefined') {
-					return urlPF
-				} else {
-					return 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/'
-				}
-			}
-			autLasyHDoc = function(urlLF,cbFnc) {
-				urlF = getPF()+ urlLF + '.htm';
-				autLasyF(urlF,cbFnc);
-			}
 			cbFncDnm = function () {
 				var inBodyDoc = document.implementation.createHTMLDocument('');
 				inBodyDoc.documentElement.innerHTML = this.responseText;
