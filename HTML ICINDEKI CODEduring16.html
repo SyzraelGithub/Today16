@@ -22,10 +22,10 @@ hovIn = function() {
 hovOu = function() {
 	hovIf.call(this, false, hovCA, [['background-color', 'White'],['border', 'none']])
 }
-hovOuSml = function(el) {
-	hovOuSml_(el,'span',12,100);
+hovOe = function(el) {
+	hovOE(el,'span',12,100);
 }
-hovOuSml_ = function(el,tN,pX,t) {
+hovOE = function(el,tN,pX,t) {
 	$(el).find(tN).animate({fontSize: pX + 'px'}, t);
 }
 $(document).ready(function () {
@@ -34,8 +34,7 @@ $(document).ready(function () {
 	$.each($('body>div'), function(i, el){
 		setTimeout(function(){
 			if (Tar != el) {
-				//$(el).find('span').animate({fontSize: '12px'}, 100);
-				hovOuSml(el);
+				hovOe(el);
 			}
 		},100 + ( i * 100 ));
 	});
@@ -90,7 +89,7 @@ function getTar() {
 function setoldTar() {
 	hovCA(oldTar, [['background-color', 'White'],['border', 'none']]);
 	if (oldTar != Tar) {
-		hovOuSml(oldTar);
+		hovOe(oldTar);
 	};
 	oldTar = Tar;
 }
