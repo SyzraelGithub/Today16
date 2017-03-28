@@ -386,7 +386,35 @@ function fncDivAdd(fncParam) {
 				elSibOut = elSib;
 				var dHourExt = elSib.innerText.substring(0,5).substring(0,2);
 				var dMinuteExt = elSib.innerText.substring(0,5).substring(3,5);
-				var defDivExt = '\n\t<div>\n\t\t<font face=\"Segoe UI\" color=\"#0000ff\">\n\t\t\t<b>\n\t\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">' + dHourExt + ':' + dMinuteExt + ' A...<\/span>\n\t\t\t<\/b>\n\t\t<\/font>\n\t<\/div>\n\t<div>\n\t\t<font face=\"Segoe UI\">\n\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">a...<\/span>\n\t\t<\/font>\n\t<\/div>';
+				var defDivExt;
+				if (defDivExtYeniUsul) {
+					autLsynF = function(urlF) {
+						with (new XMLHttpRequest()) {open('GET',urlF,false);send();return responseText}
+					}
+					getPF = function() {
+						if (typeof urlPF != 'undefined') {
+							return urlPF
+						} else {
+							return 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/'
+						}
+					}
+					autLsynHDoc = function(urlLF) {
+						urlF = getPF()+ urlLF + '.htm';
+						var docF = document.implementation.createHTMLDocument('');
+						docF.documentElement.innerHTML = autLsynF(urlF);
+						return docF;
+					}
+					var inBodyDoc = autLsynHDoc('defDivOld');
+					with (inBodyDoc.getElementsByTagName('span')[0]){
+						innerText = innerText.replace('00',dHourExt);
+						innerText = innerText.replace('00',dMinuteExt);
+					}
+					defDivExt = inBodyDoc.body.innerHTML;
+					//Daha bitmedi dHourExt ve dMinute Ext 'i de alacak. Replace ilk Occurance 'ı alıyorsa,
+					//Burada sırayla çalışır.
+				} else {
+					defDivExt = '\n\t<div>\n\t\t<font face=\"Segoe UI\" color=\"#00' + '00' + 'ff\">\n\t\t\t<b>\n\t\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">' + dHourExt + ':' + dMinuteExt + ' A...<\/span>\n\t\t\t<\/b>\n\t\t<\/font>\n\t<\/div>\n\t<div>\n\t\t<font face=\"Segoe UI\">\n\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">a...<\/span>\n\t\t<\/font>\n\t<\/div>';
+				}
 				$(el).next()[0].outerHTML += Array(parseInt(fncParam[1])+1).join(defDivExt);
 			}
 		}
@@ -1420,7 +1448,7 @@ function getTar() {
 				//Daha bitmedi dHourExt ve dMinute Ext 'i de alacak. Replace ilk Occurance 'ı alıyorsa,
 				//Burada sırayla çalışır.
 			} else {
-				defDivExt = '\n\t<div>\n\t\t<font face=\"Segoe UI\" color=\"#0000ff\">\n\t\t\t<b>\n\t\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">' + dHourExt + ':' + dMinuteExt + ' A...<\/span>\n\t\t\t<\/b>\n\t\t<\/font>\n\t<\/div>\n\t<div>\n\t\t<font face=\"Segoe UI\">\n\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">a...<\/span>\n\t\t<\/font>\n\t<\/div>';
+				defDivExt = '\n\t<div>\n\t\t<font face=\"Segoe UI\" color=\"#00' + '00' + 'ff\">\n\t\t\t<b>\n\t\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">' + dHourExt + ':' + dMinuteExt + ' A...<\/span>\n\t\t\t<\/b>\n\t\t<\/font>\n\t<\/div>\n\t<div>\n\t\t<font face=\"Segoe UI\">\n\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">a...<\/span>\n\t\t<\/font>\n\t<\/div>';
 			}
 			//$('body').html($('body').html() + defDivExt + defDivExt + defDivExt);
 			/*
