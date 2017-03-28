@@ -22,13 +22,20 @@ hovIn = function() {
 hovOu = function() {
 	hovIf.call(this, false, hovCA, [['background-color', 'White'],['border', 'none']])
 }
+hovOuSml = function(el) {
+	hovOuSml_(el,'span',12,100);
+}
+hovOuSml_ = function(el,tN,pX,t) {
+	$(el).find(tN).animate({fontSize: pX + 'px'}, t);
+}
 $(document).ready(function () {
 	$(document).on({mouseenter: hovIn, mouseleave: hovOu}, 'body>div');
 	$('body>div').each(hovSt);
 	$.each($('body>div'), function(i, el){
 		setTimeout(function(){
 			if (Tar != el) {
-				$(el).find('span').animate({fontSize: '12px'}, 100);
+				//$(el).find('span').animate({fontSize: '12px'}, 100);
+				hovOuSml(el);
 			}
 		},100 + ( i * 100 ));
 	});
@@ -61,22 +68,29 @@ function isOddTar(oTar) {
 	if (oTar.childNodes[cNI].nodeType == 3) {cNI++}
 	if (oTar.childNodes[cNI].style.color == 'rgb(0, 0, 255)') {return true} else {return false}
 }
-function getTar() {
-	var yerTar = document.getSelection().getRangeAt(0).startContainer;
-	while (yerTar.parentNode.tagName != 'BODY') {
-		yerTar = yerTar.parentNode;
+function conTar() {
+	var cTar = document.getSelection().getRangeAt(0).startContainer;
+	while (cTar.parentNode.tagName != 'BODY') {
+		cTar = cTar.parentNode;
 	};
-	if ($('body>div').length - $(yerTar).index() < 7) {
-		if (isOddTar(yerTar)) {
+	return cTar
+}
+function lstTar(lTar, lNum) {
+	if ($('body>div').length - $(lTar).index() < lNum) {
+		if (isOddTar(lTar)) {
 			autLasyHDoc('defDiv',cbFncCur);
 		}
 	}
+}
+function getTar() {
+	var yerTar = conTar();
+	lstTar(yerTar,7);
 	return yerTar;
 }
 function setoldTar() {
 	hovCA(oldTar, [['background-color', 'White'],['border', 'none']]);
 	if (oldTar != Tar) {
-		$(oldTar).find('span').animate({fontSize: '12px'}, 100);
+		hovOuSml(oldTar);
 	};
 	oldTar = Tar;
 }
@@ -85,7 +99,7 @@ function setTar() {
 	if (isOddTar(Tar)) {
 		$(Tar).find('span').animate({fontSize: '24px'}, 100);
 	} else {
-		$(Tar).find('span').animate({fontSize: '21px'}, 100);
+		$(Tar).find('span').animate({fontSize: '18px'}, 100);
 	}
 }
 function getSib(parSib) {
