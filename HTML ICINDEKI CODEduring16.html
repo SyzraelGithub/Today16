@@ -28,16 +28,18 @@ hovOe = function(el) {
 hovOE = function(el,tN,pX,t) {
 	$(el).find(tN).animate({fontSize: pX + 'px'}, t);
 }
+hovEa = function(i, el){
+	setTimeout(hovEA,100 + ( i * 100 ),el);
+}
+hovEA = function(el){
+	if (Tar != el) {
+		hovOe(el);
+	}
+}
 $(document).ready(function () {
 	$(document).on({mouseenter: hovIn, mouseleave: hovOu}, 'body>div');
 	$('body>div').each(hovSt);
-	$.each($('body>div'), function(i, el){
-		setTimeout(function(){
-			if (Tar != el) {
-				hovOe(el);
-			}
-		},100 + ( i * 100 ));
-	});
+	$.each($('body>div'), hovEa);
 });
 $(window).load(function() {
 	$('html, body').animate({ scrollTop: $(document).height() }, 1000);
