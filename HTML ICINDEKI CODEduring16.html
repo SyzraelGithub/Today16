@@ -1336,7 +1336,7 @@ function isToday() {
 	var retGen = retGenDec_dDt();
 	return (titleDay == retGen) 
 }
-
+var defDivExtYeniUsul; //istersen true yap dışarıdan alsın(Yaptım 1611291338)
 function getTar() {
 	//*1507130900*/console.log('function getTar() {started}');
 	var yerTar /*yerelTar*/ = document.getSelection().getRangeAt(0).startContainer;
@@ -1362,7 +1362,62 @@ function getTar() {
 			dDate = new Date();
 			var dHourExt = twoDigit(dDate.getHours());
 			var dMinuteExt = twoDigit(dDate.getMinutes());
-			var defDivExt = '\n\t<div>\n\t\t<font face=\"Segoe UI\" color=\"#0000ff\">\n\t\t\t<b>\n\t\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">' + dHourExt + ':' + dMinuteExt + ' A...<\/span>\n\t\t\t<\/b>\n\t\t<\/font>\n\t<\/div>\n\t<div>\n\t\t<font face=\"Segoe UI\">\n\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">a...<\/span>\n\t\t<\/font>\n\t<\/div>';
+			/*
+				161128 - 1611280956
+				Şu anda defDivExt Metin şekilde alıyor.
+					var defDivExt = '\n\t<div>\n\t\t<font face=\"Segoe UI\" color=\"#0000ff\">\n\t\t\t<b>\n\t\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">' + dHourExt + ':' + dMinuteExt + ' A...<\/span>\n\t\t\t<\/b>\n\t\t<\/font>\n\t<\/div>\n\t<div>\n\t\t<font face=\"Segoe UI\">\n\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">a...<\/span>\n\t\t<\/font>\n\t<\/div>';
+				Ben bazı değişikliklerden dolayı artık bunu harici bir htm dosyasından almasını istiyorum.
+				O htm dosyası hazır. defDivOld.htm .
+				Onu buraya eklemek için gereken kod;
+				autLsynF = function(urlF) {
+					with (new XMLHttpRequest()) {open('GET',urlF,false);send();return responseText}
+				}
+				getPF = function() {
+					if (typeof urlPF != 'undefined') {
+						return urlPF
+					} else {
+						return 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/'
+					}
+				}
+				autLsynHDoc = function(urlLF) {
+					urlF = getPF()+ urlLF + '.htm';
+					var docF = document.implementation.createHTMLDocument('');
+					docF.documentElement.innerHTML = autLsynF(urlF);
+					return docF;
+				}
+				var inBodyDoc = autLsynHDoc('defDivOld');
+				$("body").append(inBodyDoc.body.innerHTML)
+				//with (inBodyDoc.body) { //Bu kod kopyalamıyor, taşıyor.
+					//for (var i = children.length -1; i > 0 ;i--) {
+						//$("body").append(children[i]);
+					//}
+				//}
+			*/
+			var defDivExt;
+			if (defDivExtYeniUsul) {
+				autLsynF = function(urlF) {
+					with (new XMLHttpRequest()) {open('GET',urlF,false);send();return responseText}
+				}
+				getPF = function() {
+					if (typeof urlPF != 'undefined') {
+						return urlPF
+					} else {
+						return 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/'
+					}
+				}
+				autLsynHDoc = function(urlLF) {
+					urlF = getPF()+ urlLF + '.htm';
+					var docF = document.implementation.createHTMLDocument('');
+					docF.documentElement.innerHTML = autLsynF(urlF);
+					return docF;
+				}
+				var inBodyDoc = autLsynHDoc('defDivOld');
+				defDivExt = inBodyDoc.body.innerHTML;
+				//Daha bitmedi dHourExt ve dMinute Ext 'i de alacak. Replace ilk Occurance 'ı alıyorsa,
+				//Burada sırayla çalışır.
+			} else {
+				defDivExt = '\n\t<div>\n\t\t<font face=\"Segoe UI\" color=\"#0000ff\">\n\t\t\t<b>\n\t\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">' + dHourExt + ':' + dMinuteExt + ' A...<\/span>\n\t\t\t<\/b>\n\t\t<\/font>\n\t<\/div>\n\t<div>\n\t\t<font face=\"Segoe UI\">\n\t\t\t<span data-wiz-span=\"data-wiz-span\" style=\"font-size: 9pt;\">a...<\/span>\n\t\t<\/font>\n\t<\/div>';
+			}
 			//$('body').html($('body').html() + defDivExt + defDivExt + defDivExt);
 			/*
 				1507081500 Bence 
