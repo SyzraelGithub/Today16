@@ -3,37 +3,11 @@
 
 <script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script id="jQ001_001">
-function cssObj() {
-	this.b0 = 'border';
-	this.b1 = '1px dashed gray';
-	this.b2 = '1px dotted Silver';
-	this.b3 = 'none';
-	this.c0 = 'background-color';
-	this.c1 = 'LightGray';
-	this.c2 = 'WhiteSmoke';
-	this.c3 = 'White';
-	this.c4 = 'rgb(0, 0, 255)';
-	with (this) {
-		this.a1 = [[c0,c1],[b0,b1]];
-		this.a2 = [[c0,c2],[b0,b2]];
-		this.a3 = [[c0,c3],[b0,b3]];
-		this.a0 = [a1,a2,a3];
-	}
-	this.t0 = 'span';
-	this.q0 = 'body>div';
-	this.q1 = 'html, body';
-	this.q2 = 'keyup click';
-	this.q3 = 'BODY';
-	this.f0 = 'defDiv';
-	this.r0 = 2;
-	this.r1 = 1.5;
-	this.n0 = 7;
-	this.n1 = 12
-}
 var cO = new cssObj();
 var Tar, TarSib, oldTar;
 hovCA = function(_this,cssArr) {
-	while (cssArr.length) {hovCa(_this,cssArr.pop())}
+	var cssArrCln = cssArr.slice(0);
+	while (cssArrCln.length) {hovCa(_this,cssArrCln.pop())}
 }
 hovCa = function(_this,cssArr) {
 	$(_this).css(cssArr[0], cssArr[1]);
@@ -54,22 +28,22 @@ hovOE = function(el, tN, pX, t) {
 	$(el).find(tN).animate({fontSize:pX+'px'},t);
 }
 hovOe = function(el, k, t) {
-	k=k||1;t=t||100;hovOE(el,cO.t0,12*k,t);
+	k=k||1;t=t||cO.n2;hovOE(el,cO.t0,12*k,t);
 }
 hovEA = function(el, t, k){
-	t=t||100;k=k||1;(Tar!=el)?hovOe(el, k, t):null
+	t=t||cO.n2;k=k||1;(Tar!=el)?hovOe(el, k, t):null
 }
 hoveA = function(i, el, t) {
 	setTimeout(hovEA, t+(i*t), el, t);
 }
 hovEa = function(i, el){
-	hoveA(i, el, 100);
+	hoveA(i, el, cO.n2);
 }
 $(document).ready(function () {
 	$(cO.q0).hover(hovIn, hovOu);
 	$(cO.q0).each(hovSt);
 	$.each($(cO.q0), hovEa);
-	$(cO.q1).animate({ scrollTop: $(document).height() }, 1000);
+	$(cO.q1).animate({ scrollTop: $(document).height() }, cO.n2*10);
 });
 $(document).on({mouseenter: hovIn, mouseleave: hovOu}, cO.q0);
 $(document).on(cO.q2, function (e) {
