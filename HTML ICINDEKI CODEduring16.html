@@ -4,29 +4,29 @@
 <script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script id="jQ001_001">
 var Tar, TarSib, oldTar;
-function tarCssW__(_this) {
+tarCssW__ = function(_this) {
 	$(_this).css('background-color', 'White');
 	$(_this).css('border', 'none');	
 }
-function tarCssWsd(_this) {
+tarCssWsd = function(_this) {
 	$(_this).css('background-color', 'WhiteSmoke');
 	$(_this).css('border', '1px dotted Silver');
 }
-function tarCssGlD(_this) {
+tarCssGlD = function(_this) {
 	$(_this).css('background-color', 'LightGray');
 	$(_this).css('border', '1px dashed gray');
 }
-function hovSt() {
+hovSt = function() {
 	if ($(this).get(0).style.border == '1px dashed gray') {
 		tarCssW__(this)
 	}
 }
-function hovIn() {
+hovIn = function() {
 	if ($(this).get(0).style.border != '1px dashed gray') {
 		tarCssWsd(this)
 	}
 }
-function hovOu() {
+hovOu = function() {
 	if ($(this).get(0).style.border != '1px dashed gray') {
 		tarCssW__(this)
 	}
@@ -45,7 +45,6 @@ $(document).ready(function () {
 $(window).load(function() {
 	$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 });
-
 $(document).bind('keyup click', function (e) {
 	Tar = getTar();
 	setoldTar();
