@@ -4,17 +4,18 @@
 <script id="jQ001" type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script id="jQ001_001">
 var Tar, TarSib, oldTar;
+function tarCssNrm() {
+	if ($(this).get(0).style.border == '1px dashed gray') {
+		tarCssW__(this);
+	}
+}
 function tarCssW__(_this) {
 	$(_this).css('background-color', 'White');
 	$(_this).css('border', 'none');	
 }
 $(document).ready(function () {
 	$('body>div').hover(hovIn, hovOu);
-	$('body>div').each(function () {
-		if ($(this).get(0).style.border == '1px dashed gray') {
-			tarCssW__(this);
-		}
-	});
+	$('body>div').each(tarCssNrm);
 	$.each($('body>div'), function(i, el){
 		setTimeout(function(){
 			if (Tar != el) {
