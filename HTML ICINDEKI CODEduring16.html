@@ -22,22 +22,22 @@ hovIn = function() {
 hovOu = function() {
 	hovIf.call(this, false, hovCA, [['background-color', 'White'],['border', 'none']])
 }
-hovOe = function(el) {
-	hovOE(el, 'span', 12, 100);
-}
 hovOE = function(el, tN, pX, t) {
 	$(el).find(tN).animate({fontSize: pX + 'px'}, t);
 }
-hovEa = function(i, el){
-	hoveA(i, el, 100);
+hovOe = function(el, t) {
+	hovOE(el, 'span', 12, t);
+}
+hovEA = function(el, t){
+	if (Tar != el) {
+		hovOe(el, t);
+	}
 }
 hoveA = function(i, el, t) {
-	setTimeout(hovEA, t+(i*t), el);
+	setTimeout(hovEA, t+(i*t), el, t);
 }
-hovEA = function(el){
-	if (Tar != el) {
-		hovOe(el);
-	}
+hovEa = function(i, el){
+	hoveA(i, el, 100);
 }
 $(document).ready(function () {
 	$(document).on({mouseenter: hovIn, mouseleave: hovOu}, 'body>div');
@@ -70,7 +70,7 @@ function autoNow() {
 function isOddTar(oTar) {
 	var cNI= 0;
 	if (oTar.childNodes[cNI].nodeType == 3) {cNI++}
-	if (oTar.childNodes[cNI].style.color == 'rgb(0, 0, 255)') {return true} else {return false}
+	return (oTar.childNodes[cNI].style.color == 'rgb(0, 0, 255)')
 }
 function conTar() {
 	var cTar = document.getSelection().getRangeAt(0).startContainer;
@@ -93,10 +93,8 @@ function getTar() {
 }
 function setoldTar() {
 	hovCA(oldTar, [['background-color', 'White'],['border', 'none']]);
-	if (oldTar != Tar) {
-		hovOe(oldTar);
-	};
-	oldTar = Tar;
+	(oldTar!=Tar?hovOe(oldTar,100):null);
+	oldTar=Tar
 }
 function setTar() {
 	hovCA(Tar, [['background-color', 'LightGray'],['border', '1px dashed gray']]);
