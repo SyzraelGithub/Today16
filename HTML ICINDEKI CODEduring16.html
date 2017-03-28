@@ -38,14 +38,14 @@ hovEa = function(i, el){
 	hoveA(i, el, 100);
 }
 $(document).ready(function () {
-	$(document).on({mouseenter: hovIn, mouseleave: hovOu}, 'body>div');
 	$('body>div').each(hovSt);
 	$.each($('body>div'), hovEa);
 });
 $(window).load(function() {
 	$('html, body').animate({ scrollTop: $(document).height() }, 1000);
 });
-$(document).bind('keyup click', function (e) {
+$(document).on({mouseenter: hovIn, mouseleave: hovOu}, 'body>div');
+$(document).on('keyup click', function (e) {
 	autoTar();
 	autoNow()
 });
