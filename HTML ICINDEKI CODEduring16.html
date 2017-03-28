@@ -5,7 +5,7 @@
 <script id="jQ001_001">
 var Tar, TarSib, oldTar;
 $(document).ready(function () {
-	$('div').hover(hovIn, hovOu);
+	$('body>div').hover(hovIn, hovOu);
 	$('body>div').each(function () {
 		if ($(this).get(0).style.border == '1px dashed gray') {
 			$(this).css('background-color', 'White');
@@ -100,7 +100,7 @@ function getTar() {
 				}
 				$('body').append(inBodyDoc.documentElement.innerHTML);
 			}
-			autLasyHDoc('defDivOld',cbFncDnm);
+			autLasyHDoc('defDiv',cbFncDnm);
 		}
 	}
 	return yerTar;
