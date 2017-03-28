@@ -66,17 +66,7 @@ function getTar() {
 			childNodeIndex++;
 		}
 		if	(yerTar.childNodes[childNodeIndex].style.color == 'rgb(0, 0, 255)') {
-			var dDt = new getdDt(new Date());
-			cbFncDnm = function () {
-				var inBodyDoc = document.implementation.createHTMLDocument('');
-				inBodyDoc.documentElement.innerHTML = this.responseText;
-				with (inBodyDoc.getElementsByTagName('span')[0]){
-					innerText = innerText.replace('00',dDt.dHour);
-					innerText = innerText.replace('00',dDt.dMinute);
-				}
-				$('body').append(inBodyDoc.documentElement.innerHTML);
-			}
-			autLasyHDoc('defDiv',cbFncDnm);
+			autLasyHDoc('defDiv',cbFncCur);
 		}
 	}
 	return yerTar;
