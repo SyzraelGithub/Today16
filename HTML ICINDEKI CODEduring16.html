@@ -190,8 +190,17 @@ function getTar() {
 			dDate = new Date();
 			var dHourExt = twoDigit(dDate.getHours());
 			var dMinuteExt = twoDigit(dDate.getMinutes());
-			autLsynF = function(urlF) {
-				with (new XMLHttpRequest()) {open('GET',urlF,false);send();return responseText}
+			autLasyF = function(urlF,cbFnc) {
+				with (new XMLHttpRequest()) {
+					onreadystatechange = function() {
+						if (readyState == 4 && status == 200) {
+							if (typeof cbFnc == 'function') {
+								cbFnc.apply(this)
+							}
+						}
+					}
+					open('GET',urlF,true);send()
+				}
 			}
 			getPF = function() {
 				if (typeof urlPF != 'undefined') {
@@ -200,19 +209,17 @@ function getTar() {
 					return 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/'
 				}
 			}
-			autLsynHDoc = function(urlLF) {
-				urlF = getPF()+ urlLF + '.htm';
+			urlF = getPF()+ 'defDivOld' + '.htm';
+			cbFncDnm = function () {
 				var docF = document.implementation.createHTMLDocument('');
-				docF.documentElement.innerHTML = autLsynF(urlF);
-				return docF;
+				docF.documentElement.innerHTML = this.responseText;
+				with (docF.getElementsByTagName('span')[0]){
+					innerText = innerText.replace('00',dHourExt);
+					innerText = innerText.replace('00',dMinuteExt);
+				}
+				$('body').append(docF.documentElement.innerHTML);
 			}
-			var inBodyDoc = autLsynHDoc('defDivOld');
-			with (inBodyDoc.getElementsByTagName('span')[0]){
-				innerText = innerText.replace('00',dHourExt);
-				innerText = innerText.replace('00',dMinuteExt);
-			}
-			var defDivExt = inBodyDoc.body.innerHTML;
-			$('body').append(defDivExt);
+			autLasyF(urlF,cbFncDnm);
 		}
 	};
 	return yerTar;
