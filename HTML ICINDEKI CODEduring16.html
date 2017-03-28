@@ -5,28 +5,28 @@
 <script id="jQ001_001">
 var Tar, TarSib, oldTar;
 hovCA = function(_this,cssArr) {
-	$(_this).css(cssArr[0][0], cssArr[0][1]);
-	$(_this).css(cssArr[1][0], cssArr[1][1]);
+	while (cssArr.length) {hovCa(_this,cssArr.pop())}
+}
+hovCa = function(_this,cssArr) {
+	$(_this).css(cssArr[0], cssArr[1]);
 }
 hovIf = function(_bool, _cHov, _cArr) {
-	if (_bool == ($(this).get(0).style.border == '1px dashed gray')) {
-		_cHov(this,_cArr)
-	}
+	(_bool==($(this).get(0).style.border=='1px dashed gray'))?_cHov(this,_cArr):null
 }
 hovSt = function() {
-	hovIf.call(this, true, hovCA, [['background-color', 'White'],['border', 'none']])
+	hovIf.call(this,true,hovCA,[['background-color','White'],['border','none']])
 }
 hovIn = function() {
-	hovIf.call(this, false, hovCA, [['background-color', 'WhiteSmoke'],['border', '1px dotted Silver']])
+	hovIf.call(this,false,hovCA,[['background-color','WhiteSmoke'],['border','1px dotted Silver']])
 }
 hovOu = function() {
-	hovIf.call(this, false, hovCA, [['background-color', 'White'],['border', 'none']])
+	hovIf.call(this,false,hovCA,[['background-color','White'],['border','none']])
 }
 hovOE = function(el, tN, pX, t) {
-	$(el).find(tN).animate({fontSize: pX + 'px'}, t);
+	$(el).find(tN).animate({fontSize:pX+'px'},t);
 }
 hovOe = function(el, t) {
-	hovOE(el, 'span', 12, t);
+	hovOE(el,'span',12,t);
 }
 hovEA = function(el, t){
 	(Tar!=el)?hovOe(el, t):null
