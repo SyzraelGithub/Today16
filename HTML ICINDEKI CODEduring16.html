@@ -6,14 +6,13 @@
 var Tar, TarSib, oldTar;
 $(document).ready(function () {
 	$('div').hover(hovIn, hovOu);
-	$('div').each(function () {
-		if ($(this).get(0).parentNode.nodeName == 'BODY' && 
-			$(this).get(0).style.border == '1px dashed gray') {
+	$('body>div').each(function () {
+		if ($(this).get(0).style.border == '1px dashed gray') {
 			$(this).css('background-color', 'White');
 			$(this).css('border', 'none');
 		}
 	});
-	$.each($('body > div'), function(i, el){
+	$.each($('body>div'), function(i, el){
 		setTimeout(function(){
 			if (Tar != el) {
 				$(el).find('span').animate({fontSize: '12px'}, 100);
