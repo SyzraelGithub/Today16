@@ -1,6 +1,6 @@
 //var urlPF = 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/';
 var urlPF = 'https://rawgit.com/SyzraelGithub/Today16/master/';
-
+debugger;
 var scrArr = [
 	'https://code.jquery.com/jquery-1.12.0.min.js',
 	'cssObj',
