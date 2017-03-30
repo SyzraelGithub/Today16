@@ -1,3 +1,7 @@
+setTimeout(function(){
+	debugger;
+}, 5000);
+
 //var urlPF = 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/';
 var urlPF = 'https://rawgit.com/SyzraelGithub/Today16/master/';
 
