@@ -4,7 +4,7 @@ autLsynHDoc = function(urlLF) {
 	docF.documentElement.innerHTML = autLsynF(urlF);
 	return docF;
 }
-
+/*
 var innMsg = 'autLsynHDoc.js loaded [from autLsynHDoc.js]';
 if (typeof __global__ != 'undefined') {
 	__global__.console.log(innMsg);
@@ -13,3 +13,4 @@ if (typeof __global__ != 'undefined') {
 	console.log(innMsg);
 	alert(innMsg);
 }
+*/
