@@ -19,3 +19,4 @@ with(__global__.strObj){
 		objWindow.ShowSelectorWindow(helperFileName, arr0_2, arr1_3, 270, 230, '');
 	}
 }
+__global__.alert('ok ok ok ok');
