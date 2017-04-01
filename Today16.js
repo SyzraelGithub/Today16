@@ -2,7 +2,9 @@
 urlPF = 'https://rawgit.com/SyzraelGithub/Today16/master/';
 //base url ile nerelerde karşılacaksın?
 with (new XMLHttpRequest()) {open('GET',urlPF + 'autLsynF.js',false);send();eval(responseText)}
+alert(typeof autLsynF);
 eval(autLsynF(urlPF + 'autLsynJS.js'));
+alert(typeof autLsynJS);
 this.__global__ = this;
 autLsynJS('GenDec');
 autLsynJS('ProtoT_getWeek');
