@@ -17,3 +17,4 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 		}
 	}
 }
+thisTmp.alert('ok');
