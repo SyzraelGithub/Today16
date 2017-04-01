@@ -18,6 +18,8 @@ autLsynJS('twoDigit');
 alert(typeof twoDigit);
 autLsynJS('GenDec_dDt');
 autLsynJS('varLoadF');
+alert(autLsynF(urlPF + 'autLsynF.js'));
 autLsynJS('OnTodayBtnClicked16');
-
+alert(autLsynF(urlPF + 'OnTodayBtnClicked16.js'));
+alert(autLsynF(urlPF + 'Today16.html'));
 alert('valla ha oldu!');
