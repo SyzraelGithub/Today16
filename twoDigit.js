@@ -14,5 +14,5 @@ if (typeof WizFormatInt2 == 'function' && typeof thisTmp.twoDigit != 'function')
 	}
 }
 var innMsg = 'twoDigit.js loaded [from twoDigit.js]';
-__global__.console.log(innMsg);
-__global__.alert(innMsg);
+thisTmp.console.log(innMsg);
+thisTmp.alert(innMsg);
