@@ -19,4 +19,6 @@ with(__global__.strObj){
 		objWindow.ShowSelectorWindow(helperFileName, arr0_2, arr1_3, 270, 230, '');
 	}
 }
-__global__.alert('ok ok ok ok');
+var innMsg = 'OnTodayBtnClicked16.js loaded';
+__global__.console.log(innMsg);
+__global__.alert(innMsg);
