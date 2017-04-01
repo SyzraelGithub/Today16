@@ -1,3 +1,5 @@
+// [OnTodayBtnClicked16.js] If you see this UPDATED
+
 with(__global__.strObj){
 	pluginPath = objApp.GetPluginPathByScriptFileName(jsFileName);
 	helperFileName = pluginPath + helperFilePart;
