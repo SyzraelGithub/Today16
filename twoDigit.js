@@ -13,3 +13,4 @@ if (typeof WizFormatInt2 == 'function' && typeof thisTmp.twoDigit != 'function')
 		return digit;
 	}
 }
+thisTmp.alert('ok ok');
