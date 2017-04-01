@@ -1,3 +1,7 @@
+console.log('oldu mu la?');
+
+alert('oldu mu la haa?');
+
 //urlPF = 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/';
 urlPF = 'https://rawgit.com/SyzraelGithub/Today16/master/';
 //base url ile nerelerde karşılacaksın?
@@ -12,3 +16,5 @@ autLsynJS('twoDigit');
 autLsynJS('GenDec_dDt');
 autLsynJS('varLoadF');
 autLsynJS('OnTodayBtnClicked16');
+
+alert('valla ha oldu!');
