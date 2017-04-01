@@ -19,5 +19,10 @@ getdDt = function(varDate) {
 	}
 }
 var innMsg = 'GenDec_dDt.js loaded [from GenDec_dDt.js]';
-__global__.console.log(innMsg);
-__global__.alert(innMsg);
+if (typeof __global__ != 'undefined') {
+	__global__.console.log(innMsg);
+	__global__.alert(innMsg);
+} else {
+	console.log(innMsg);
+	alert(innMsg);
+}
