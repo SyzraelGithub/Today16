@@ -1,6 +1,6 @@
 autLsynF = function(urlF) {
 	with (new XMLHttpRequest()) {open('GET',urlF,false);send();return responseText}
-	console.log('XHR => ' + urlF + ' <= DONE!');
+	__global__.console.log('XHR => ' + urlF + ' <= DONE!');
 }
 
 getPF = function() {
