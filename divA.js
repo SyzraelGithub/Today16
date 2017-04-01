@@ -5,7 +5,7 @@ divA.id = 'divA';
 divA.class = 'divAcls';
 
 document.body.appendChild(divA);
-
+/*
 var innMsg = 'divA.js loaded [from divA.js]';
 if (typeof __global__ != 'undefined') {
 	__global__.console.log(innMsg);
@@ -14,3 +14,4 @@ if (typeof __global__ != 'undefined') {
 	console.log(innMsg);
 	alert(innMsg);
 }
+*/
