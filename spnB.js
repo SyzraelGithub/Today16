@@ -22,4 +22,4 @@ alert('spnB devam');
 
 spnB.innerText = dDt.myLocation;
 
-alert('spnB devam');
+alert('spnB son');
