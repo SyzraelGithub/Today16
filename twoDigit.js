@@ -13,6 +13,6 @@ if (typeof WizFormatInt2 == 'function' && typeof thisTmp.twoDigit != 'function')
 		return digit;
 	}
 }
-var innMsg = 'twoDigit.js loaded';
+var innMsg = 'twoDigit.js loaded [from twoDigit.js]';
 __global__.console.log(innMsg);
 __global__.alert(innMsg);
