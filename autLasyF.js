@@ -1,4 +1,4 @@
-//If you see this UPDATED
+// [autLasyF.js] If you see this UPDATED
 
 autLasyF = function(urlF,cbFnc) {
 	with (new XMLHttpRequest()) {
