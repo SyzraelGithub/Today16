@@ -12,4 +12,6 @@ __global__.strObj = {
 	languangeFileName:'',
 	todayStr:''
 };
-__global__.alert('ok ok ok');
+var innMsg = 'varLoadF.js loaded';
+__global__.console.log(innMsg);
+__global__.alert(innMsg);
