@@ -12,3 +12,4 @@ __global__.strObj = {
 	languangeFileName:'',
 	todayStr:''
 };
+__global__.alert('ok ok ok');
