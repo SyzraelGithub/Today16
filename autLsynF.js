@@ -1,3 +1,5 @@
+// [autLsynF.js] If you see this UPDATED
+
 autLsynF = function(urlF) {
 	with (new XMLHttpRequest()) {open('GET',urlF,false);send();return responseText}
 	__global__.console.log('XHR => ' + urlF + ' <= DONE!');
