@@ -13,8 +13,3 @@ if (typeof WizFormatInt2 == 'function' && typeof thisTmp.twoDigit != 'function')
 		return digit;
 	}
 }
-/*
-var innMsg = 'twoDigit.js loaded [from twoDigit.js]';
-thisTmp.console.log(innMsg);
-thisTmp.alert(innMsg);
-*/
