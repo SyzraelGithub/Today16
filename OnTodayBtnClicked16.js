@@ -2,7 +2,7 @@
 
 with(__global__.strObj){
 	pluginPath = objApp.GetPluginPathByScriptFileName(jsFileName);
-	helperFileName = pluginPath + helperFilePart;
+	/*helperFileName = pluginPath + helperFilePart;*/
 	helperFileName = helperFileOnline;
 	languangeFileName = pluginPath + iniFileName;
 	todayStr = objApp.LoadStringFromFile(languangeFileName,stringName);
