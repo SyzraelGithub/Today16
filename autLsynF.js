@@ -13,7 +13,7 @@ getPF = function() {
 }
 
 if (document.getElementsByTagName('base').length > 0) {
-	alert(document.getElementsByTagName('base')[0].href)
+	console.log(document.getElementsByTagName('base')[0].href)
 	//alert(window.location.href.replace(/[^/]*$/, ''));
 } else {//gjhgjghhjgjhfgj
 	alert('base yok');
