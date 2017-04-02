@@ -14,7 +14,6 @@ getPF = function() {
 
 if (document.getElementsByTagName('base').length > 0) {
 	console.log(document.getElementsByTagName('base')[0].href)
-	//alert(window.location.href.replace(/[^/]*$/, ''));
-} else {//gjhgjghhjgjhfgj
+} else {
 	alert('base yok');
 }
