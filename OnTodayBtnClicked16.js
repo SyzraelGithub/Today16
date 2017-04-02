@@ -1,5 +1,3 @@
-// [OnTodayBtnClicked16.js] If you see this UPDATED
-
 with(__global__.strObj){
 	pluginPath = objApp.GetPluginPathByScriptFileName(jsFileName);
 	/*helperFileName = pluginPath + helperFilePart;*/
@@ -21,8 +19,3 @@ with(__global__.strObj){
 		objWindow.ShowSelectorWindow(helperFileName, arr0_2, arr1_3, 270, 230, '');
 	}
 }
-/*
-var innMsg = 'OnTodayBtnClicked16.js loaded [from OnTodayBtnClicked16.js] (02)';
-__global__.console.log(innMsg);
-__global__.alert(innMsg);
-*/
