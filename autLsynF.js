@@ -14,4 +14,6 @@ getPF = function() {
 
 if (document.getElementsByTagName('base').length > 0) {
 	alert(document.getElementsByTagName('base')[0].href)
+} else {
+	alert('base yok');
 }
