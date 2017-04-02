@@ -18,13 +18,3 @@ getdDt = function(varDate) {
 		this.newHourMinute = dHour + ':' + dMinute;
 	}
 }
-/*
-var innMsg = 'GenDec_dDt.js loaded [from GenDec_dDt.js]';
-if (typeof __global__ != 'undefined') {
-	__global__.console.log(innMsg);
-	__global__.alert(innMsg);
-} else {
-	console.log(innMsg);
-	alert(innMsg);
-}
-*/
