@@ -17,8 +17,3 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 		}
 	}
 }
-/*
-var innMsg = 'GenDec.js loaded [from GenDec.js]';
-thisTmp.console.log(innMsg);
-thisTmp.alert(innMsg);
-*/
