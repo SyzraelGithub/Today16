@@ -11,3 +11,5 @@ getPF = function() {
 		return 'https://rawgit.com/SyzraelGithub/Today16/master/'
 	}
 }
+
+alert(document.getElementsByTagName('base')[0].href);
