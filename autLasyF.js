@@ -1,5 +1,3 @@
-// [autLasyF.js] If you see this UPDATED
-
 autLasyF = function(urlF,cbFnc) {
 	with (new XMLHttpRequest()) {
 		onreadystatechange = function() {
