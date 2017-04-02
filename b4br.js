@@ -5,7 +5,3 @@ function b4br(el, bD, br){
 		el.parentElement.insertBefore(bD, el);
 	}
 }
-/*
-ghybjnuılikmnjubhnfjuı
-lfrojulvrlkvgrjfu
-*/
