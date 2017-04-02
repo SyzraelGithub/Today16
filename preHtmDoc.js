@@ -3,6 +3,3 @@ function preHtmDoc(htmDoc) {
 	htmDoc = addHtmBody(htmDoc);
 	return htmDoc;
 }
-
-
-
