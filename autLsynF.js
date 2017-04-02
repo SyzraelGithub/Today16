@@ -1,5 +1,3 @@
-// [autLsynF.js] (13..) If you see this UPDATED
-
 autLsynF = function(urlF) {
 	with (new XMLHttpRequest()) {open('GET',urlF,false);send();return responseText}
 	__global__.console.log('XHR => ' + urlF + ' <= DONE!');
@@ -13,13 +11,3 @@ getPF = function() {
 		return 'https://rawgit.com/SyzraelGithub/Today16/master/'
 	}
 }
-/*
-var innMsg = 'autLsynF.js loaded [from autLsynF.js]';
-if (typeof __global__ != 'undefined') {
-	__global__.console.log(innMsg);
-	__global__.alert(innMsg);
-} else {
-	console.log(innMsg);
-	alert(innMsg);
-}
-*/
