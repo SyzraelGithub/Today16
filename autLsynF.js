@@ -7,8 +7,5 @@ getPF = function() {
 		return urlPF
 	} else if (document.getElementsByTagName('base').length > 0) {
 		return document.getElementsByTagName('base')[0].href
-	} else {
-		//return 'https://dl.dropboxusercontent.com/u/31117393/h1/iPlg/Today16/'
-		return 'https://rawgit.com/SyzraelGithub/Today16/master/'
 	}
 }
