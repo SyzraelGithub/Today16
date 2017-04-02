@@ -12,4 +12,6 @@ getPF = function() {
 	}
 }
 
-alert(document.getElementsByTagName('base')[0].href);
+if (document.getElementsByTagName('base').length > 0) {
+	alert(document.getElementsByTagName('base')[0].href)
+}
