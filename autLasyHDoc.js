@@ -13,5 +13,3 @@ cbFncCur = function () {
 	}
 	$('body').append(inBodyDoc.documentElement.innerHTML);
 }
-
-/**/
