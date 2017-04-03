@@ -3,7 +3,7 @@ function onLoadJS(fNameJS) {
 		var s = document.createElement('script');
 		s.id = 'jQ001_001_init';
 		s.type = 'text/javascript';
-		s.src = 'https://rawgit.com/SyzraelGithub/Today16/master/' + fNameJS + '.js';
+		s.src = '' + fNameJS + '.js';
 		document.head.appendChild(s)
 	}
 };
