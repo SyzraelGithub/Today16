@@ -5,7 +5,6 @@ function onLoadJS(fNameJS) {
 		s.type = 'text/javascript';
 		s.src = 'https://rawgit.com/SyzraelGithub/Today16/master/' + fNameJS + '.js';
 		document.head.appendChild(s)
-	} else {
 	}
 };
 onLoadJS('onLoadInit');
