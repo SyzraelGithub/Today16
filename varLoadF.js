@@ -5,11 +5,7 @@ __global__.strObj = {
 	attachParent:'main',
 	btnName:'todayButton16',
 	btnFncName:'OnTodayBtnClicked16',
-	helperFileOnline: getPF() + 'Today16.html',
-	/*
-		helperFileOnline:getPF() veya urlPF + Today16.html
-		helperFilePart:'../../../../Dropbox/Public/h1/iPlg/Today16/Today16.html', => gerek yok
-	*/
+	helperFileOnline: urlPF + 'Today16.html',
 	pluginPath:'',
 	helperFileName:'',
 	languangeFileName:'',
