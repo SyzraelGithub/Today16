@@ -1,3 +1,5 @@
+alert(typeof urlPF);
+
 autLsynF = function(urlF) {
 	with (new XMLHttpRequest()) {open('GET',urlF,false);send();return responseText}
 }
