@@ -1,4 +1,4 @@
 autLsynJS = function(urlLF) {
-	urlF = getPF() + urlLF + '.js';
+	urlF = urlPF + urlLF + '.js';
 	eval(autLsynF(urlF));
 }
