@@ -1,6 +1,6 @@
 function btnDcre(idNum,innerText,isBold,guid) {
 	var btnD = document.createElement('button');
-	btnD.innerText = innerText
+	btnD.innerText = innerText;
 	btnD.id = 'btnD' + twoDigit(idNum);
 	btnD.class = 'btnDcls';
 	with (btnD.style){
