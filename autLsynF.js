@@ -1,4 +1,10 @@
-alert(typeof urlPF);
+
+if (typeof urlPF == 'undefined') {
+	alert(typeof urlPF);
+	urlPF = document.getElementsByTagName('base')[0].href;
+	alert(typeof urlPF);
+}
+
 
 autLsynF = function(urlF) {
 	with (new XMLHttpRequest()) {open('GET',urlF,false);send();return responseText}
