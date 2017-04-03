@@ -1,5 +1,5 @@
 autLasyHDoc = function(urlLF,cbFnc) {
-	urlF = getPF()+ urlLF + '.htm';
+	urlF = urlPF + urlLF + '.htm';
 	autLasyF(urlF,cbFnc);
 }
 
