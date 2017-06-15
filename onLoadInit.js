@@ -23,7 +23,7 @@ function jQcheck() {
 	if (typeof $ == 'function') {clearTimeout(jQcheckTO)}
 }
 
-var jQcheckTO = setTimeout(jQcheck, 500);
+var jQcheckTO = setTimeout(jQcheck, 25);
 
 /*
 	1706151906
