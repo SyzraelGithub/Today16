@@ -56,6 +56,36 @@ var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 	---
 	typeof $ 'ın hayrı olmadığına emin olduğumuza göre en yakın zamanda
 	2 scrArr olayına girelim.
+	---
+	Unutursun belki diye belirtmek istiyorum
+		'jquery',		=>	SIRALI
+		'cssObj',		=>	SIRALI
+		'hov',			=>	SIRALI
+		'GenDec',		=>	DIREK
+		'ProtoT_getWeek',	=>	DIREK
+		'twoDigit',		=>	DIREK
+		'GenDec_dDt',		=>	DIREK
+		'autLasyF',		=>	DIREK
+		'autLsynF',		=>	DIREK
+		'autLasyHDoc',		=>	DIREK
+		'autoTarNow',		=>	SIRALI
+		'docRea'		=>	SIRALI
+	Yani srcArr ikiye bölünüyor. srcArrDirek ve srcArrSirali gibi mesela 
+	---
+	Sıralı aynen createScript() 'i kullanıyor. (şuandaki haliyle)
+	Direk ise createScript() 'i newScript.onload 'sız kullanıyor.
+	---
+	Bundan dolayı ben öneriyorum ki,
+	createScript(src,id,parent,type) 'ı dışarıdan aldığı gibi
+	waitOnload diye bir Boolean olsun. True ise Sıralı olsun
+	waitOnload False ise bruteForce takılsın.
+	---
+	veya bruteForce olsun. false ise sıralı true ise kaba kuvvet
+	---
+	Not:
+		1) Mapping olayına dikkat et.
+		2) sirali kendi bir sonrakine geçer ama brute için sen döngü oluşturacaksın
+			shift dongusu
 */
 
 function jQcheck() {
