@@ -10,7 +10,16 @@ var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 */
 
 function jQcheck() {
-	console.log('!$ == ' + (!$) + ' . So, jQuery is ' + (!$?'not loaded':'loaded'));
+	console.log(
+		'typeof $ == ' + 
+		(typeof $) + 
+		' . So, jQuery is ' + 
+		((typeof $ == 'function')?
+			'loaded'
+			:
+			'not loaded'
+		)
+	);
 	if (!!$) {clearTimeout(jQcheckTO)}
 }
 
