@@ -31,6 +31,19 @@ var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 		https://stackoverflow.com/questions/313893/how-to-measure-time-taken-by-a-function-to-execute
 		'daki öneri
 		performance.now() 'ı kullanman yönünde
+			---
+			typeof $ == undefined . So, jQuery is not loaded 806.015
+			onLoadInit.js:46 typeof $ == undefined . So, jQuery is not loaded 852.755
+			onLoadInit.js:46 typeof $ == undefined . So, jQuery is not loaded 899.2950000000001
+			onLoadInit.js:46 typeof $ == undefined . So, jQuery is not loaded 946.3050000000001
+			onLoadInit.js:116 jquery-1.12.0.min loaded 992.5800000000002
+			onLoadInit.js:114 hov started
+			onLoadInit.js:46 typeof $ == function . So, jQuery is loaded 997.5500000000001
+			onLoadInit.js:116 hov loaded 1102.265
+			onLoadInit.js:114 GenDec started
+			---
+			Yukarıda yazılanlardan yola çıkarak diyorum ki
+			typeof $ 'ın bana ms cinsinden hiçbir hayrı yok.
 		---
 		Eğer typeof $ 'dan hayır gelmeyeceğine %100 emin olursan
 		Ondan sonra yapmanı önereceğimiz şey şu;
@@ -40,6 +53,9 @@ var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 	Diğeri ise yine sıralı yükleme yapacak. 
 	Bağlılık sorunu olmayanların sıra beklemesine gerek olmadığına karar verdiğim için
 	Bu Yöntemi deneyeceğim.
+	---
+	typeof $ 'ın hayrı olmadığına emin olduğumuza göre en yakın zamanda
+	2 scrArr olayına girelim.
 */
 
 function jQcheck() {
