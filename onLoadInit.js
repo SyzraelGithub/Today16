@@ -20,7 +20,7 @@ function jQcheck() {
 			'not loaded'
 		)
 	);
-	if (!!$) {clearTimeout(jQcheckTO)}
+	if (typeof $ == 'function') {clearTimeout(jQcheckTO)}
 }
 
 var jQcheckTO = setTimeout(jQcheck, 500);
