@@ -2,6 +2,24 @@
 //var urlPF = 'https://rawgit.com/SyzraelGithub/Today16/master/';
 var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 
+/*
+	1706151906
+	Burada js sıralı yüklemesi işi çok zaman aldığı için
+	onload event tetiklenmesi ile !$ == false 'a dönmesi 
+	aynı zamana denk geliyor mu onu kontrol edeceğim.
+*/
+
+function jQcheck() {
+	console.log('!$ == ' + (!$) + ' . So, jQuery is ' + (!$?'not loaded':'loaded'));
+	if (!!$) {clearTimeout(jQcheckTO)}
+}
+
+var jQcheckTO = setTimeout(jQcheck, 500);
+
+/*
+	1706151906
+*/
+
 var scrArr = [
 	'https://code.jquery.com/jquery-1.12.0.min.js',
 	'cssObj',
