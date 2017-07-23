@@ -93,6 +93,9 @@ var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 	o da onu kontrol etse?
 	Ama $ hata vermeyecek mi? Try finally mi yapıcaz yani?
 	Ayrıca başarılı olsa ne olacak ki? jQ dan sonra gelenlerin sırası da önemli.
+	---
+	Burada fork da yapabiliriz. Temiz eski versiyon, Bu versiyon,
+	İkiye bölünmüş arr versiyon. Tek versiyon içeride ayrılıyor.
 */
 
 function jQcheck() {
