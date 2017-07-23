@@ -89,6 +89,8 @@ var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 	1707231127
 	Bu arada konuya şu an çok hakim değilim ama, aklıma birşey geldi.
 	Acaba document.ready kontrolünün sonuçlanma süresini de ölçümlemeli miyim?
+	Yani, jQcheck içinde veya dışarıda, dRcheck şeklinde bir mekanizma
+	o da onu kontrol etse?
 */
 
 function jQcheck() {
