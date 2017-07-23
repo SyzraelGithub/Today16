@@ -92,6 +92,7 @@ var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 	Yani, jQcheck içinde veya dışarıda, dRcheck şeklinde bir mekanizma
 	o da onu kontrol etse?
 	Ama $ hata vermeyecek mi? Try finally mi yapıcaz yani?
+	Ayrıca başarılı olsa ne olacak ki? jQ dan sonra gelenlerin sırası da önemli.
 */
 
 function jQcheck() {
