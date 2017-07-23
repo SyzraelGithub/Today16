@@ -86,6 +86,9 @@ var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 		1) Mapping olayına dikkat et.
 		2) sirali kendi bir sonrakine geçer ama brute için sen döngü oluşturacaksın
 			shift dongusu
+	1707231127
+	Bu arada konuya şu an çok hakim değilim ama, aklıma birşey geldi.
+	Acaba document.ready kontrolünün sonuçlanma süresini de ölçümlemeli miyim?
 */
 
 function jQcheck() {
