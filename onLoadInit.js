@@ -61,9 +61,9 @@ creScrSrl = function(src,id,par,typ) {
 		if (!!id) {newScr.id=id} else {newScr.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
 		if (!!typ) {newScr.type = typ}
 		par = par || document.head;
-		console.log('[STARTED] {SRL}' + newScript.id);
+		console.log('[STARTED] {SRL}' + newScr.id);
 		newScr.onload = function () {
-			console.log('[LOADED] {SRL}' + newScript.id);
+			console.log('[LOADED] {SRL}' + newScr.id);
 			if (scrArrSrl.length) {creScrSrl(scrArrSrl.shift())}
 		}
 		par.appendChild(newScr);
@@ -78,7 +78,7 @@ creScrPrl = function(src,id,par,typ) {
 		if (!!id) {newScr.id=id} else {newScr.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
 		if (!!typ) {newScr.type = typ}
 		par = par || document.head;
-		console.log('[STARTED] {SRL}' + newScript.id);
+		console.log('[STARTED] {SRL}' + newScr.id);
 		par.appendChild(newScr);
 	} 
 }
