@@ -24,7 +24,7 @@ var scrArr = [
 	Mevcut sıra unutulmasın diye bunu fonksiyonalize ettim.
 */
 
-sswtElArr = function(arr,x,y) {
+swtElArr = function(arr,x,y) {
 	arr[x] = arr.splice(y, 1, arr[x])[0];
 	return arr
 }
