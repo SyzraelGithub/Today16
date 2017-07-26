@@ -32,7 +32,7 @@ swtElArr = function(arr,x,y) {
 	return arr
 }
 
-//scrArr = swtElArr(scrArr,0,1); // 1707261948 sanırım artık buna gerek yok.
+scrArr = swtElArr(scrArr,0,1); // 1707261948 sanırım artık buna gerek yok.
 
 isUrl = function(url) {
 	return url.startsWith('http')
