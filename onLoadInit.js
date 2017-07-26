@@ -22,6 +22,9 @@ var scrArr = [
 	docRea.js cO hazır değilken çalışıyor. Bunu önlemek için
 	cssObj 'i yukarı almayı denemeye karar verdim.
 	Mevcut sıra unutulmasın diye bunu fonksiyonalize ettim.
+	---
+	1707261948
+	sanırım artık buna gerek yok.
 */
 
 swtElArr = function(arr,x,y) {
@@ -29,7 +32,7 @@ swtElArr = function(arr,x,y) {
 	return arr
 }
 
-scrArr = swtElArr(scrArr,0,1);
+//scrArr = swtElArr(scrArr,0,1); // 1707261948 sanırım artık buna gerek yok.
 
 isUrl = function(url) {
 	return url.startsWith('http')
