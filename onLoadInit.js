@@ -2,28 +2,6 @@
 //var urlPF = 'https://rawgit.com/SyzraelGithub/Today16/master/';
 var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 
-function jQcheck() {
-	console.log(
-		'typeof $ == ' + 
-		(typeof $) + 
-		' . So, jQuery is ' + 
-		((typeof $ == 'function')?
-			'loaded'
-			:
-			'not loaded'
-		) + 
-		' ' +
-		performance.now()
-	);
-	if (typeof $ == 'function') {clearTimeout(jQcheckTO)}
-}
-
-var jQcheckTO = setInterval(jQcheck, 50);
-
-/*
-	1706151906
-*/
-
 var scrArr = [
 	'https://code.jquery.com/jquery-1.12.0.min.js',
 	'cssObj',
