@@ -79,7 +79,7 @@ creScrPrl = function(src,id,par,typ) {
 		if (!!id) {newScr.id=id} else {newScr.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
 		if (!!typ) {newScr.type = typ}
 		par = par || document.head;
-		console.log('[STARTED] {SRL}' + newScr.id);
+		console.log('[STARTED] {PRL}' + newScr.id);
 		par.appendChild(newScr);
 	} 
 }
