@@ -111,6 +111,18 @@ function jQcheck() {
 		' ' +
 		performance.now()
 	);
+	try {
+		console.log('try started' + performance.now());
+		$(function() {
+			console.log('try $ started' + performance.now());
+		})
+	}
+	catch(err) {
+		console.log('catch started ' + performance.now() + ' : ' + err);
+	}
+	finally {
+		console.log('finally started ' + performance.now());
+	}
 	if (typeof $ == 'function') {clearTimeout(jQcheckTO)}
 }
 
