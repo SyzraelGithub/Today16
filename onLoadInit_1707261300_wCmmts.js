@@ -456,6 +456,11 @@ var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 		Bu da gösteriyor ki scrArr ikiye bölünmeden, performans arttırma şansın yok.
 		Şimdi bu dosyayı kenarda bırakıp bu deneme hiç yapılmamış gibi 
 		Commmentsiz dosyadan devam edelim. 
+	---
+	1707261503
+	srcArrPrl => Parallel
+	srcArrSrl => Serial
+	
 */
 
 function jQcheck() {
