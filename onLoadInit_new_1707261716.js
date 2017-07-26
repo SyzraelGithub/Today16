@@ -82,7 +82,7 @@ creScrPrl = function(src,id,par,typ) {
 
 creScrSrl(scrArrSrl.shift());
 
-while (scrArrPrl.length) {creScrPrl(scrArrPrl.shift)}
+while (scrArrPrl.length) {creScrPrl(scrArrPrl.shift())}
 
 isiOS = function() {
 	var iDevices = [
