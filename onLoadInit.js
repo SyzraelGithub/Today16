@@ -3,18 +3,18 @@
 var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 
 var scrArr = [
-	'https://code.jquery.com/jquery-1.12.0.min.js',
-	'cssObj',
-	'hov',
-	'GenDec',
-	'ProtoT_getWeek',
-	'twoDigit',
-	'GenDec_dDt',
-	'autLasyF',
-	'autLsynF',
-	'autLasyHDoc',
-	'autoTarNow',
-	'docRea'
+	['https://code.jquery.com/jquery-1.12.0.min.js',true],
+	['cssObj',true],
+	['hov',true],
+	['GenDec',false],
+	['ProtoT_getWeek',false],
+	['twoDigit',false],
+	['GenDec_dDt',false],
+	['autLasyF',false],
+	['autLsynF',false],
+	['autLasyHDoc',false],
+	['autoTarNow',true],
+	['docRea',true]
 ];
 
 /*
@@ -24,41 +24,65 @@ var scrArr = [
 	Mevcut sıra unutulmasın diye bunu fonksiyonalize ettim.
 */
 
-switchElinArr = function(arr,x,y) {
+swtElArr = function(arr,x,y) {
 	arr[x] = arr.splice(y, 1, arr[x])[0];
 	return arr
 }
 
-scrArr = switchElinArr(scrArr,0,1);
+scrArr = swtElArr(scrArr,0,1);
 
 isUrl = function(url) {
 	return url.startsWith('http')
 }
 
 cnvUrl = function(txt) {
-	return isUrl(txt)?txt:urlPF+txt+'.js'
+	return [isUrl(txt[0])?txt[0]:urlPF+txt[0]+'.js', txt[1]]
 }
 
 scrArr = scrArr.map(cnvUrl);
 
-createScript = function(src,id,parent,type) {
-	var newScript = document.getElementById(id);
-	if (!newScript) {
-		newScript = document.createElement('script');
-		newScript.src = src;
-		if (!!id) {newScript.id=id} else {newScript.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
-		if (!!type) {newScript.type = type}
-		parent = parent || document.head;
-		console.log('[STARTED] ' + newScript.id + ' s t a r t e d');
-		newScript.onload = function () {
-			console.log('[LOADED] ' + newScript.id + ' l o a d e d ' + performance.now());
-			if (scrArr.length) {createScript(scrArr.shift())}
+var scrArrSrl = [];
+var scrArrPrl = [];
+
+while (scrArr.length) {
+	var scrArrEl = scrArr.shift();
+	if (scrArrEl[1]) {
+		scrArrSrl.push(scrArrEl[0]);
+	}	else {
+		scrArrPrl.push(scrArrEl[0]);
+	}
+}
+
+creScrSrl = function(src,id,par,typ) {
+	var newScr = document.getElementById(id);
+	if (!newScr) {
+		newScr = document.createElement('script');
+		newScr.src = src;
+		if (!!id) {newScr.id=id} else {newScr.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
+		if (!!typ) {newScr.type = typ}
+		par = par || document.head;
+		newScr.onload = function () {
+			if (scrArrSrl.length) {creScrSrl(scrArrSrl.shift())}
 		}
-		parent.appendChild(newScript);
+		par.appendChild(newScr);
 	} 
 }
 
-createScript(scrArr.shift());
+creScrPrl = function(src,id,par,typ) {
+	var newScr = document.getElementById(id);
+	if (!newScr) {
+		newScr = document.createElement('script');
+		newScr.src = src;
+		if (!!id) {newScr.id=id} else {newScr.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
+		if (!!typ) {newScr.type = typ}
+		par = par || document.head;
+		par.appendChild(newScr);
+	} 
+}
+
+creScrSrl(scrArrSrl.shift());
+
+while (scrArrPrl.length) {creScrPrl(scrArrPrl.shift)}
 
 isiOS = function() {
 	var iDevices = [
