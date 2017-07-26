@@ -24,15 +24,13 @@ var scrArr = [
 	Mevcut sıra unutulmasın diye bunu fonksiyonalize ettim.
 	---
 	1707261948
-	sanırım artık buna gerek yok.
+	sanırım artık bunlara gerek yok.
+	swtElArr = function(arr,x,y) {
+		arr[x] = arr.splice(y, 1, arr[x])[0];
+		return arr
+	}
+	scrArr = swtElArr(scrArr,0,1);
 */
-
-swtElArr = function(arr,x,y) {
-	arr[x] = arr.splice(y, 1, arr[x])[0];
-	return arr
-}
-
-scrArr = swtElArr(scrArr,0,1); // 1707261948 sanırım artık buna gerek yok.
 
 isUrl = function(url) {
 	return url.startsWith('http')
