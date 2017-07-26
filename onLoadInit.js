@@ -4,7 +4,7 @@ var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 
 var scrArr = [
 	['https://code.jquery.com/jquery-1.12.0.min.js',true],
-	['cssObj',true],
+	['cssObj',false],
 	['hov',true],
 	['GenDec',false],
 	['ProtoT_getWeek',false],
