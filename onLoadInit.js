@@ -100,7 +100,7 @@ var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 
 function jQcheck() {
 	console.log(
-		'typeof $ == ' + 
+		'[TYPEOF] typeof $ == ' + 
 		(typeof $) + 
 		' . So, jQuery is ' + 
 		((typeof $ == 'function')?
@@ -112,16 +112,16 @@ function jQcheck() {
 		performance.now()
 	);
 	try {
-		console.log('try started' + performance.now());
+		console.log('[TRY] try started' + performance.now());
 		$(function() {
-			console.log('try $ started' + performance.now());
+			console.log('[TRY] try $ started' + performance.now());
 		})
 	}
 	catch(err) {
-		console.log('catch started ' + performance.now() + ' : ' + err);
+		console.log('[TRY] catch started ' + performance.now() + ' : ' + err);
 	}
 	finally {
-		console.log('finally started ' + performance.now());
+		console.log('[TRY] finally started ' + performance.now());
 	}
 	if (typeof $ == 'function') {clearTimeout(jQcheckTO)}
 }
@@ -179,9 +179,9 @@ createScript = function(src,id,parent,type) {
 		if (!!id) {newScript.id=id} else {newScript.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
 		if (!!type) {newScript.type = type}
 		parent = parent || document.head;
-		console.log(newScript.id + ' started');
+		console.log('[STARTED] ' + newScript.id + ' started');
 		newScript.onload = function () {
-			console.log(newScript.id + ' loaded ' + performance.now());
+			console.log('[LOADED] ' + newScript.id + ' loaded ' + performance.now());
 			if (scrArr.length) {createScript(scrArr.shift())}
 		}
 		parent.appendChild(newScript);
