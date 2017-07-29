@@ -28,11 +28,11 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 				thisTmp.objDatabase = thisTmp.objWizDoc.Database;
 			} else {
 				/*
-					Here should stand an inputbox, which asks to user,
-					whether body tag should turn contenteditable = true
+					Here should stand an inputbox, which asks to the user,
+					whether body tag should turn into contenteditable = true
 					---
 					It appears like you are opening the note in an external browser unlike wiznote.
-					Would you like to set body tag contenteditable = true?
+					Would you like to set body tag contenteditable attribute to true?
 					YES / NO ?
 				*/
 			}
