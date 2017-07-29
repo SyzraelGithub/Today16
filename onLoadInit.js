@@ -16,7 +16,7 @@ var scrArr = [
 	['autoTarNow',true],
 	['docRea',true],
 	['http://code.jquery.com/ui/1.10.3/jquery-ui.min.js',true],
-	['autCmp',true] /*Raw bekleniyor (halen)*/
+	['autCmp',true] /*Raw bekleniyor (halen.)*/
 ];
 
 /*
