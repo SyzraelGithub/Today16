@@ -89,6 +89,22 @@ creScrSrl(scrArrSrl.shift());
 
 while (scrArrPrl.length) {creScrPrl(scrArrPrl.shift())}
 
+/*
+	1708291456
+	creSty veya creCSS diye bir fnc olabilir ileride ancak şimdilik tek style tag var.
+	Bundan dolayı direk yaratalım veya fnc 'a çok özenmeyelim.
+*/
+
+	var jquiSty = document.createElement('link'); //IE(>7.0) can throw an Error.
+  	jquiSty.rel = 'stylesheet';
+	jquiSty.type = 'text/css';
+  	jquiSty.href = 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css';
+	document.head.appendChild(jquiSty);
+
+/*
+	1708291456
+*/
+
 isiOS = function() {
 	var iDevices = [
 		'iPad Simulator',
