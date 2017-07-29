@@ -85,7 +85,7 @@ $(function() {
 
 	} else {
 		
-		blueSpans.attr('contentEditable','true');
+		blueSpans.removeAttr('contentEditable');
 		
 	}
 	
