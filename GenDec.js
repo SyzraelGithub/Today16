@@ -28,6 +28,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 				thisTmp.objDatabase = thisTmp.objWizDoc.Database;
 			} else {
 				/*
+					1807291431
 					Here should stand an inputbox, which asks to the user,
 					whether body tag should turn into contenteditable = true
 					---
