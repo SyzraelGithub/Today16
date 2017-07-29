@@ -50,9 +50,9 @@ $(function() {
 		return split(term).pop();
 	}
 	
-	if (document.body.contentEditable == 'true') {
+	var blueSpans = $('div>p').filter(function(){return $(this).css('color')=='rgb(0, 0, 255)'}).children().filter(function(){return $(this).attr('role')!='status'});
 		
-		var blueSpans = $('div>p').filter(function(){return $(this).css('color')=='rgb(0, 0, 255)'}).children().filter(function(){return $(this).attr('role')!='status'});
+	if (document.body.contentEditable == 'true') {
 		
 		blueSpans.attr('contentEditable','true');
 		
@@ -83,6 +83,10 @@ $(function() {
 			}
 		});
 
-	};
+	} else {
+		
+		blueSpans.attr('contentEditable','true');
+		
+	}
 	
 });
