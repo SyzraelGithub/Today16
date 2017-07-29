@@ -98,7 +98,7 @@ while (scrArrPrl.length) {creScrPrl(scrArrPrl.shift())}
 	var jquiSty = document.createElement('link'); //IE(>7.0) can throw an Error.
   	jquiSty.rel = 'stylesheet';
 	jquiSty.type = 'text/css';
-  	jquiSty.href = 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css';
+  	jquiSty.href = 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css';
 	document.head.appendChild(jquiSty);
 
 /*
