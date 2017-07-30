@@ -57,12 +57,28 @@ while (scrArr.length) {
 }
 
 creScrSrl = function(src,id,par,typ) {
+	id = id || src.split('/').pop().split('.').slice(0,-1).join('.');
+	/*
+		1707301505
+		Farklı adreslerde aynı isimli dosyaların kesinlikle aynı içeriği barındırdığını garanti ediyor olsaydım,
+		eklenmeye çalışılan link veya script 'in id mevcut olması halinde kesinlikle, yüklenmemesi
+		gerektiğini söylerdim.
+		---
+		Ancak böyle bir garanti veremiyorsan, o zaman ilk aklıma gelen öneri;
+		mevcut tag deki src veya href 'e bakılsın, yuklenmeye çalışılan adresteki içerik ile aynı ise
+		yüklenmesin, farklı ise, ya eski versiyondur deyip mevcut tag kaldırılsın ya da
+		yeni adresteki içerik aynı id ismiyle yüklensin veya _01 takısı gibi bir takı eklensin.
+		mesela jquery.js diye bir dosya var. o mevcut iken bir tane daha geldi.
+		ama baktık ki içerikleri aynı değil. o zaman yeni eklenmeye çalışılan kaynak jquery_01 olsun.
+		Ancak, sorun şu, bir üçüncü jquery daha eklenmeye çalışılırsa, bu sefer hem mevcut jquery 'i
+		hem de jquery_01 'i kontrol etsin. İş biraz uzar böyle..
+	*/
 	var newScr = document.getElementById(id);
 	if (!newScr) {
 		newScr = document.createElement('script');
 		newScr.src = src;
-		if (!!id) {newScr.id=id} else {newScr.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
-		if (!!typ) {newScr.type = typ}
+		newScr.id=id;
+		if (!!typ) {newScr.type = typ};
 		par = par || document.head;
 		console.log('[STARTED] {SRL}' + newScr.id);
 		newScr.onload = function () {
@@ -74,12 +90,13 @@ creScrSrl = function(src,id,par,typ) {
 }
 
 creScrPrl = function(src,id,par,typ) {
+	id = id || src.split('/').pop().split('.').slice(0,-1).join('.');
 	var newScr = document.getElementById(id);
 	if (!newScr) {
 		newScr = document.createElement('script');
 		newScr.src = src;
-		if (!!id) {newScr.id=id} else {newScr.id=src.split('/').pop().split('.').slice(0,-1).join('.')}
-		if (!!typ) {newScr.type = typ}
+		newScr.id=id;
+		if (!!typ) {newScr.type = typ};
 		par = par || document.head;
 		console.log('[STARTED] {PRL}' + newScr.id);
 		par.appendChild(newScr);
@@ -97,11 +114,12 @@ while (scrArrPrl.length) {creScrPrl(scrArrPrl.shift())}
 */
 
 creLnk = function(hrf,id,par,rel,typ) {
+	id = id || hrf.split('/').pop().split('.').slice(0,-1).join('.');
 	var newLnk =  document.getElementById(id);
 	if (!newLnk) {
 		newLnk = document.createElement('link');
 		newLnk.href = hrf;
-		if (!!id) {newLnk.id=id} else {newLnk.id=hrf.split('/').pop().split('.').slice(0,-1).join('.')}
+		newLnk.id = id;
 		par = par || document.head;
 		rel = rel || 'stylesheet';
 		typ = typ || 'text/css';
