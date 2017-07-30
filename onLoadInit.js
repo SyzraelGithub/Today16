@@ -128,7 +128,9 @@ creLnk = function(hrf,id,par,rel,typ) {
 		newLnk = document.createElement('link');
 		newLnk.id = id;
 		rel = rel || 'stylesheet';
+		newLnk.rel = rel;
 		typ = typ || 'text/css';
+		newLnk.type = typ;
 		newLnk.href = hrf;
 		par = par || document.head;
 		console.log('[STARTED] {LNK}' + newLnk.id);
