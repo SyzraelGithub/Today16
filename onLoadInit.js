@@ -56,6 +56,14 @@ while (scrArr.length) {
 	}
 }
 
+/*
+	1707301647
+	creScrSrl ile creScrPrl aslında creScr olarak birleşebilir. Nasıl dersen,
+	src,id,par,typ yanında bir de arr alır yani matrisin tamamı.
+	Eğer arr boş gelmezse onload 'a sokar. Boş gelirse 
+	direk atlar.
+*/
+
 creScrSrl = function(src,id,par,typ) {
 	id = id || src.split('/').pop().split('.').slice(0,-1).join('.');
 	/*
