@@ -105,6 +105,7 @@ creLnk = function(hrf,id,par,rel,typ) {
 		par = par || document.head;
 		rel = rel || 'stylesheet';
 		typ = typ || 'text/css';
+		console.log('[STARTED] {LNK}' + newLnk.id);
 		par.appendChild(newLnk);
 	}
 }
