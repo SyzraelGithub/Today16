@@ -49,6 +49,6 @@ function getSib(parSib) {
 	/*
 		1707301636
 		autocomplete denemeleri esnasında role="status" benzeri <span> lar oluştuğu için
-		artık direk [0] elemanı almak hataya sebeb oluyor.
+		artık direk [0] elemanı almak hataya sebeb olacak
 	*/
 }
