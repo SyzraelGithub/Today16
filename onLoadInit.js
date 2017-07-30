@@ -96,11 +96,28 @@ while (scrArrPrl.length) {creScrPrl(scrArrPrl.shift())}
 	Bundan dolayı direk yaratalım veya fnc 'a çok özenmeyelim.
 */
 
-	var jquiSty = document.createElement('link'); //IE(>7.0) can throw an Error.
-  	jquiSty.rel = 'stylesheet';
-	jquiSty.type = 'text/css';
-  	jquiSty.href = 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css'; //min is better i think
-	document.head.appendChild(jquiSty);
+creLnk = function(hrf,id,par,rel,typ) {
+	var newLnk =  document.getElementById(id);
+	if (!newLnk) {
+		newLnk = document.createElement('link');
+		newLnk.href = hrf;
+		if (!!id) {newLnk.id=id} else {newLnk.id=hrf.split('/').pop().split('.').slice(0,-1).join('.')}
+		par = par || document.head;
+		rel = rel || 'stylesheet';
+		typ = typ || 'text/css';
+		par.appendChild(newLnk);
+	}
+}
+
+/*
+var jquiSty = document.createElement('link'); //IE(>7.0) can throw an Error.
+jquiSty.rel = 'stylesheet';
+jquiSty.type = 'text/css';
+jquiSty.href = 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css'; //min is better i think
+document.head.appendChild(jquiSty);
+*/
+
+creLnk('http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css');
 
 /*
 	1708291456
