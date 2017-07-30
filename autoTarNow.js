@@ -46,4 +46,9 @@ function setTar() {
 }
 function getSib(parSib) {
 	return parSib.getElementsByTagName(cO.t0)[0];
+	/*
+		1707301636
+		autocomplete denemeleri esnasında role="status" benzeri <span> lar oluştuğu için
+		artık direk [0] elemanı almak hataya sebeb oluyor.
+	*/
 }
