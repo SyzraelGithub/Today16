@@ -84,9 +84,9 @@ creScrSrl = function(src,id,par,typ) {
 	var newScr = document.getElementById(id);
 	if (!newScr) {
 		newScr = document.createElement('script');
-		newScr.src = src;
 		newScr.id=id;
 		if (!!typ) {newScr.type = typ};
+		newScr.src = src;
 		par = par || document.head;
 		console.log('[STARTED] {SRL}' + newScr.id);
 		newScr.onload = function () {
@@ -102,9 +102,9 @@ creScrPrl = function(src,id,par,typ) {
 	var newScr = document.getElementById(id);
 	if (!newScr) {
 		newScr = document.createElement('script');
-		newScr.src = src;
 		newScr.id=id;
 		if (!!typ) {newScr.type = typ};
+		newScr.src = src;
 		par = par || document.head;
 		console.log('[STARTED] {PRL}' + newScr.id);
 		par.appendChild(newScr);
@@ -126,11 +126,11 @@ creLnk = function(hrf,id,par,rel,typ) {
 	var newLnk =  document.getElementById(id);
 	if (!newLnk) {
 		newLnk = document.createElement('link');
-		newLnk.href = hrf;
 		newLnk.id = id;
-		par = par || document.head;
 		rel = rel || 'stylesheet';
 		typ = typ || 'text/css';
+		newLnk.href = hrf;
+		par = par || document.head;
 		console.log('[STARTED] {LNK}' + newLnk.id);
 		par.appendChild(newLnk);
 	}
