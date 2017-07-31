@@ -1,6 +1,13 @@
 var thisTmp = this;
 if (typeof __global__ != 'undefined') {thisTmp = __global__}
 if (typeof thisTmp.WiNcapable == 'undefined') {thisTmp.WiNcapable = false}
+
+autCmpPush = function () { // 1707311608 autCmp 'yi scrArrSrl 'e push etmeyi fnc yaptım 2 yerde kullacağım için
+	if (confirm('autCmp.js, scrArrSrl\'a push edilsin mi?')) {
+		scrArrSrl.push(cnvUrl(['autCmp',true])[0]);
+	}
+}
+
 if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 	if (typeof thisTmp.objApp == 'object') {thisTmp.WiNcapable = true; 
 		if (typeof thisTmp.objApp.Database == 'object') {
@@ -73,9 +80,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 						ile listeye js eklicez. Böylece sadece Chrome 'da iken yani
 						WizNote dışında iken çalışacak.
 					*/
-					if (confirm('autCmp.js, scrArrSrl\'a push edilsin mi?')) {
-						scrArrSrl.push(cnvUrl(['autCmp',true])[0]);
-					}
+					autCmpPush();
 				}
 				
 				/*
