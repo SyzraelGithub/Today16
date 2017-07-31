@@ -44,6 +44,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 					'true'
 				);
 				document.body.contentEditable = cntntEdtbl;
+				document.body.spellcheck = 'false'; //Aslında bu newNote.html 'den hazır gelemez miydi?
 			}
 		}
 	}
