@@ -69,9 +69,9 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 						ile listeye js eklicez. Böylece sadece Chrome 'da iken yani
 						WizNote dışında iken çalışacak.
 					*/
-					console.log(scrArrSrl);
-					scrArrSrl.push(cnvUrl(['autCmp',true])[0]);
-					console.log(scrArrSrl);
+					if (confirm('autCmp.js, scrArrSrl\'a push edilsin mi?')) {
+						scrArrSrl.push(cnvUrl(['autCmp',true])[0]);
+					}
 				}
 				
 				/*
