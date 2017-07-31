@@ -14,7 +14,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 		} else {
 			thisTmp.objWizDoc = thisTmp.objApp.WizDocument;
 			/*
-				1807291423
+				1707291423
 				thisTmp.objWizDoc == undefined
 				if you open the note in an external browser unlike wiznote
 				for example in chrome or safari.
@@ -28,7 +28,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 				thisTmp.objDatabase = thisTmp.objWizDoc.Database;
 			} else {
 				/*
-					1807291431
+					1707291431
 					Here should stand an inputbox, which asks to the user,
 					whether body tag should turn into contenteditable = true
 					---
