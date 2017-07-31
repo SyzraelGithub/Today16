@@ -50,7 +50,22 @@ $(function() {
 		return split(term).pop();
 	}
 	
-	var blueSpans = $('div>p').filter(function(){return $(this).css('color')=='rgb(0, 0, 255)'}).children().filter(function(){return $(this).attr('role')!='status'});
+	/*
+		1707311516
+		Aşağıdakinin yerine daha kısası geldi.
+		---
+		var blueSpans = 
+			$('div>p').
+			filter(function(){return $(this).css('color')=='rgb(0, 0, 255)'}).
+			children().
+			filter(function(){return $(this).attr('role')!='status'});
+	*/
+	
+	var blueSpans = 
+		$('div>p').
+		filter(cO.f0).
+		children().
+		filter(cO.f1);
 	
 	blueSpans.attr('contentEditable','true');
 	
