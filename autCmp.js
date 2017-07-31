@@ -114,6 +114,8 @@ $(function() {
 			terms.pop();
 			terms.push(ui.item.value);
 			$(this).html(value.substr(0, 6) + terms.join('.'));
+			console.log(terms);
+			console.log(terms.join('.'));
 			placeCaretAtEnd(this);
 			return false;
 		}
