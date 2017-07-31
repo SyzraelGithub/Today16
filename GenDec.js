@@ -35,6 +35,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 			
 			if (typeof thisTmp.objWizDoc != 'undefined') {
 				thisTmp.objDatabase = thisTmp.objWizDoc.Database;
+				autCmpPush(); // 1707311611 autocomplete 'i WizNote 'da devre dışı bırakmak için bu satırı commentle
 			} else {
 				
 				/*
