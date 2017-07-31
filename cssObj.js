@@ -35,6 +35,7 @@ cssObj = function() {
 		filtre fnc 'ler f0 f1 olarak gelsin.
 		Ancak
 		fnc 'ler $ barındırıyor. Sırayı değiştirmek gerekir mi?
+		Yani jQ cssObj 'den önce bitmeli mi?
 	*/
 }
 var cO = new cssObj();
