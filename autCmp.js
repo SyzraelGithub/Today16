@@ -61,7 +61,7 @@ $(function() {
 			filter(function(){return $(this).attr('role')!='status'});
 	*/
 	
-	var bluePs = $(cO.q4);
+	var bluePs = $(cO.q4).filter(cO.f0);
 	
 	if (document.body.contentEditable == 'true') { //e küçük değil!!
 		bluePs.attr('contentEditable','false');
