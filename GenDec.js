@@ -51,7 +51,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 					Mecburi olan tek şey true veya false gelebilmesi.
 				*/
 				document.body.contentEditable = cntntEdtbl;
-				document.body.spellcheck = 'false'; 
+				document.body.spellcheck = false; 
 				/*
 					1707311130
 					Aslında bu newNote.html 'den hazır gelemez miydi?
