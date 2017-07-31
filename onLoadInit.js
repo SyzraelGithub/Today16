@@ -123,6 +123,17 @@ while (scrArrPrl.length) {creScrPrl(scrArrPrl.shift())}
 
 creLnk = function(hrf,id,par,rel,typ) {
 	id = id || hrf.split('/').pop().split('.').slice(0,-1).join('.');
+	/*
+		1707311400
+		jQui.js ile jQui.css aynı id almamalı.
+		Palyatif çözüm olarak. id += '_lnk';
+		Ancak esas çözüm. Aynı isimli bulursan,
+		bak bakalım ikisi de script mi link mi
+		aynı ise bak bakalım içerik aynı mı
+		peki bir üçüncü var mı yok mu?
+		Önceden dediğim gibi uzar gider konu..
+	*/
+	id += '_lnk';
 	var newLnk =  document.getElementById(id);
 	if (!newLnk) {
 		newLnk = document.createElement('link');
