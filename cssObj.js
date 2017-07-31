@@ -38,6 +38,29 @@ cssObj = function() {
 		Yani jQ cssObj 'den önce bitmeli mi?
 		swtElArr ile değişiklik yapılmıyorken zaten sıra öyle
 		Ancak cssObj Prl yükleniyor. Srl değil. Değişmesi gerekir mi?
+		---
+		f0 e0 değişikliği tamam.
+		Zaten sadece burası dışında
+		autoTarNow.js 'de lstTar fnc da varmış.
+	*/
+	this.f0 = function() {
+		return $(this).css('color')=='rgb(0, 0, 255)' // this.c4
+	}
+	this.f1 = function(){
+		return $(this).attr('role')!='status'
+	}
+	/*
+		1707311506
+		Bu fnc ler çalışsın da ondan sonra
+		Bu ifadede ki;
+		---
+		var blueSpans = 
+			$('div>p')
+			.filter(function(){return $(this).css('color')=='rgb(0, 0, 255)'})
+			.children()
+			.filter(function(){return $(this).attr('role')!='status'});
+		---
+		'div>p' yi de değişkene atayalım.
 	*/
 }
 var cO = new cssObj();
