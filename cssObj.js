@@ -32,7 +32,7 @@ cssObj = function() {
 		blueSpans için kullanılan filtreler,
 		birden fazla yerde kullanılacak gibi gözüküyor.
 		this.f0 bence this.e0 olarak değişsin.
-		filtre fnc 'ler f0 f1 diye değişsin.
+		filtre fnc 'ler f0 f1 olarak gelsin.
 		Ancak
 		fnc 'ler $ barındırıyor. Sırayı değiştirmek gerekir mi?
 	*/
