@@ -19,6 +19,7 @@ cssObj = function() {
 	this.q1 = 'html, body';
 	this.q2 = 'keyup click';
 	this.q3 = 'BODY';
+	//this.q4 = 'div>p'; // 1707311520 bu aşağıda kullanıldığı yerde (q4 ün dolu olduğu belli olsun diye gölgesi burada)
 	this.e0 /*f0*/ = 'defDiv';
 	this.r0 = 2;
 	this.r1 = 1.5;
@@ -43,6 +44,7 @@ cssObj = function() {
 		Zaten sadece burası dışında
 		autoTarNow.js 'de lstTar fnc da varmış.
 	*/
+	this.q4 = 'div>p'; // 1707311519 yeni geldi blueSpans için. Önceki q lardan da türetebilirdik. Daha şık olurdu.
 	this.f0 = function() {
 		return $(this).css('color')=='rgb(0, 0, 255)' // this.c4
 	}
