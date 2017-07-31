@@ -60,6 +60,10 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 					switch (cntntEdtbl) {
 						case 'true' || 'false' || 'inherit':
 							document.body.contentEditable = cntntEdtbl;
+							break;
+						case 'f':
+							document.body.contentEditable = 'false';
+							break;
 					}
 					document.body.spellcheck = false;
 					/*
