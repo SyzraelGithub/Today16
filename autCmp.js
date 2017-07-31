@@ -61,6 +61,14 @@ $(function() {
 			filter(function(){return $(this).attr('role')!='status'});
 	*/
 	
+	var bluePs = $(cO.q4);
+	
+	if (document.body.contenteditable == 'true') {
+		bluePs.attr('contentEditable','false');
+	} else {
+		bluePs.removeAttr('contentEditable');
+	}
+	
 	var blueSpans = 
 		$(cO.q4). // 1707311523 bağladım q4 =>	$('div>p'). // 1707311518 bunu da cO 'ya bağla.
 		filter(cO.f0).
