@@ -63,7 +63,7 @@ $(function() {
 	
 	var bluePs = $(cO.q4);
 	
-	if (document.body.contentEditable == 'true') {
+	if (document.body.contentEditable == 'true') { //e küçük değil!!
 		bluePs.attr('contentEditable','false');
 	} else {
 		bluePs.removeAttr('contentEditable');
