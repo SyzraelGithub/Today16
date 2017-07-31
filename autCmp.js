@@ -113,7 +113,7 @@ $(function() {
 			var terms = split(value);
 			terms.pop();
 			terms.push(ui.item.value);
-			$(this).html(value.substr(0, 6) + terms.join('.') + '.');
+			$(this).html(value.substr(0, 6) + terms.join('.'));
 			placeCaretAtEnd(this);
 			return false;
 		}
