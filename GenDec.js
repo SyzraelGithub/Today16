@@ -13,6 +13,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 			}
 		} else {
 			thisTmp.objWizDoc = thisTmp.objApp.WizDocument;
+			
 			/*
 				1707291423
 				thisTmp.objWizDoc == undefined
@@ -24,9 +25,11 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 				---
 				So the line above, must be in an if clause
 			*/
+			
 			if (typeof thisTmp.objWizDoc != 'undefined') {
 				thisTmp.objDatabase = thisTmp.objWizDoc.Database;
 			} else {
+				
 				/*
 					1707291431
 					Here should stand an inputbox, which asks to the user,
@@ -36,6 +39,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 					Would you like to set body tag contenteditable attribute to true?
 					YES / NO ?
 				*/
+				
 				var cntntEdtbl = prompt( //1707311000 civarlarında yazdım.
 					'It appears like you are opening the note,\n' +
 					'in an external browser unlike wiznote.\n' +
@@ -43,6 +47,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 					'contenteditable attribute to true?',
 					'true'
 				);
+				
 				/*
 					1707311135
 					En şık olanı, burada bir switch olması bence.
@@ -50,8 +55,15 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 					Ancak şık olan ile mecburi olanı karıştırmamak lazım. 
 					Mecburi olan tek şey true veya false gelebilmesi.
 				*/
-				document.body.contentEditable = cntntEdtbl;
-				document.body.spellcheck = false; 
+				
+				if (cntntEdtbl) {
+					switch (cntntEdtbl) {
+						case 'true' || 'false' || 'inherit':
+							document.body.contentEditable = cntntEdtbl;
+					}
+					document.body.spellcheck = false; 
+				}
+				
 				/*
 					1707311130
 					Aslında bu newNote.html 'den hazır gelemez miydi?
