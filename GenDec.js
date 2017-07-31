@@ -35,7 +35,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 			
 			if (typeof thisTmp.objWizDoc != 'undefined') {
 				thisTmp.objDatabase = thisTmp.objWizDoc.Database;
-				autCmpPush(); // 1707311611 autocomplete 'i WizNote 'da devre dışı bırakmak için bu satırı commentle
+				//autCmpPush(); // 1707311611 autocomplete 'i WizNote 'da devre dışı bırakmak için bu satırı commentle
 			} else {
 				
 				/*
@@ -81,7 +81,7 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 						ile listeye js eklicez. Böylece sadece Chrome 'da iken yani
 						WizNote dışında iken çalışacak.
 					*/
-					autCmpPush();
+					//autCmpPush();
 				}
 				
 				/*
@@ -92,3 +92,4 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 		}
 	}
 }
+autCmpPush(); // 1707311611 autocomplete 'i WizNote 'da devre dışı bırakmak için bu satırı commentle
