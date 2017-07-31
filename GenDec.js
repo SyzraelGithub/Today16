@@ -36,6 +36,14 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 					Would you like to set body tag contenteditable attribute to true?
 					YES / NO ?
 				*/
+				var cntntEdtbl = prompt(
+					'It appears like you are opening the note,\n' +
+					'in an external browser unlike wiznote.\n' +
+					'Would you like to set the body tag\'s\n' +
+					'contenteditable attribute to true?',
+					'true'
+				);
+				document.body.contentEditable = cntntEdtbl;
 			}
 		}
 	}
