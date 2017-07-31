@@ -36,15 +36,26 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 					Would you like to set body tag contenteditable attribute to true?
 					YES / NO ?
 				*/
-				var cntntEdtbl = prompt(
+				var cntntEdtbl = prompt( //1707311000 civarlarında yazdım.
 					'It appears like you are opening the note,\n' +
 					'in an external browser unlike wiznote.\n' +
 					'Would you like to set the body tag\'s\n' +
 					'contenteditable attribute to true?',
 					'true'
 				);
+				/*
+					1707311135
+					En şık olanı, burada bir switch olması bence.
+					Ayrıca x ile çıkılıp çıkılmadığını da kontrol etmek şık olurdu.
+					Ancak şık olan ile mecburi olanı karıştırmamak lazım. 
+					Mecburi olan tek şey true veya false gelebilmesi.
+				*/
 				document.body.contentEditable = cntntEdtbl;
-				document.body.spellcheck = 'false'; //Aslında bu newNote.html 'den hazır gelemez miydi?
+				document.body.spellcheck = 'false'; 
+				/*
+					1707311130
+					Aslında bu newNote.html 'den hazır gelemez miydi?
+				*/
 			}
 		}
 	}
