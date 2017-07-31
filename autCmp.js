@@ -1,27 +1,27 @@
 $(function() {
 	var availableTags = [
 		"ActionScript",
-		"AppleScript",
-		"Asp",
+		/*"AppleScript",*/
+		/*"Asp",*/
 		"BASIC",
-		"C",
+		/*"C",
 		"C++",
 		"Clojure",
-		"COBOL",
+		"COBOL",*/
 		"ColdFusion",
 		"Erlang",
 		"Fortran",
 		"Groovy",
 		"Haskell",
-		"Java",
+		/*"Java",*/
 		"JavaScript",
 		"Lisp",
-		"Perl",
-		"PHP",
+		/*"Perl",
+		"PHP",*/
 		"Python",
 		"Ruby",
 		"Scala",
-		"Scheme"
+		/*"Scheme"*/
 	];
 
 	function placeCaretAtEnd(el) {
