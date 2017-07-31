@@ -40,13 +40,13 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 					YES / NO ?
 				*/
 				
-				var cntntEdtbl = 'true';/*prompt( //1707311000 civarlarında yazdım.
+				var cntntEdtbl = prompt( //1707311000 civarlarında yazdım.
 					'It appears like you are opening the note,\n' +
 					'in an external browser unlike wiznote.\n' +
 					'Would you like to set the body tag\'s\n' +
 					'contenteditable attribute to true?',
 					'true'
-				);*/
+				);
 				
 				/*
 					1707311135
@@ -69,9 +69,9 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 						ile listeye js eklicez. Böylece sadece Chrome 'da iken yani
 						WizNote dışında iken çalışacak.
 					*/
-					//console.log(scrArrSrl);
-					//scrArrSrl.push(cnvUrl(['autCmp',true])[0]);
-					//console.log(scrArrSrl);
+					console.log(scrArrSrl);
+					scrArrSrl.push(cnvUrl(['autCmp',true])[0]);
+					console.log(scrArrSrl);
 				}
 				
 				/*
