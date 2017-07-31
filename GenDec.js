@@ -61,7 +61,15 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 						case 'true' || 'false' || 'inherit':
 							document.body.contentEditable = cntntEdtbl;
 					}
-					document.body.spellcheck = false; 
+					document.body.spellcheck = false;
+					/*
+						1707311221
+						Ne kadar doğru bir yöntem bilmiyorum ama şimdilik aklıma gelen şu;
+						scrArrSrl.push(cnvUrl('autCmp'));
+						ile listeye js eklicez. Böylece sadece Chrome 'da iken yani
+						WizNote dışında iken çalışacak.
+					*/
+					scrArrSrl.push(cnvUrl('autCmp'));
 				}
 				
 				/*
