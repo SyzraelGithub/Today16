@@ -8,7 +8,7 @@ if (typeof thisTmp.WiNcapable == 'undefined') {thisTmp.WiNcapable = false}
 			scrArrSrl.push(cnvUrl(['autCmp',true])[0]);
 		}
 	}
-	// ..
+	// ...
 */
 
 if (typeof thisTmp.objApp == 'undefined') {
