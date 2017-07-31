@@ -36,6 +36,8 @@ cssObj = function() {
 		Ancak
 		fnc 'ler $ barındırıyor. Sırayı değiştirmek gerekir mi?
 		Yani jQ cssObj 'den önce bitmeli mi?
+		swtElArr ile değişiklik yapılmıyorken zaten sıra öyle
+		Ancak cssObj Prl yükleniyor. Srl değil. Değişmesi gerekir mi?
 	*/
 }
 var cO = new cssObj();
