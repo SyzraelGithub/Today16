@@ -8,8 +8,10 @@ autCmpPush = function () { // 1707311608 autCmp 'yi scrArrSrl 'e push etmeyi fnc
 	}
 }
 
-if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
-	if (typeof thisTmp.objApp == 'object') {thisTmp.WiNcapable = true; 
+if (typeof thisTmp.objApp == 'undefined') {
+	thisTmp.objApp = window.external;
+	if (typeof thisTmp.objApp == 'object') {
+		thisTmp.WiNcapable = true; 
 		if (typeof thisTmp.objApp.Database == 'object') {
 			thisTmp.objDatabase = thisTmp.objApp.Database;
 			thisTmp.objWindow = thisTmp.objApp.Window;
@@ -90,6 +92,6 @@ if (typeof thisTmp.objApp == 'undefined') {thisTmp.objApp = window.external;
 				*/
 			}
 		}
+		autCmpPush(); // 1707311611 autocomplete 'i WizNote 'da devre dışı bırakmak için bu satırı commentle
 	}
 }
-autCmpPush(); // 1707311611 autocomplete 'i WizNote 'da devre dışı bırakmak için bu satırı commentle
