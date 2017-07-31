@@ -27,7 +27,7 @@ function conTar() {
 }
 function lstTar(lTar, lNum) {
 	if ($(cO.q0).length - $(lTar).index() < lNum) {
-		(isOddTar(lTar))?autLasyHDoc(cO.f0,cbFncCur):null
+		(isOddTar(lTar))?autLasyHDoc(cO.e0,cbFncCur):null
 	}
 }
 function getTar() {
