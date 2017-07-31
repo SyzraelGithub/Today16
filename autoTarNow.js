@@ -45,10 +45,14 @@ function setTar() {
 	hovOe(Tar, (isOddTar(Tar)?cO.r0:cO.r1));
 }
 function getSib(parSib) {
-	return parSib.getElementsByTagName(cO.t0)[0];
+	//return parSib.getElementsByTagName(cO.t0)[0];
 	/*
 		1707301636
 		autocomplete denemeleri esnasında role="status" benzeri <span> lar oluştuğu için
 		artık direk [0] elemanı almak hataya sebeb olacak
+		---
+		1707311539
+		Şimdilik bulduğum en başarılı query zinciri şu
 	*/
+	return $($(parSib).children('p')[0]).children('span').filter(cO.f1)[0];
 }
