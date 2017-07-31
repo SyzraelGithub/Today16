@@ -63,7 +63,7 @@ $(function() {
 	
 	var bluePs = $(cO.q4);
 	
-	if (document.body.contenteditable == 'true') {
+	if (document.body.contentEditable == 'true') {
 		bluePs.attr('contentEditable','false');
 	} else {
 		bluePs.removeAttr('contentEditable');
