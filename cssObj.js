@@ -27,5 +27,14 @@ cssObj = function() {
 	this.n0 = 7;
 	this.n1 = 12;
 	this.n2 = 100;
+	/*
+		1707311422
+		blueSpans için kullanılan filtreler,
+		birden fazla yerde kullanılacak gibi gözüküyor.
+		this.f0 bence this.e0 olarak değişsin.
+		filtre fnc 'ler f0 f1 diye değişsin.
+		Ancak
+		fnc 'ler $ barındırıyor. Sırayı değiştirmek gerekir mi?
+	*/
 }
 var cO = new cssObj();
