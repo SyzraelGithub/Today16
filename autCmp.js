@@ -62,12 +62,27 @@ $(function() {
 	*/
 	
 	var bluePs = $(cO.q4).filter(cO.f0); // sadece mavi p ler
-	
-	if (document.body.contentEditable == 'true') { //e küçük değil!!
-		bluePs.attr('contentEditable','false');
-	} else {
-		bluePs.removeAttr('contentEditable');
-	}
+	/*
+		1707311618
+		contentEditable 'a bakmadan direk bluePs leri editable false yapsın.
+		Anladığım kadarıyla eskisi gibi 
+		edit mode da objWizDoc 
+		read mode da objDoc 
+		olayı kalkmış yanlış anlamadıysam.
+		Dolayısıyla body nin editable ı na bakmaksızın bluePs ler
+		editable false olsunlar.
+		En azında denemek amaçlı.
+		---
+		if (document.body.contentEditable == 'true') { //e küçük değil!!
+			bluePs.attr('contentEditable','false');
+		} else {
+			bluePs.removeAttr('contentEditable');
+		}
+		---
+		yukarıdaki kodu kaldırdım böylece.
+	*/
+
+	bluePs.attr('contentEditable','false');
 	
 	var blueSpans = 
 		$(cO.q4). // 1707311523 bağladım q4 =>	$('div>p'). // 1707311518 bunu da cO 'ya bağla.
