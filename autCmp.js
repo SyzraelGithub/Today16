@@ -23,6 +23,15 @@ $(function() {
 		"Scala",
 		/*"Scheme"*/
 	];
+	
+	availableTags = [
+		"Ad2",
+		"çık",
+		"uğr",
+		"gel",
+		"bln",
+		"iş"
+	];
 
 	function placeCaretAtEnd(el) {
 		el.focus();
