@@ -1,4 +1,7 @@
 $(function() {
+	
+	$('body > ul').remove(); // yoksa binlerce çıkıyor piyasaya
+	
 	var availableTags = [
 		"ActionScript",
 		"AppleScript",
