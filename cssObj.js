@@ -51,6 +51,9 @@ cssObj = function() {
 	this.f1 = function(){
 		return $(this).attr('role')!='status'
 	}
+	this.f2 = function(){
+		return $(this).attr('role')=='status'
+	}
 	/*
 		1707311506
 		Bu fnc ler çalışsın da ondan sonra
