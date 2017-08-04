@@ -26,7 +26,14 @@ function conTar() {
 	return cTar
 }
 function lstTar(lTar, lNum) {
-	if ($(cO.q0).length - $(lTar).index() < lNum) {
+	if (
+		($(cO.q0).length) - (
+			$(lTar).index()
+			+ $('body>ul').length - ($(cO.q0).length / 2) // Bu kısım ul karmaşasından
+		)
+		< lNum
+	)
+	{
 		(isOddTar(lTar))?autLasyHDoc(cO.e0,cbFncCur):null
 	}
 }
