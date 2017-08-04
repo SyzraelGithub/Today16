@@ -118,15 +118,15 @@ $(function() {
 	}).autocomplete({
 		minLength: 1,
 		source: function (request, response) {
-			var requestTmp = extractAllButLast(request);
+			var termTmp = extractAllButLast(request.term);
 			var availableTagsTmp = availableTags.slice();
 			var availableTagsFlt = [];
-			if (requestTmp != '') {
+			if (termTmp != '') {
 				while (availableTagsTmp.length) {
 					var availableTag = availableTagsTmp.pop();
-					if (availableTag.startsWith(requestTmp)) {
+					if (availableTag.startsWith(termTmp)) {
 						availableTagsFlt.push(
-							availableTag.substring(requestTmp.length+1)
+							availableTag.substring(termTmp.length+1)
 						);
 					}
 				}
