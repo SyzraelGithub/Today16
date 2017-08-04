@@ -61,6 +61,12 @@ $(function() {
 		return split(term).pop();
 	}
 	
+	function extractAllButLast(term) {
+		var termtmp = split(term);
+		termtmp.pop();
+		return termtmp.join('.');
+	}
+	
 	/*
 		1707311516
 		Aşağıdakinin yerine daha kısası geldi.
@@ -112,11 +118,29 @@ $(function() {
 	}).autocomplete({
 		minLength: 1,
 		source: function (request, response) {
+			var requestTmp = extractAllButLast(request);
+			var availableTagsTmp = availableTags.slice();
+			var availableTagsFlt = [];
+			if (requestTmp != '') {
+				while (availableTagsTmp.length) {
+					var availableTag = availableTagsTmp.pop();
+					if (availableTag.startsWith(requestTmp)) {
+						availableTagsFlt.push(
+							availableTag.substring(requestTmp.length+1)
+						);
+					}
+				}
+				if (!availableTagsFlt.length) {
+					availableTagsFlt = availableTags;
+				}
+			} else {
+				availableTagsFlt = availableTags;
+			}
 			// delegate back to autocomplete, but extract the last term
 			response(
 				//$.ui.autocomplete.filter
 				$_ui_autocomplete_filter
-					(availableTags, extractLast(request.term)
+					(availableTagsFlt, extractLast(request.term)
 				)
 			);
 		},
