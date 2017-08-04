@@ -2,7 +2,7 @@ $(function() {
 	
 	$('body > ul').remove(); // yoksa binlerce çıkıyor piyasaya <ul>
 	
-	$(cO.q4).children().filter(cO.f2); // yoksa binlerce çıkıyor piyasaya <span role="status">
+	$(cO.q4).children().filter(cO.f2).remove(); // yoksa binlerce çıkıyor piyasaya <span role="status">
 	
 	var availableTags = [
 		"ActionScript",
