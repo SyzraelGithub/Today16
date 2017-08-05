@@ -13,13 +13,13 @@ var observer = new MutationObserver(function(mutations) {
 				//alert(msg);
 			}
 		}
-		console.log(mutation.type);
+		//console.log(mutation.type);
 		mutationOut = mutation;
 	});
 });
  
 // configuration of the observer:
-var config = { attributes: true } //, childList: true, characterData: true };
+var config = { attributes: true }; //, childList: true, characterData: true };
  
 // pass in the target node, as well as the observer options
 observer.observe(target, config);
