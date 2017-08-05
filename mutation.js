@@ -10,7 +10,7 @@ var observer = new MutationObserver(function(mutations) {
 		  if (mutation.attributeName == 'contenteditable') {
 			  var msg = 'contentEditable = ' + target.contentEditable;
 			  console.log(msg);
-			  alert(msg);
+			  //alert(msg);
 		  }
 	  }
     console.log(mutation.type);
