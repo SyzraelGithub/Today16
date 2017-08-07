@@ -14,6 +14,14 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 					var msg = 'contentEditable = ' + target.contentEditable;
 					console.log(msg);
 					//alert(msg);
+					switch (target.contentEditable) {
+						case 'true':
+							break;
+						case 'false':
+							break;
+						case 'inherit':
+							break;
+					}
 				}
 			}
 			//console.log(mutation.type);
