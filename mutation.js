@@ -1,18 +1,18 @@
-fncCntntEdtbl = function (trgt, colArr) {
+fncCntntEdtbl = function (trgt, colArr, msg) {
 	switch (trgt.contentEditable) {
 		case 'true':
-			$('div').find('span').filter(cO.f1).css('background-color', colArr[0]);
+			$('div:first').find('span').filter(cO.f1).css('background-color', colArr[0]).text(msg + ' cntntEdtbl = true');
 			break;
 		case 'false':
-			$('div').find('span').filter(cO.f1).css('background-color', colArr[1]);
+			$('div:first').find('span').filter(cO.f1).css('background-color', colArr[1]).text(msg + ' cntntEdtbl = false');
 			break;
 		case 'inherit':
-			$('div').find('span').filter(cO.f1).css('background-color', colArr[2]);
+			$('div:first').find('span').filter(cO.f1).css('background-color', colArr[2]).text(msg + ' cntntEdtbl = inherit');
 			break;
 	}
 }
 
-fncCntntEdtbl(document.body, ['lightblue','lightcoral','lightgreen']);
+fncCntntEdtbl(document.body, ['lightblue','lightcoral','lightgreen'], 'outside of if');
 
 //var mutationOut; // if 'in içindeyken de mutationOut Out olabiliyorsa, gerek yok burada olmasına
 
@@ -30,7 +30,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 					var msg = 'contentEditable = ' + target.contentEditable;
 					console.log(msg);
 					//alert(msg);
-					fncCntntEdtbl(target, ['lightcyan','lightpink','lightyellow']);
+					fncCntntEdtbl(target, ['lightcyan','lightpink','lightyellow'], 'inside of if from mutation');
 				}
 			}
 			//console.log(mutation.type);
