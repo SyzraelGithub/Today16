@@ -1,10 +1,10 @@
-var mutationOut;
+//var mutationOut;
 
 if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 	// select the target node
 	var target = document.body;
 
-	//var mutationOut;
+	var mutationOut;
 	 
 	// create an observer instance
 	var observer = new MutationObserver(function(mutations) {
