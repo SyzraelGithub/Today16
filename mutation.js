@@ -12,7 +12,7 @@ fncCntntEdtbl = function (trgt, colArr) {
 	}
 }
 
-fncCntntEdtbl(target,['lightblue','lightcoral','lightgreen']);
+fncCntntEdtbl(document.body, ['lightblue','lightcoral','lightgreen']);
 
 //var mutationOut; // if 'in içindeyken de mutationOut Out olabiliyorsa, gerek yok burada olmasına
 
@@ -30,7 +30,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 					var msg = 'contentEditable = ' + target.contentEditable;
 					console.log(msg);
 					//alert(msg);
-					fncCntntEdtbl(target,['lightcyan','lightpink','lightyellow']);
+					fncCntntEdtbl(target, ['lightcyan','lightpink','lightyellow']);
 				}
 			}
 			//console.log(mutation.type);
