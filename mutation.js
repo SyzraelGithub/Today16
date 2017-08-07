@@ -16,10 +16,13 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 					//alert(msg);
 					switch (target.contentEditable) {
 						case 'true':
+							$('div').find('span').filter(cO.f1).css('background-color', 'yellow');
 							break;
 						case 'false':
+							$('div').find('span').filter(cO.f1).css('background-color', '');
 							break;
 						case 'inherit':
+							$('div').find('span').filter(cO.f1).css('background-color', 'lightblue');
 							break;
 					}
 				}
