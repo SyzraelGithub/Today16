@@ -1,3 +1,19 @@
+fncCntntEdtbl = function (trgt, colArr) {
+	switch (trgt.contentEditable) {
+		case 'true':
+			$('div').find('span').filter(cO.f1).css('background-color', colArr[0]);
+			break;
+		case 'false':
+			$('div').find('span').filter(cO.f1).css('background-color', colArr[1]);
+			break;
+		case 'inherit':
+			$('div').find('span').filter(cO.f1).css('background-color', colArr[2]);
+			break;
+	}
+}
+
+fncCntntEdtbl(target,['lightblue','lightcoral','lightgreen']);
+
 //var mutationOut; // if 'in içindeyken de mutationOut Out olabiliyorsa, gerek yok burada olmasına
 
 if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
@@ -14,17 +30,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 					var msg = 'contentEditable = ' + target.contentEditable;
 					console.log(msg);
 					//alert(msg);
-					switch (target.contentEditable) {
-						case 'true':
-							$('div').find('span').filter(cO.f1).css('background-color', 'yellow');
-							break;
-						case 'false':
-							$('div').find('span').filter(cO.f1).css('background-color', '');
-							break;
-						case 'inherit':
-							$('div').find('span').filter(cO.f1).css('background-color', 'lightblue');
-							break;
-					}
+					fncCntntEdtbl(target,['lightcyan','lightpink','lightyellow']);
 				}
 			}
 			//console.log(mutation.type);
