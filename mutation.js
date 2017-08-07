@@ -1,4 +1,4 @@
-//var mutationOut;
+//var mutationOut; // if 'in içindeyken de mutationOut Out olabiliyorsa, gerek yok burada olmasına
 
 if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 	// select the target node
