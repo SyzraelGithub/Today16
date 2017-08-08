@@ -5,6 +5,7 @@ fncCntntEdtbl = function (trgt) {
 		case 'true':
 			bluePs.attr('contentEditable','false');
 			blueSpans.attr('contentEditable','true');
+			spanComplete();
 			break;
 		case 'false' || 'inherit':
 			bluePs.removeAttr('contentEditable');
