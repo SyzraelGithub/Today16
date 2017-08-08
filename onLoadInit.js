@@ -16,7 +16,7 @@ var scrArr = [
 	['autoTarNow',true],
 	['docRea',true],
 	['http://code.jquery.com/ui/1.10.3/jquery-ui.min.js',true],
-	['autCmpPrp',true],
+	['autCmpPrpVarTag',true],
 	['mutation',true],
 	['autCmp',true]
 ];
