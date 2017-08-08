@@ -2,6 +2,54 @@
 //var urlPF = 'https://rawgit.com/SyzraelGithub/Today16/master/';
 var urlPF = document.currentScript.src.replace(/[^/]*$/, '');
 
+/*
+	1708291456
+	creSty veya creCSS diye bir fnc olabilir ileride ancak şimdilik tek style tag var.
+	Bundan dolayı direk yaratalım veya fnc 'a çok özenmeyelim.
+*/
+
+creLnk = function(hrf,id,par,rel,typ) {
+	id = id || hrf.split('/').pop().split('.').slice(0,-1).join('.');
+	/*
+		1707311400
+		jQui.js ile jQui.css aynı id almamalı.
+		Palyatif çözüm olarak. id += '_lnk';
+		Ancak esas çözüm. Aynı isimli bulursan,
+		bak bakalım ikisi de script mi link mi
+		aynı ise bak bakalım içerik aynı mı
+		peki bir üçüncü var mı yok mu?
+		Önceden dediğim gibi uzar gider konu..
+	*/
+	id += '_lnk';
+	var newLnk =  document.getElementById(id);
+	if (!newLnk) {
+		newLnk = document.createElement('link');
+		newLnk.id = id;
+		rel = rel || 'stylesheet';
+		newLnk.rel = rel;
+		typ = typ || 'text/css';
+		newLnk.type = typ;
+		newLnk.href = hrf;
+		par = par || document.head;
+		console.log('[STARTED] {LNK}' + newLnk.id);
+		par.appendChild(newLnk);
+	}
+}
+
+/*
+var jquiSty = document.createElement('link'); //IE(>7.0) can throw an Error.
+jquiSty.rel = 'stylesheet';
+jquiSty.type = 'text/css';
+jquiSty.href = 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css'; //min is better i think
+document.head.appendChild(jquiSty);
+*/
+
+creLnk('http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css');
+
+/*
+	1708291456
+*/
+
 var scrArr = [
 	['https://code.jquery.com/jquery-1.12.0.min.js',true],
 	['cssObj',false],
@@ -118,54 +166,6 @@ creScrPrl = function(src,id,par,typ) {
 creScrSrl(scrArrSrl.shift());
 
 while (scrArrPrl.length) {creScrPrl(scrArrPrl.shift())}
-
-/*
-	1708291456
-	creSty veya creCSS diye bir fnc olabilir ileride ancak şimdilik tek style tag var.
-	Bundan dolayı direk yaratalım veya fnc 'a çok özenmeyelim.
-*/
-
-creLnk = function(hrf,id,par,rel,typ) {
-	id = id || hrf.split('/').pop().split('.').slice(0,-1).join('.');
-	/*
-		1707311400
-		jQui.js ile jQui.css aynı id almamalı.
-		Palyatif çözüm olarak. id += '_lnk';
-		Ancak esas çözüm. Aynı isimli bulursan,
-		bak bakalım ikisi de script mi link mi
-		aynı ise bak bakalım içerik aynı mı
-		peki bir üçüncü var mı yok mu?
-		Önceden dediğim gibi uzar gider konu..
-	*/
-	id += '_lnk';
-	var newLnk =  document.getElementById(id);
-	if (!newLnk) {
-		newLnk = document.createElement('link');
-		newLnk.id = id;
-		rel = rel || 'stylesheet';
-		newLnk.rel = rel;
-		typ = typ || 'text/css';
-		newLnk.type = typ;
-		newLnk.href = hrf;
-		par = par || document.head;
-		console.log('[STARTED] {LNK}' + newLnk.id);
-		par.appendChild(newLnk);
-	}
-}
-
-/*
-var jquiSty = document.createElement('link'); //IE(>7.0) can throw an Error.
-jquiSty.rel = 'stylesheet';
-jquiSty.type = 'text/css';
-jquiSty.href = 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css'; //min is better i think
-document.head.appendChild(jquiSty);
-*/
-
-creLnk('http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css');
-
-/*
-	1708291456
-*/
 
 isiOS = function() {
 	var iDevices = [
