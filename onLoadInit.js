@@ -18,6 +18,7 @@ var scrArr = [
 	['http://code.jquery.com/ui/1.10.3/jquery-ui.min.js',true],
 	['autCmpPrpVarTag',true],
 	['autCmpFnc',true],
+	['autCmpFlt',true],
 	['mutation',true],
 	['autCmp',true]
 ];
