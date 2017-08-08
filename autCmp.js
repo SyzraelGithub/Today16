@@ -1,11 +1,3 @@
-$('body > ul').remove(); // yoksa binlerce çıkıyor piyasaya <ul>
-
-$(cO.q4).children().filter(cO.f2).remove(); // yoksa binlerce çıkıyor piyasaya <span role="status">
-
-bluePs.attr('contentEditable','false');
-
-blueSpans.attr('contentEditable','true');
-
 blueSpans
 // don't navigate away from the field on tab when selecting an item
 .bind("keydown", function (event) {
