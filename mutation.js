@@ -1,6 +1,7 @@
+$('body > ul').remove(); // yoksa binlerce çıkıyor piyasaya <ul>
+$(cO.q4).children().filter(cO.f2).remove(); // yoksa binlerce çıkıyor piyasaya <span role="status">
+
 fncCntntEdtbl = function (trgt) {
-	$('body > ul').remove(); // yoksa binlerce çıkıyor piyasaya <ul>
-	$(cO.q4).children().filter(cO.f2).remove(); // yoksa binlerce çıkıyor piyasaya <span role="status">
 	switch (trgt.contentEditable) {
 		case 'true':
 			bluePs.attr('contentEditable','false');
