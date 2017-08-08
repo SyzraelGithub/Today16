@@ -12,7 +12,12 @@ cbFncCur = function () {
 		innerText = innerText.replace('00',dDt.dMinute);
 	}
 	$('body').append(inBodyDoc.documentElement.innerHTML);
-	if (!$(cO.q4).filter(cO.f0).last().children().filter(cO.f2).length) {
-		spanComplete($(cO.q4).filter(cO.f0).last().children().filter(cO.f1));
+	if (document.body.contentEditable == 'true') {
+		if (!$(cO.q4).filter(cO.f0).last().children().filter(cO.f2).length) {
+			$(cO.q4).filter(cO.f0).last().attr('contentEditable','false');
+			$(cO.q4).filter(cO.f0).last().children().filter(cO.f1).attr('contentEditable','true');
+			spanComplete($(cO.q4).filter(cO.f0).last().children().filter(cO.f1));
+		}
 	}
+
 }
