@@ -19,8 +19,8 @@ var scrArr = [
 	['autCmpPrpVarTag',true],
 	['autCmpFnc',true],
 	['autCmpFlt',true],
-	['mutation',true],
-	['autCmp',true]
+	['autCmp',true],
+	['mutation',true]
 ];
 
 /*
