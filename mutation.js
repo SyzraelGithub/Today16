@@ -1,13 +1,13 @@
 fncCntntEdtbl = function (trgt, colArr, msg) {
 	switch (trgt.contentEditable) {
 		case 'true':
-			$('div:last').find('span').filter(cO.f1).css('background-color', colArr[0]).text(msg + ' cntntEdtbl = true');
+			$('div>p:last').children().filter(cO.f1).css('background-color', colArr[0]).text(msg + ' cntntEdtbl = true');
 			break;
 		case 'false':
-			$('div:last').find('span').filter(cO.f1).css('background-color', colArr[1]).text(msg + ' cntntEdtbl = false');
+			$('div>p:last').children().filter(cO.f1).css('background-color', colArr[1]).text(msg + ' cntntEdtbl = false');
 			break;
 		case 'inherit':
-			$('div:last').find('span').filter(cO.f1).css('background-color', colArr[2]).text(msg + ' cntntEdtbl = inherit');
+			$('div>p:last').children().filter(cO.f1).css('background-color', colArr[2]).text(msg + ' cntntEdtbl = inherit');
 			break;
 	}
 }
