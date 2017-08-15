@@ -23,7 +23,6 @@ function placeCaretAtEnd(el) {
 }
 
 function split(val) {
-	val = val.replace(/&nbsp;/g, ' ');
 	var tmpval = val.substring(6);
 	return tmpval.split('.');
 }
