@@ -24,7 +24,9 @@ function placeCaretAtEnd(el) {
 
 function split(val) {
 	var tmpval = val.substring(6);
-	tmpval = tmpval.replace('&nbsp;',' '); //Aslında eğreti bir çözüm.
+	if (tmpval[5] == '&') {
+		beeLasyF(60,400,0.3,'triangle');beeLasyF(70,500,0.3,'triangle');beeLasyF(80,600,0.3,'triangle');
+	}
 	return tmpval.split('.');
 }
 
