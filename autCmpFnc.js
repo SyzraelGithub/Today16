@@ -23,13 +23,8 @@ function placeCaretAtEnd(el) {
 }
 
 function split(val) {
-	if (val.indexOf('&') != -1) {
-		beeLasyF(60,400,0.3,'triangle');beeLasyF(70,500,0.3,'triangle');beeLasyF(80,600,0.3,'triangle');
-	}
+	val = val.replace(/&nbsp;/g, ' ');
 	var tmpval = val.substring(6);
-	if (tmpval.indexOf('&') != -1) {
-		beeLasyF(160,100,0.3,'triangle');beeLasyF(170,200,0.3,'triangle');beeLasyF(180,300,0.3,'triangle');
-	}
 	return tmpval.split('.');
 }
 
