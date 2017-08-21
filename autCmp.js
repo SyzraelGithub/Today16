@@ -52,7 +52,7 @@ function spnCmpSel(event, ui) {
 
 function spanComplete(whichSpans) {
 	whichSpans // don't navigate away from the field on tab when selecting an item
-	.bind("keydown", spnCmpBnd})
+	.bind("keydown", spnCmpBnd)
 	.autocomplete({
 		minLength: 1,
 		source: spnCmpSrc,
