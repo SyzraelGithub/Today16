@@ -5,5 +5,3 @@ spnE.class = 'spnEcls';
 spnE.innerText = 'Aktif Kullanıcı';
 
 prgE.appendChild(spnE);
-
-b4br(spnE);
