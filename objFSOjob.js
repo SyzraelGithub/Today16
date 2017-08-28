@@ -1,0 +1,1 @@
+var objFSO = objApp.CreateActiveXObject("Scripting.FileSystemObject");
