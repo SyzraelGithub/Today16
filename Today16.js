@@ -8,4 +8,5 @@ autLsynJS('ProtoT_getWeek');
 autLsynJS('twoDigit');
 autLsynJS('GenDec_dDt');
 autLsynJS('varLoadF');
+autLsynJS('varLoadFPrc');
 autLsynJS('OnTodayBtnClicked16');
