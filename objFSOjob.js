@@ -1,1 +1,14 @@
-var objFSO = objApp.CreateActiveXObject("Scripting.FileSystemObject");
+var thisTmp = this;
+if (typeof __global__ != 'undefined') {thisTmp = __global__}
+
+thisTmp.objFSO = objApp.CreateActiveXObject("Scripting.FileSystemObject");
+
+thisTmp.strObj.pluginUserPath = strObj.pluginPath + objDatabase.UserName + '\\';
+thisTmp.strObj.objFldUser = {};
+
+if (!thisTmp.objFSO.FolderExists(thisTmp.strObj.pluginUserPath)) {
+  console.log('Folder Yok');
+  thisTmp.strObj.objFldUser = objFSO.CreateFolder(strObj.pluginUserPath);
+} else {
+  console.log('Folder Var');
+}
