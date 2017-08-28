@@ -1,4 +1,7 @@
-__global__.strObj = {
+var thisTmp = this;
+if (typeof __global__ != 'undefined') {thisTmp = __global__}
+
+thisTmp.strObj = {
 	jsFileName:'Today16.js',
 	iniFileName:'plugin.ini',
 	stringName:'today',
