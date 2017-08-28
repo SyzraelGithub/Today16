@@ -10,7 +10,7 @@ with(thisTmp.strObj){
 		btnFncName
 	)
 	//window varsa window['btnFncName'] gelebilir OnTodayBtnClicked16 yerine. veya __global__ de olabilir.
-	OnTodayBtnClicked16 = function () {
+	thisTmp[btnFncName] = function () {
 		var rect = objWindow.GetToolButtonRect(attachParent, btnName);
 		var arr = rect.split(',');
 		var arr0_2 = (parseInt(arr[0])+parseInt(arr[2]))/2;
