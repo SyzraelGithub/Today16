@@ -12,3 +12,8 @@ if (!thisTmp.objFSO.FolderExists(thisTmp.strObj.pluginUserPath)) {
 } else {
   console.log('Folder Var');
 }
+
+/*
+  Eğer Style varsa, Style.js diye veya Style.json diye veya Style.??? diye bir dosya yarat.
+  İçine Styles = {} Styles = []
+*/
