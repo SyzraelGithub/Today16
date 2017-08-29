@@ -7,8 +7,8 @@ thisTmp.strObj.pluginUserPath = strObj.pluginPath + objDatabase.UserName + '\\';
 thisTmp.strObj.objFldUser = {};
 
 if (!thisTmp.objFSO.FolderExists(thisTmp.strObj.pluginUserPath)) {
-  console.log('Folder Yok');
   thisTmp.strObj.objFldUser = objFSO.CreateFolder(strObj.pluginUserPath);
+  console.log('Folder Yoktu Yaratıldı');
 } else {
   console.log('Folder Var');
 }
