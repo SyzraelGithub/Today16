@@ -23,3 +23,14 @@ if (objDatabase.Styles.count != 0) {
   Eğer Style varsa, Style.js diye veya Style.json diye veya Style.??? diye bir dosya yarat.
   İçine Styles = {} Styles = []
 */
+
+var objStys = objDatabase.Styles;
+for (var Styi = 0; Styi < objStys.count; Styi++) {
+	var objSty = objDatabase.Styles.Item(Styi);
+	console.log(objSty.Name);
+	var objStyDocs = objSty.Documents;
+	for (var Doci = 0; Doci < objStyDocs.count; Doci++) {
+		var objStyDoc = objStyDocs.Item(Doci);
+		console.log(objSty.Name + ' | ' + objStyDoc.Title + ' | ' + objStyDoc.Location);
+	}
+}
