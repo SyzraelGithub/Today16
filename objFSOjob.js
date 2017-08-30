@@ -25,12 +25,29 @@ if (objDatabase.Styles.count != 0) {
 */
 
 var objStys = objDatabase.Styles;
+var objStysJSON = [];
 for (var Styi = 0; Styi < objStys.count; Styi++) {
 	var objSty = objDatabase.Styles.Item(Styi);
-	console.log(objSty.Name);
+	objStysJSON.push(
+		{
+			Name : objSty.Name,
+			Desciption : objSty.Description,
+			TextColor : objSty.TextColor,
+			BackColor : objSty.BackColor,
+			TextBold : objSty.TextBold,
+			Documents : []
+		}
+	);
 	var objStyDocs = objSty.Documents;
 	for (var Doci = 0; Doci < objStyDocs.count; Doci++) {
 		var objStyDoc = objStyDocs.Item(Doci);
-		console.log(objSty.Name + ' | ' + objStyDoc.Title + ' | ' + objStyDoc.Location);
+		objStysJSON[objStysJSON.length-1].Documents.push(
+			{
+				Title : objStyDoc.Title,
+				Location : objStyDoc.Location
+			}
+		);
 	}
 }
+
+console.log(objStysJSON);
