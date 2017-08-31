@@ -6,9 +6,9 @@ thisTmp.objFSO = objApp.CreateActiveXObject("Scripting.FileSystemObject");
 thisTmp.strObj.pluginUserPath = thisTmp.strObj.pluginPath + objDatabase.UserName + '\\';
 thisTmp.strObj.objFldUser = {};
 
-if (!thisTmp.objFSO.FolderExists(thisTmp.strObj.pluginUserPath)) {
+//if (!thisTmp.objFSO.FolderExists(thisTmp.strObj.pluginUserPath)) {
 	thisTmp.strObj.objFldUser = objFSO.CreateFolder(thisTmp.strObj.pluginUserPath);
-}
+//}
 
 if (objDatabase.Styles.count != 0) {
 	thisTmp.strObj.pluginStyPath = thisTmp.strObj.pluginUserPath + 'Styles\\';
