@@ -39,4 +39,8 @@ if (objDatabase.Styles.count != 0) {
 		}
 	}
 	console.log(objStysJSON);
+	strObj.pluginStyFileName = strObj.pluginStyPath + 'Styles.json';
+	strObj.pluginStyFile = objFSO.CreateTextFile(strObj.pluginStyFileName,true);
+	strObj.pluginStyFile.Write(JSON.stringify(objStysJSON));
+	strObj.pluginStyFile.Close();
 }
