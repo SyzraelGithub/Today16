@@ -8,5 +8,5 @@ autLsynJS('ProtoT_getWeek');
 autLsynJS('twoDigit');
 autLsynJS('GenDec_dDt');
 autLsynJS('varLoadF');
-autLsynJS('varLoadFPrc');
+autLsynJS('varLoadFPrc'); //Eğer GitHub klasöründen alınmıyorsa bu gözükmeyecek.
 autLsynJS('OnTodayBtnClicked16');
