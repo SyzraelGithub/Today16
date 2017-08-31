@@ -7,12 +7,12 @@ thisTmp.strObj.pluginUserPath = thisTmp.strObj.pluginPath + objDatabase.UserName
 thisTmp.strObj.objFldUser = {};
 
 if (!thisTmp.objFSO.FolderExists(thisTmp.strObj.pluginUserPath)) {
-	thisTmp.strObj.objFldUser = objFSO.CreateFolder(strObj.pluginUserPath);
+	thisTmp.strObj.objFldUser = objFSO.CreateFolder(thisTmp.strObj.pluginUserPath);
 }
 
 if (objDatabase.Styles.count != 0) {
 	thisTmp.strObj.pluginStyPath = thisTmp.strObj.pluginUserPath + 'Styles\\';
-	thisTmp.strObj.objFldSty = objFSO.CreateFolder(strObj.pluginStyPath);
+	thisTmp.strObj.objFldSty = objFSO.CreateFolder(thisTmp.strObj.pluginStyPath);
 	var objStys = objDatabase.Styles;
 	var objStysJSON = [];
 	for (var Styi = 0; Styi < objStys.count; Styi++) {
@@ -39,8 +39,8 @@ if (objDatabase.Styles.count != 0) {
 		}
 	}
 	console.log(objStysJSON);
-	strObj.pluginStyFileName = strObj.pluginStyPath + 'Styles.json';
-	strObj.pluginStyFile = objFSO.CreateTextFile(strObj.pluginStyFileName,true);
-	strObj.pluginStyFile.Write(JSON.stringify(objStysJSON));
-	strObj.pluginStyFile.Close();
+	thisTmp.strObj.pluginStyFileName = thisTmp.strObj.pluginStyPath + 'Styles.json';
+	thisTmp.strObj.pluginStyFile = objFSO.CreateTextFile(thisTmp.strObj.pluginStyFileName,true);
+	thisTmp.strObj.pluginStyFile.Write(JSON.stringify(objStysJSON));
+	thisTmp.strObj.pluginStyFile.Close();
 }
