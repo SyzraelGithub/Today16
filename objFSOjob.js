@@ -9,7 +9,7 @@ thisTmp.strObj.swpFilePath = thisTmp.strObj.swpFldPath + 'swpFile.json';
 thisTmp.strObj.swpFile = {};
 
 if (objFSO.FileExists(strObj.swpFilePath)) {
-  
+  //Open
 } else {
-
+  //Create
 }
