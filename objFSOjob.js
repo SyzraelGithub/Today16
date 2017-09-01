@@ -8,7 +8,7 @@ thisTmp.strObj.swpFld = objFSO.CreateFolder(thisTmp.strObj.swpFldPth);
 thisTmp.strObj.swpFilPth = thisTmp.strObj.swpFldPth + 'swpFil.json';
 thisTmp.strObj.swpFil = {};
 
-if (objFSO.FileExists(strObj.swpFilPth)) {
+if (thisTmp.objFSO.FileExists(strObj.swpFilPth)) {
   //Open
 } else {
   //Create
