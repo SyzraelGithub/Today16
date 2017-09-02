@@ -127,7 +127,7 @@ btnESty.onclick = function () {
 			UserStyle.Description + ' | ' +
 			UserStyle.TextColor + ' | ' +
 			UserStyle.BackColor + ' | ' +
-			UserStyle.TextBold + ' | ' + 
+			UserStyle.TextBold
 		);
 		// kadswkfhaskdkashdfjghakdshfhajkhfdkahdsjaf
 	}
