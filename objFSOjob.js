@@ -83,11 +83,12 @@ for (var i = 0; i < arrOptE.length; i++) {
 for (var userName in swapFileJSON["Users"]) {
 	if (userName != objDatabase.UserName) {
 		var optE = document.createElement('option');
+		optE.value = userName;
 		optE.text = userName;
 		slcE.appendChild(optE);
 	}
 }
 
 slcE.onchange = function () {
-	alert('DEĞİŞTİRDİN!');
+	alert(slcE.selectedValue);
 }
