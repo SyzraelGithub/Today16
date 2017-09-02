@@ -112,6 +112,8 @@ prgE.appendChild(btnESty);
 
 b4br(btnESty);
 
+slcEonchange();
+
 /*
 dknflanqjdslfnafdadsflansdnfömanödsf
 adsfölansdnöfas
