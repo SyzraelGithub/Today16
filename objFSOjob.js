@@ -81,7 +81,9 @@ for (var i = 0; i < arrOptE.length; i++) {
 */
 
 for (var userName in swapFileJSON["Users"]) {
-	var optE = document.createElement('option');
-	optE.text = userName;
-	slcE.appendChild(optE);
+	if (userName != objDatabase.UserName) {
+		var optE = document.createElement('option');
+		optE.text = userName;
+		slcE.appendChild(optE);
+	}
 }
