@@ -66,7 +66,7 @@ var arrOptE = [
 	['Gunluk', 1],
 	['Haftalik', 7],
 	['Aylik', 30],
-	['Mevsimlik', 120] // 
+	['Mevsimlik', 120] // sdfdfgsdfgsdfg
 ];
 
 for (var i = 0; i < arrOptE.length; i++) {
