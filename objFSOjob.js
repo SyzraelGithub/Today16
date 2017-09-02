@@ -62,6 +62,7 @@ prgE.appendChild(slcE);
 
 b4br(slcE);
 
+/*
 var arrOptE = [
 	['Gunluk', 1],
 	['Haftalik', 7],
@@ -77,4 +78,10 @@ for (var i = 0; i < arrOptE.length; i++) {
 	optE.text = arrOptE[i][0];
 	slcE.appendChild(optE);
 }
+*/
 
+for (var userName in swapFileJSON["Users"]) {
+	var optE = document.createElement('option');
+	optE.text = userName;
+	slcE.appendChild(optE);
+}
