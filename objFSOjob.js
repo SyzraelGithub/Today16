@@ -131,20 +131,12 @@ btnESty.onclick = function () {
 		for (var j = 0; j < StyleDocs.length; j++) {
 			var StyleDoc = StyleDocs[j];
 			var sqlQry = docQry([['LOCATION',StyleDoc.Location],['TITLE',StyleDoc.Title]]);
-			console.log(
-				UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + sqlQry.Count + ' Found'
-			);
-			/*
-			if (typeof sqlQry != 'undefined') {
+			for (var sqlQryi = 0; sqlQryi < sqlQry.Count; sqlQryi++) {
+				var sqlDoc = sqlQry.Item(sqlQryi);
 				console.log(
-					UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + sqlQry.Count + ' Found'
-				);
-			} else {
-				console.log(
-					UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + 'sqlQry.Count = undefined'
+					UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + sqlDoc.GUID + ' | ' + sqlQryi + ' Found'
 				);
 			}
-			*/
 		}
 	}
 }
