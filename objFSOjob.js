@@ -133,9 +133,6 @@ btnESty.onclick = function () {
 			var sqlQry = docQry([['LOCATION',StyleDoc.Location],['TITLE',StyleDoc.Title]]);
 			for (var sqlQryi = 0; sqlQryi < sqlQry.Count; sqlQryi++) {
 				var sqlDoc = sqlQry.Item(sqlQryi);
-				console.log(
-					UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + sqlDoc.GUID + ' | ' + (sqlQryi + 1) + ' Found'
-				);
 				sqlDoc.Style = newStyle;
 			}
 		}
