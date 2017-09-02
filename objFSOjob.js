@@ -3,45 +3,51 @@ if (typeof __global__ != 'undefined') {thisTmp = __global__}
 
 thisTmp.objFSO = objApp.CreateActiveXObject("Scripting.FileSystemObject");
 
-console.log(strObj);
+strObj.swapFileName = strObj.pluginPath + 'swapFile.json';
 
+var swapFileJSON = {};
+swapFileJSON['Users'] = {};
+swapFileJSON['Users'][objDatabase.UserName] = {};
 
-/*
-thisTmp.strObj.pluginUserPath = thisTmp.strObj.pluginPath + objDatabase.UserName + '\\';
-thisTmp.strObj.objFldUser = {};
-
-thisTmp.strObj.objFldUser = objFSO.CreateFolder(thisTmp.strObj.pluginUserPath);
-
-thisTmp.strObj.pluginStyPath = thisTmp.strObj.pluginUserPath + 'Styles\\';
-thisTmp.strObj.objFldSty = objFSO.CreateFolder(thisTmp.strObj.pluginStyPath);
-var objStys = objDatabase.Styles;
-var objStysJSON = [];
-for (var Styi = 0; Styi < objStys.count; Styi++) {
-  var objSty = objDatabase.Styles.Item(Styi);
-  objStysJSON.push(
-    {
-      Name : objSty.Name,
-      Desciption : objSty.Description,
-      TextColor : objSty.TextColor,
-      BackColor : objSty.BackColor,
-      TextBold : objSty.TextBold,
-      Documents : []
-    }
-  );
-  var objStyDocs = objSty.Documents;
-  for (var Doci = 0; Doci < objStyDocs.count; Doci++) {
-    var objStyDoc = objStyDocs.Item(Doci);
-    objStysJSON[objStysJSON.length-1].Documents.push(
-      {
-        Title : objStyDoc.Title,
-        Location : objStyDoc.Location
-      }
-    );
-  }
+if (objDatabase.Styles.count != 0) {
+	swapFileJSON['Users'][objDatabase.UserName]['Styles'] = [];
+	var UserStyles = swapFileJSON['Users'][objDatabase.UserName]['Styles'];
+	var objStys = objDatabase.Styles;
+	for (var Styi = 0; Styi < objStys.count; Styi++) {
+		var objSty = objStys.Item(Styi);
+		UserStyles.push(
+			{
+				Name : objSty.Name,
+				Description : objSty.Description,
+				TextColor : objSty.TextColor,
+				BackColor : objSty.BackColor,
+				TextBold : objSty.TextBold,
+				Documents : []
+			}
+		);
+		var objStyDocs = objSty.Documents;
+		for (var Doci = 0; Doci < objStyDocs.count; Doci++) {
+			var objStyDoc = objStyDocs.Item(Doci);
+			UserStyles[UserStyles.length-1].Documents.push(
+				{
+					Title : objStyDoc.Title,
+					Location : objStyDoc.Location
+				}
+			);
+		}
+	}
 }
-console.log(objStysJSON);
-thisTmp.strObj.pluginStyFileName = thisTmp.strObj.pluginStyPath + 'Styles.json';
-thisTmp.strObj.pluginStyFile = objFSO.CreateTextFile(thisTmp.strObj.pluginStyFileName,true);
-thisTmp.strObj.pluginStyFile.Write(JSON.stringify(objStysJSON));
-thisTmp.strObj.pluginStyFile.Close();
-*/
+
+if (objDatabase.Styles.count != 0 /*|| Tags.count || folderIcons.count*/) {
+	if (objFSO.FileExists(strObj.swapFileName)) {
+		strObj.swapFile = objFSO.OpenTextFile(strObj.swapFileName,1);
+		var swapObj =JSON.parse(strObj.swapFile.ReadAll());
+		strObj.swapFile.Close();
+		swapObj['Users'][objDatabase.UserName] = swapFileJSON['Users'][objDatabase.UserName];
+		swapFileJSON = swapObj;
+	}
+}
+
+strObj.swapFile = objFSO.CreateTextFile(strObj.swapFileName, true);
+strObj.swapFile.Write(JSON.stringify(swapFileJSON));
+strObj.swapFile.Close();
