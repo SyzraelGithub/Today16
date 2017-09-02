@@ -90,5 +90,10 @@ for (var userName in swapFileJSON["Users"]) {
 }
 
 slcE.onchange = function () {
-	//alert(slcE.value);
+	if (Object.keys(swapFileJSON["Users"][slcE.value]).length > 0) {
+		if (typeof swapFileJSON["Users"][slcE.value]['Styles'] != 'undefined') {
+			var swapStyles = swapFileJSON["Users"][slcE.value]['Styles'];
+			alert('Bu Seçtiğinin içinde Style var');
+		}
+	}
 }
