@@ -22,6 +22,7 @@ if (objDatabase.Styles.count != 0) {
 				TextColor : objSty.TextColor,
 				BackColor : objSty.BackColor,
 				TextBold : objSty.TextBold,
+				/*FlagIndex de gelmeye aday (Ama genelde -1)*/
 				Documents : []
 			}
 		);
@@ -115,6 +116,9 @@ b4br(btnESty);
 slcEonchange();
 
 btnESty.onclick = function () {
-	alert('TIKLAYABİLDİĞİNE GÖRE SEÇTİĞİN USER IN STYLE I VAR');
-	//rwerwer
+	var UserStyles = swapFileJSON["Users"][slcE.value]['Styles'];
+	for (var i = 0; i < UserStyles.length; i++) {
+		var UserStyle = UserStyles(i);
+		alert(UserStyle.Name);
+	}
 }
