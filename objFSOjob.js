@@ -132,7 +132,7 @@ btnESty.onclick = function () {
 			var StyleDoc = StyleDocs[j];
 			var sqlQry = docQry([['LOCATION',StyleDoc.Location],['TITLE',StyleDoc.Title]]);
 			console.log(
-				UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + sqlQry.Count + ' Found';
+				UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + sqlQry.Count + ' Found'
 			);
 		}
 	}
