@@ -118,7 +118,7 @@ slcEonchange();
 btnESty.onclick = function () {
 	var UserStyles = swapFileJSON["Users"][slcE.value]['Styles'];
 	for (var i = 0; i < UserStyles.length; i++) {
-		var UserStyle = UserStyles(i);
+		var UserStyle = UserStyles[i];
 		alert(UserStyle.Name);
 	}
 }
