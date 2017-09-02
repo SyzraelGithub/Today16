@@ -74,7 +74,7 @@ for (var i = 0; i < arrOptE.length; i++) {
 	optE.id = 'optE' + twoDigit(i);
 	optE.class = 'optEcls';
 	optE.value = arrOptE[i][1];
-	optB.text = arrOptE[i][0];
+	optE.text = arrOptE[i][0];
 	slcE.appendChild(optE);
 }
 
