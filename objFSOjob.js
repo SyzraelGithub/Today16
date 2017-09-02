@@ -87,3 +87,7 @@ for (var userName in swapFileJSON["Users"]) {
 		slcE.appendChild(optE);
 	}
 }
+
+slcE.onchange = function () {
+	alert('DEĞİŞTİRDİN!');
+}
