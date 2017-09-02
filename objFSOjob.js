@@ -116,4 +116,5 @@ slcEonchange();
 
 btnESty.onclick = function () {
 	alert('TIKLAYABİLDİĞİNE GÖRE SEÇTİĞİN USER IN STYLE I VAR');
+	//rwerwer
 }
