@@ -65,8 +65,8 @@ b4br(slcE);
 var arrOptE = [
 	['Gunluk', 1],
 	['Haftalik', 7],
-	['Aylik', 30],		// eaqwerqadfdsfadsfadsf
-	['Mevsimlik', 120]	// sdfdfgsdfgsdfg
+	['Aylik', 30],
+	['Mevsimlik', 120]
 ];
 
 for (var i = 0; i < arrOptE.length; i++) {
