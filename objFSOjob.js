@@ -130,5 +130,9 @@ btnESty.onclick = function () {
 			UserStyle.TextBold,
 			-1
 		);
+		alert(
+			UserStyle.Name + ' isimli Style eklendi ancak/n' +
+			UserStyle.Documents.length + ' adet Document daha renklenmedi'
+		);
 	}
 }
