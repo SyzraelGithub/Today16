@@ -92,11 +92,10 @@ for (var userName in swapFileJSON["Users"]) {
 slcE.onchange = slcEonchange;
 	
 function slcEonchange() {
-	alert('SEÇİM YAPMADAN DA ÇALIŞIYOR');
+	btnESty.disabled = true;
 	if (Object.keys(swapFileJSON["Users"][slcE.value]).length > 0) {
 		if (typeof swapFileJSON["Users"][slcE.value]['Styles'] != 'undefined') {
-			var swapStyles = swapFileJSON["Users"][slcE.value]['Styles'];
-			alert('Bu Seçtiğinin içinde Style var');
+			btnESty.disabled = !(swapFileJSON["Users"][slcE.value]['Styles'].length > 0);
 		}
 	}
 }
