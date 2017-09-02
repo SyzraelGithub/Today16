@@ -131,9 +131,16 @@ btnESty.onclick = function () {
 		for (var j = 0; j < StyleDocs.length; j++) {
 			var StyleDoc = StyleDocs[j];
 			var sqlQry = docQry([['LOCATION',StyleDoc.Location],['TITLE',StyleDoc.Title]]);
-			console.log(
-				UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + sqlQry.Count + ' Found'
-			);
+			if (typeof sqlQry.Count != 'undefined') {
+				console.log(
+					UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + sqlQry.Count + ' Found'
+				);
+			} else {
+				console.log(
+					UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + 'sqlQry.Count = undefined'
+				);
+			}
+
 		}
 	}
 }
