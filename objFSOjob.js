@@ -2,7 +2,7 @@ var thisTmp = this;
 if (typeof __global__ != 'undefined') {thisTmp = __global__}
 
 thisTmp.objFSO = objApp.CreateActiveXObject("Scripting.FileSystemObject");
-
+/*
 thisTmp.strObj.pluginUserPath = thisTmp.strObj.pluginPath + objDatabase.UserName + '\\';
 thisTmp.strObj.objFldUser = {};
 
@@ -40,3 +40,4 @@ thisTmp.strObj.pluginStyFileName = thisTmp.strObj.pluginStyPath + 'Styles.json';
 thisTmp.strObj.pluginStyFile = objFSO.CreateTextFile(thisTmp.strObj.pluginStyFileName,true);
 thisTmp.strObj.pluginStyFile.Write(JSON.stringify(objStysJSON));
 thisTmp.strObj.pluginStyFile.Close();
+*/
