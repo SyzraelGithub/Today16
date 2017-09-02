@@ -119,7 +119,7 @@ btnESty.onclick = function () {
 	var UserStyles = swapFileJSON["Users"][slcE.value]['Styles'];
 	for (var i = 0; i < UserStyles.length; i++) {
 		var UserStyle = UserStyles[i];
-		objDatabase.CreateStyle(
+		var newStyle = objDatabase.CreateStyle(
 			UserStyle.Name,
 			UserStyle.Description,
 			UserStyle.TextColor,
@@ -136,6 +136,7 @@ btnESty.onclick = function () {
 				console.log(
 					UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + sqlDoc.GUID + ' | ' + (sqlQryi + 1) + ' Found'
 				);
+				sqlDoc.Style = newStyle;
 			}
 		}
 	}
