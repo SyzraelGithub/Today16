@@ -90,5 +90,5 @@ for (var userName in swapFileJSON["Users"]) {
 }
 
 slcE.onchange = function () {
-	alert(slcE.value);
+	//alert(slcE.value);
 }
