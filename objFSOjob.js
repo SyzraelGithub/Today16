@@ -49,3 +49,32 @@ if (objFSO.FileExists(strObj.swapFileName)) {
 strObj.swapFile = objFSO.CreateTextFile(strObj.swapFileName, true);
 strObj.swapFile.Write(JSON.stringify(swapFileJSON));
 strObj.swapFile.Close();
+
+var slcE = document.createElement('select');
+
+slcE.id = 'slcE';
+slcE.class = 'slcEcls';
+slcE.style.color = '#388e8e';
+slcE.style.fontWeight = 'bold';
+slcE.style.fontSize = '8pt';
+
+prgE.appendChild(slcE);
+
+b4br(slcE);
+
+var arrOptE = [
+	['Gunluk', 1],
+	['Haftalik', 7],
+	['Aylik', 30],
+	['Mevsimlik', 120]
+];
+
+for (var i = 0; i < arrOptE.length; i++) {
+	var optE = document.createElement('option');
+	optE.id = 'optE' + twoDigit(i);
+	optE.class = 'optEcls';
+	optE.value = arrOptE[i][1];
+	optB.text = arrOptE[i][0];
+	slcE.appendChild(optE);
+}
+
