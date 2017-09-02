@@ -38,14 +38,14 @@ if (objDatabase.Styles.count != 0) {
 	}
 }
 
-if (objDatabase.Styles.count != 0 /*|| Tags.count || folderIcons.count*/) {
-	if (objFSO.FileExists(strObj.swapFileName)) {
-		strObj.swapFile = objFSO.OpenTextFile(strObj.swapFileName,1);
-		var swapObj =JSON.parse(strObj.swapFile.ReadAll());
-		strObj.swapFile.Close();
+if (objFSO.FileExists(strObj.swapFileName)) {
+	strObj.swapFile = objFSO.OpenTextFile(strObj.swapFileName,1);
+	var swapObj =JSON.parse(strObj.swapFile.ReadAll());
+	strObj.swapFile.Close();
+	if (objDatabase.Styles.count != 0 /*|| Tags.count || folderIcons.count*/) {
 		swapObj['Users'][objDatabase.UserName] = swapFileJSON['Users'][objDatabase.UserName];
-		swapFileJSON = swapObj;
 	}
+	swapFileJSON = swapObj;
 }
 
 strObj.swapFile = objFSO.CreateTextFile(strObj.swapFileName, true);
