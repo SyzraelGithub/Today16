@@ -22,10 +22,7 @@ if (objDatabase.Styles.count != 0) {
 				TextColor : objSty.TextColor,
 				BackColor : objSty.BackColor,
 				TextBold : objSty.TextBold,
-				/*
-					FlagIndex de gelmeye aday (Ama genelde -1)
-					FlagIndex : objSty.FlagIndex
-				*/
+				FlagIndex : objSty.FlagIndex,
 				Documents : []
 			}
 		);
@@ -128,7 +125,7 @@ btnESty.onclick = function () {
 			UserStyle.TextColor,
 			UserStyle.BackColor,
 			UserStyle.TextBold,
-			-1
+			UserStyle.FlagIndex
 		);
 		alert(
 			UserStyle.Name + ' isimli Style eklendi ancak/n' +
