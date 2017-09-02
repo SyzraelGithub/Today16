@@ -42,16 +42,7 @@ if (objFSO.FileExists(strObj.swapFileName)) {
 	strObj.swapFile = objFSO.OpenTextFile(strObj.swapFileName,1);
 	var swapObj =JSON.parse(strObj.swapFile.ReadAll());
 	strObj.swapFile.Close();
-	if (typeof swapObj['Users'][objDatabase.UserName] != 'undefined') {
-		if (
-			Object.keys(swapFileJSON['Users'][objDatabase.UserName]).length
-			>=
-			Object.keys(swapObj['Users'][objDatabase.UserName]).length
-		) {
-		    swapObj['Users'][objDatabase.UserName] = swapFileJSON['Users'][objDatabase.UserName];
-		}
-	}
-
+	swapObj['Users'][objDatabase.UserName] = swapFileJSON['Users'][objDatabase.UserName];
 	swapFileJSON = swapObj;
 }
 
