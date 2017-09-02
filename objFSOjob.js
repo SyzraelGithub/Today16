@@ -2,6 +2,10 @@ var thisTmp = this;
 if (typeof __global__ != 'undefined') {thisTmp = __global__}
 
 thisTmp.objFSO = objApp.CreateActiveXObject("Scripting.FileSystemObject");
+
+console.log(strObj);
+
+
 /*
 thisTmp.strObj.pluginUserPath = thisTmp.strObj.pluginPath + objDatabase.UserName + '\\';
 thisTmp.strObj.objFldUser = {};
