@@ -84,7 +84,7 @@ for (var userName in swapFileJSON["Users"]) {
 	if (userName != objDatabase.UserName) {
 		var optE = document.createElement('option');
 		optE.value = userName;
-		optE.text = userName;
+		optE.text = userName.split('@')[0];
 		slcE.appendChild(optE);
 	}
 }
