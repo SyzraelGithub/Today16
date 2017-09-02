@@ -42,9 +42,8 @@ if (objFSO.FileExists(strObj.swapFileName)) {
 	strObj.swapFile = objFSO.OpenTextFile(strObj.swapFileName,1);
 	var swapObj =JSON.parse(strObj.swapFile.ReadAll());
 	strObj.swapFile.Close();
-	if (objDatabase.Styles.count != 0 /*|| Tags.count || folderIcons.count*/) {
-		swapObj['Users'][objDatabase.UserName] = swapFileJSON['Users'][objDatabase.UserName];
-	}
+	//Dosyadaki dolu ama okunan boş ise boşaltma
+	swapObj['Users'][objDatabase.UserName] = swapFileJSON['Users'][objDatabase.UserName];
 	swapFileJSON = swapObj;
 }
 
