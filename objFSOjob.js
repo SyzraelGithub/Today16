@@ -90,7 +90,7 @@ for (var userName in swapFileJSON["Users"]) {
 }
 
 slcE.onchange = function () {
-	alert('ghh');
+	alert('SEÇİM YAPMADAN DA ÇALIŞIYOR');
 	if (Object.keys(swapFileJSON["Users"][slcE.value]).length > 0) {
 		if (typeof swapFileJSON["Users"][slcE.value]['Styles'] != 'undefined') {
 			var swapStyles = swapFileJSON["Users"][slcE.value]['Styles'];
