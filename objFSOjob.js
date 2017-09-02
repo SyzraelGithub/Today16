@@ -105,7 +105,7 @@ btnESty.id = 'btnESty';
 btnESty.class = 'btnEStycls';
 btnESty.style.fontSize = '8pt';
 btnESty.style.fontWeight = 'bold';
-
+btnESty.disabled = true;
 
 
 
