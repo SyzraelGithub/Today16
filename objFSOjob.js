@@ -115,9 +115,6 @@ b4br(btnESty);
 
 slcEonchange();
 
-/*
-dknflanqjdslfnafdadsflansdnfömanödsf
-adsfölansdnöfas
-dfmaznsdömfnasdf
-
-*/
+btnESty.onclick = function () {
+	alert('TIKLAYABİLDİĞİNE GÖRE SEÇTİĞİN USER IN STYLE I VAR');
+}
