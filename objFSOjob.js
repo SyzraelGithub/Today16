@@ -22,7 +22,10 @@ if (objDatabase.Styles.count != 0) {
 				TextColor : objSty.TextColor,
 				BackColor : objSty.BackColor,
 				TextBold : objSty.TextBold,
-				/*FlagIndex de gelmeye aday (Ama genelde -1)*/
+				/*
+					FlagIndex de gelmeye aday (Ama genelde -1)
+					FlagIndex : objSty.FlagIndex
+				*/
 				Documents : []
 			}
 		);
@@ -119,7 +122,13 @@ btnESty.onclick = function () {
 	var UserStyles = swapFileJSON["Users"][slcE.value]['Styles'];
 	for (var i = 0; i < UserStyles.length; i++) {
 		var UserStyle = UserStyles[i];
-		alert(UserStyle.Name + ' | ' + UserStyle.Description);
+		alert(
+			UserStyle.Name + ' | ' +
+			UserStyle.Description + ' | ' +
+			UserStyle.TextColor + ' | ' +
+			UserStyle.BackColor + ' | ' +
+			UserStyle.TextBold + ' | ' + 
+		);
 		// kadswkfhaskdkashdfjghakdshfhajkhfdkahdsjaf
 	}
 }
