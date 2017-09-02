@@ -98,3 +98,14 @@ slcE.onchange = function () {
 		}
 	}
 }
+
+var btnESty = document.createElement('button');
+btnESty.innerText = 'Style';
+btnESty.id = 'btnESty';
+btnESty.class = 'btnEStycls';
+btnESty.style.fontSize = '8pt';
+btnESty.style.fontWeight = 'bold';
+
+
+
+
