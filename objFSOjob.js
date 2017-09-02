@@ -122,13 +122,13 @@ btnESty.onclick = function () {
 	var UserStyles = swapFileJSON["Users"][slcE.value]['Styles'];
 	for (var i = 0; i < UserStyles.length; i++) {
 		var UserStyle = UserStyles[i];
-		alert(
-			'UserStyle.Name : ' + UserStyle.Name + '\n' +
-			'UserStyle.Description : ' + UserStyle.Description + '\n' +
-			'UserStyle.TextColor : ' + UserStyle.TextColor + '\n' +
-			'UserStyle.BackColor : ' + UserStyle.BackColor + '\n' +
-			'UserStyle.TextBold : ' + UserStyle.TextBold
+		objDatabase.CreateStyle(
+			UserStyle.Name,
+			UserStyle.Description,
+			UserStyle.TextColor,
+			UserStyle.BackColor,
+			UserStyle.TextBold,
+			-1
 		);
-		//kjkhhkhhk khjhjkhkhj khkhkjhkhkh khjkhkjhjk
 	}
 }
