@@ -134,7 +134,7 @@ btnESty.onclick = function () {
 			for (var sqlQryi = 0; sqlQryi < sqlQry.Count; sqlQryi++) {
 				var sqlDoc = sqlQry.Item(sqlQryi);
 				console.log(
-					UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + sqlDoc.GUID + ' | ' + sqlQryi + ' Found'
+					UserStyle.Name + ' | ' + StyleDoc.Title + ' | ' + sqlDoc.GUID + ' | ' + (sqlQryi + 1) + ' Found'
 				);
 			}
 		}
