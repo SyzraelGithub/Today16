@@ -113,7 +113,7 @@ prgE.appendChild(btnESty);
 
 b4br(btnESty);
 
-//slcEonchange();
+try {slcEonchange()} catch(err) {document.write(err.message)}
 
 btnESty.onclick = function () {
 	var UserStyles = swapFileJSON["Users"][slcE.value]['Styles'];
