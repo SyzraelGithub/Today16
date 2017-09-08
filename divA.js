@@ -1,4 +1,5 @@
 document.body.style.fontSize = '9pt';
+document.body.style.margin = '1px 1px 1px 1px';
 
 var divA = document.createElement('div');
 divA.id = 'divA';
