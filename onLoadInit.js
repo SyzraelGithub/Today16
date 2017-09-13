@@ -141,15 +141,32 @@ creLnk = function(hrf,id,par,rel,typ) {
 	var newLnk =  document.getElementById(id);
 	if (!newLnk) {
 		newLnk = document.createElement('link');
+		/*
+			1709132045
+			https://stackoverflow.com/questions/1184950/dynamically-loading-css-stylesheet-doesnt-work-on-ie
+			Burada diyorki, 
+			You need to set the href attr last and only after the link elem is appended to the head:
+			Bundan dolayı, önce append edicem.
+			---
+			iOS ta ilk yüklemede <link> içindeki css 'i algılamıyor gibi duruyor. Ancak bir sonrakinde çalışıyor.
+			Bundan dolayı böyle bir çözüm belki tutabilir.
+		*/
+		
+		par = par || document.head;
+		console.log('[STARTED] {LNK}' + newLnk.id);
+		par.appendChild(newLnk);
+		
 		newLnk.id = id;
 		rel = rel || 'stylesheet';
 		newLnk.rel = rel;
 		typ = typ || 'text/css';
 		newLnk.type = typ;
 		newLnk.href = hrf;
+		/*
 		par = par || document.head;
 		console.log('[STARTED] {LNK}' + newLnk.id);
 		par.appendChild(newLnk);
+		*/
 	}
 }
 
