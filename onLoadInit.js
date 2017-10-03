@@ -151,7 +151,23 @@ creLnk = function(hrf,id,par,rel,typ) {
 			iOS ta ilk yüklemede <link> içindeki css 'i algılamıyor gibi duruyor. Ancak bir sonrakinde çalışıyor.
 			Bundan dolayı böyle bir çözüm belki tutabilir.
 		*/
-		
+		/*
+			1710031006
+			Eğer gerçekten kafaya takıyorsak, ilk yüklenmedeki css sorununu, belki bir seçenek olarak,
+			ilk yüklemede link tagının head 'e değil de body 'e yükleyebiliriz.
+			---
+			Veya diyebiliriz ki, ilk yüklemenin farkına varabilirsek, mesela, 
+			herhangi bir css Rule var mı diye bakarız. Yoksa, deriz ki, demek ki yükleme başarılı olamadı,
+			Veya daha iyi bir seçenek, deriz ki, eğer creLnk fnc çalışıp da içine girildiyse,
+			ve bu yapıldığında, parent head ise, kuvvetle muhtemel, yine ilk yüklemede sıçacak.
+			Bundan dolayı sen o css 'i yükleme JSON olarak ajax olarak vs. Sonra ben onu bir şekilde 
+			eval edeyim. Tek seferliğine. Ondan sonra bakalım duruma.
+			Ancak bunun çalıştığına inanmaya kani olmak için, öncelikle par = body falan demek lazım.
+			O da belki fnc 'e giren parametrelerin sırasını değiştirmemizi gerektirebilir.
+			---
+			Bu kadar çok comment yazacaksan gerçekten, işleyen code ile yazılan code ayrılsın.
+			Offline çalışan maiStart.bat tekrar devreye girsin. 
+		*/
 		par = par || document.head;
 		console.log('[STARTED] {LNK}' + newLnk.id);
 		par.appendChild(newLnk);
