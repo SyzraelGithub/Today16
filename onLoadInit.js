@@ -166,7 +166,9 @@ creLnk = function(hrf,id,par,rel,typ) {
 			O da belki fnc 'e giren parametrelerin sırasını değiştirmemizi gerektirebilir.
 			---
 			Bu kadar çok comment yazacaksan gerçekten, işleyen code ile yazılan code ayrılsın.
-			Offline çalışan maiStart.bat tekrar devreye girsin. 
+			Offline çalışan maiStart.bat tekrar devreye girsin.
+			---
+			Hatta istersen minimize ve obfusfacte etsin aynı zamanda
 		*/
 		par = par || document.head;
 		console.log('[STARTED] {LNK}' + newLnk.id);
