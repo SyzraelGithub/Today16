@@ -169,6 +169,9 @@ creLnk = function(hrf,id,par,rel,typ) {
 			Offline çalışan maiStart.bat tekrar devreye girsin.
 			---
 			Hatta istersen minimize ve obfusfacte etsin aynı zamanda
+			---
+			Hatta ve hatta *.hta 'ya geçiş için kullanabiliriz. *.hta başka yerde de işe yarayabilir.
+			Mesela nerede? video otomasyonu için.
 		*/
 		par = par || document.head;
 		console.log('[STARTED] {LNK}' + newLnk.id);
