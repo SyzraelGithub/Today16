@@ -61,6 +61,8 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 		1710110933
 		ui-helper-hidden-accessible
 		bu class var mı yok mu varsa aktif mi?
+		---
+		aşağıdaki if 'i buraya alalım. hatta elseif 'i deneyelim.
 	*/
 }
 
