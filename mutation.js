@@ -63,7 +63,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 sSisAlert();
 
 function sSisAlert() {
-	va sSis = '';
+	var sSis = '';
 	for (var sSi = 0; sSi < document.styleSheets.length; sSi++) {
 		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
 		//alert(document.styleSheets[sSi].ownerNode.id);
