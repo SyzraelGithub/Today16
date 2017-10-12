@@ -68,5 +68,5 @@ function sSisAlert() {
 		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
 		//alert(document.styleSheets[sSi].ownerNode.id);
 	}
-	alert(sSi);
+	alert(sSis);
 }
