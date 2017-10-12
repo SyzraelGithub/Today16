@@ -57,7 +57,6 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 } else {
 	//Acaba iOS 'ta iken jquiCss 'in yüklenip yüklenmediğini kontrol etse mi?
 	//1710110925 denemeler yapıyorum
-	sSisAlert();
 	/*
 		1710110933
 		ui-helper-hidden-accessible
@@ -79,6 +78,7 @@ function sSisAlert() {
 	}
 }
 
-if (isiOS() && document.body.contentEditable == 'true') {
+if (isiOS() && document.body.contentEditable == 'true' /*Bir de ilk giriş mi ona baksın*/) {
 	alert('iOS tayız ve body editable');
+	sSisAlert();
 }
