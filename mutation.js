@@ -79,6 +79,6 @@ function sSisAlert() {
 	}
 }
 
-if (isiOS()) && document.body.contentEditable == 'true') {
+if (isiOS() && document.body.contentEditable == 'true') {
 	alert('iOS tayız ve body editable');
 }
