@@ -66,8 +66,10 @@ function sSisAlert() {
 		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
 		//alert(document.styleSheets[sSi].ownerNode.id);
 		if (document.styleSheets[sSi].ownerNode.id == 'jquery-ui.min_lnk') {
-			var sSid = document.styleSheets[sSi].ownerNode.id;
-			alert(sSid);
+			var sS = document.styleSheets[sSi];
+			var sSid = sS.ownerNode.id;
+			var sScssR0 = sS.cssRules[0];
+			alert(sScssR0.selectorText);
 		}
 	}
 }
