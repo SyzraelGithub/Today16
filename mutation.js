@@ -52,15 +52,13 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 } else {
 	//Acaba iOS 'ta iken jquiCss 'in yüklenip yüklenmediğini kontrol etse mi?
 	//1710110925 denemeler yapıyorum
-	//sSisAlert();
+	sSisAlert();
 	/*
 		1710110933
 		ui-helper-hidden-accessible
 		bu class var mı yok mu varsa aktif mi?
 	*/
 }
-
-sSisAlert();
 
 function sSisAlert() {
 	var sSis = '';
