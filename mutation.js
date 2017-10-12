@@ -52,12 +52,21 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 } else {
 	//Acaba iOS 'ta iken jquiCss 'in yüklenip yüklenmediğini kontrol etse mi?
 	//1710110925 denemeler yapıyorum
-	for (var sSi = 0; sSi < document.styleSheets.length; sSi++) {
-		alert(document.styleSheets[sSi].ownerNode.id);
-	}
+	//sSisAlert();
 	/*
 		1710110933
 		ui-helper-hidden-accessible
 		bu class var mı yok mu varsa aktif mi?
 	*/
+}
+
+sSisAlert();
+
+function sSisAlert() {
+	va sSis = '';
+	for (var sSi = 0; sSi < document.styleSheets.length; sSi++) {
+		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
+		//alert(document.styleSheets[sSi].ownerNode.id);
+	}
+	alert(sSi);
 }
