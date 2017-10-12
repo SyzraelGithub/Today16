@@ -65,6 +65,9 @@ function sSisAlert() {
 	for (var sSi = 0; sSi < document.styleSheets.length; sSi++) {
 		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
 		//alert(document.styleSheets[sSi].ownerNode.id);
+		if (document.styleSheets[sSi].ownerNode.id == 'jquery-ui.min_lnk') {
+			var sSid = document.styleSheets[sSi].ownerNode.id;
+			alert(sSid);
+		}
 	}
-	alert(sSis);
 }
