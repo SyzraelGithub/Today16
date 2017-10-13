@@ -58,12 +58,9 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 } else if (isFirstEdit()) {sSisAlert()}
 
 function sSisAlert() {
-	alert('sSisAlert() Start');
 	var sSis = '';
 	for (var sSi = 0; sSi < document.styleSheets.length; sSi++) {
-		alert('sSisAlert() for Start');
 		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
-		alert('sSisAlert() for if Start');
 		if (document.styleSheets[sSi].ownerNode.id == 'jquery-ui.min_lnk') {
 			//ui-helper-hidden-accessible
 			alert('sSisAlert() for if true Start');
@@ -71,6 +68,8 @@ function sSisAlert() {
 			alert('var sS = document.styleSheets[sSi];');
 			var sSid = sS.ownerNode.id;
 			alert('var sSid = sS.ownerNode.id;');
+			var sScssRl = sS.cssRules.length;
+			alert('var sScssRl = sS.cssRules.length; => ' + sScssRl);
 			var sScssR0 = sS.cssRules[0];
 			alert('var sScssR0 = sS.cssRules[0];');
 			alert(sScssR0.selectorText);
