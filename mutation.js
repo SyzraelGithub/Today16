@@ -82,9 +82,11 @@ function sSisAlert() {
 function isFirstEdit() {
 	alert('isFirstEdit Start');
 	var strDefCmt = '<!--mark |wiz_custom_css| for wizeditor replace it-->';
-	alert('isFirstEdit Before End');
+	alert('isFirstEdit Before End 3');
 	var isDefCmtExs = document.documentElement.outerHTML.indexOf(strDefCmt) != -1;
 	alert('isFirstEdit Before End 2');
-	return document.body.contentEditable == 'true' && isDefCmtExs;
+	var isCntEd = document.body.contentEditable == 'true'?true:false;
+	alert('isFirstEdit Before End 1');
+	return isCntEd && isDefCmtExs;
 	alert('isFirstEdit End');
 }
