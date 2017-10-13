@@ -54,18 +54,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 	 
 	// later, you can stop observing
 	//observer.disconnect();	
-} else if (isFirstEdit()) {
-	sSisAlert();
-	//Acaba iOS 'ta iken jquiCss 'in yüklenip yüklenmediğini kontrol etse mi?
-	//1710110925 denemeler yapıyorum
-	/*
-		1710110933
-		ui-helper-hidden-accessible
-		bu class var mı yok mu varsa aktif mi?
-		---
-		aşağıdaki if 'i buraya alalım. hatta elseif 'i deneyelim.
-	*/
-}
+} /*else*/ if (isFirstEdit()) {sSisAlert()}
 
 function sSisAlert() {
 	var sSis = '';
