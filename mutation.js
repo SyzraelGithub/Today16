@@ -37,6 +37,8 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 						1710120912
 						Target == body değilse
 						gitmesin bence
+						---
+						Peki target 'ın body olmadığı durum oluşuyor mu?
 					*/
 					fncCntntEdtbl(target);
 				}
