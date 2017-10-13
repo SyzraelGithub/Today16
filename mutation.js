@@ -39,6 +39,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 						gitmesin bence
 					*/
 					fncCntntEdtbl(target);
+					if (isFirstEdit()) {sSisAlert()};
 				}
 			}
 			//console.log(mutation.type);
@@ -54,12 +55,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 	 
 	// later, you can stop observing
 	//observer.disconnect();	
-}
-
-console.log('if (isFirstEdit()) {sSisAlert()} Start');
-/*else*/
-if (isFirstEdit()) {sSisAlert()}
-console.log('if (isFirstEdit()) {sSisAlert()} End');
+} else if (isFirstEdit()) {sSisAlert()}
 
 function sSisAlert() {
 	console.log('sSisAlert() Start');
