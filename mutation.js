@@ -54,7 +54,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 	 
 	// later, you can stop observing
 	//observer.disconnect();	
-} elseif (document.body.contentEditable == 'true' /*Bir de ilk giriş mi ona baksın*/) {
+} else if (document.body.contentEditable == 'true' /*Bir de ilk giriş mi ona baksın*/) {
 	//Acaba iOS 'ta iken jquiCss 'in yüklenip yüklenmediğini kontrol etse mi?
 	//1710110925 denemeler yapıyorum
 	/*
