@@ -79,7 +79,6 @@ function sSisAlert() {
 			}
 		}
 	}
-	alert('sSisAlert() End');
 }
 
 function isFirstEdit() {
