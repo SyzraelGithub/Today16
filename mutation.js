@@ -39,7 +39,6 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 						gitmesin bence
 					*/
 					fncCntntEdtbl(target);
-					//if (isFirstEdit()) {sSisAlert()};
 				}
 			}
 			//console.log(mutation.type);
@@ -55,7 +54,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 	 
 	// later, you can stop observing
 	//observer.disconnect();	
-} else /*if (isFirstEdit())*/ {sSisAlert()}
+} else if (isFirstEdit()) {sSisAlert()}
 
 function sSisAlert() {
 	var sSis = '';
@@ -63,9 +62,7 @@ function sSisAlert() {
 		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
 		if (document.styleSheets[sSi].ownerNode.id == 'jquery-ui.min_lnk') {
 			//ui-helper-hidden-accessible
-			alert('sSisAlert() for if true Start');
 			var sS = document.styleSheets[sSi];
-			alert('var sS = document.styleSheets[sSi];');
 			var sSid = sS.ownerNode.id;
 			alert('var sSid = sS.ownerNode.id; = > ' + sSid);
 			var sScssRl = sS.cssRules.length;
@@ -73,7 +70,7 @@ function sSisAlert() {
 			if (sScssRl == 0) {
 				alert('Belli ki Rule lar daha okunmamış. Eval et');
 			} else {
-				alert('Belli ki Rule lar okunmuş');
+				alert('Belli ki Rule lar okunmuş. Buraya girmemeli.');
 				var sScssR0 = sS.cssRules[0];
 				alert('var sScssR0 = sS.cssRules[0];');
 				alert(sScssR0.selectorText);
@@ -84,12 +81,8 @@ function sSisAlert() {
 }
 
 function isFirstEdit() {
-	alert('isFirstEdit Start');
 	var strDefCmt = '<!--mark |wiz_custom_css| for wizeditor replace it-->';
-	alert('isFirstEdit Before End 2');
 	var isDefCmtExs = document.documentElement.outerHTML.indexOf(strDefCmt) != -1;
-	alert('isFirstEdit Before End 1');
 	var isCntEd = document.body.contentEditable == 'true'?true:false;
-	alert('isFirstEdit Before End 0');
 	return isCntEd && isDefCmtExs;
 }
