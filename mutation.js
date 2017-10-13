@@ -55,8 +55,10 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 	// later, you can stop observing
 	//observer.disconnect();	
 } /*else*/ if (isFirstEdit()) {sSisAlert()}
+console.log('if (isFirstEdit()) {sSisAlert()}');
 
 function sSisAlert() {
+	console.log('sSisAlert() Start');
 	var sSis = '';
 	for (var sSi = 0; sSi < document.styleSheets.length; sSi++) {
 		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
@@ -69,10 +71,13 @@ function sSisAlert() {
 			alert(sScssR0.selectorText);
 		}
 	}
+	console.log('sSisAlert() End');
 }
 
 function isFirstEdit() {
+	console.log('isFirstEdit Start');
 	var strDefCmt = '<!--mark |wiz_custom_css| for wizeditor replace it-->';
 	var isDefCmtExs = document.documentElement.outerHTML.indexOf(strDefCmt) != -1;
-	return document.body.contentEditable == 'true' && isDefCmtExs
+	return document.body.contentEditable == 'true' && isDefCmtExs;
+	console.log('isFirstEdit End');
 }
