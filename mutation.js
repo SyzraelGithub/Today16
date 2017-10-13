@@ -67,11 +67,11 @@ function sSisAlert() {
 			var sS = document.styleSheets[sSi];
 			alert('var sS = document.styleSheets[sSi];');
 			var sSid = sS.ownerNode.id;
-			alert('var sSid = sS.ownerNode.id;');
+			alert('var sSid = sS.ownerNode.id; = > ' + sSid);
 			var sScssRl = sS.cssRules.length;
 			alert('var sScssRl = sS.cssRules.length; => ' + sScssRl);
 			if (sScssRl == 0) {
-				alert('Belli ki Rule lar daha okunmamış');
+				alert('Belli ki Rule lar daha okunmamış. Eval et');
 			} else {
 				alert('Belli ki Rule lar okunmuş');
 				var sScssR0 = sS.cssRules[0];
