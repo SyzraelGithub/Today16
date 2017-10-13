@@ -39,7 +39,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 						gitmesin bence
 					*/
 					fncCntntEdtbl(target);
-					if (isFirstEdit()) {sSisAlert()};
+					//if (isFirstEdit()) {sSisAlert()};
 				}
 			}
 			//console.log(mutation.type);
