@@ -71,6 +71,34 @@ function sSisLog() {
 			console.log('var sScssRl = sS.cssRules.length; => ' + sScssRl);
 			if (sScssRl == 0) {
 				alert('Belli ki Rule lar daha okunmamış. Eval et');
+				autLasyF(
+					sS.href,
+					function(){
+						this
+						.responseText
+						.split('*/')[1]
+						.split('}')
+						.map(
+							function(el){
+								return el + '}'
+							}
+						)
+						.slice(0,-1)
+						.map(
+							function(el){
+								//console.log(this.cssRules.length + ' <=> ' + el);
+								if (el.indexOf('moz') == -1) {
+									this.insertRule(
+										el,
+										this.cssRules.length
+									);
+								}
+								return el;
+							},
+							sS
+						)
+					}
+				)
 			}
 		}
 	}
