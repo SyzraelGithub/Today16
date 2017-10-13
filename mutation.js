@@ -56,9 +56,9 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 	 
 	// later, you can stop observing
 	//observer.disconnect();	
-} else if (isFirstEdit()) {sSisAlert()}
+} else if (isFirstEdit()) {sSisLog()}
 
-function sSisAlert() {
+function sSisLog() {
 	var sSis = '';
 	for (var sSi = 0; sSi < document.styleSheets.length; sSi++) {
 		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
@@ -66,16 +66,11 @@ function sSisAlert() {
 			//ui-helper-hidden-accessible
 			var sS = document.styleSheets[sSi];
 			var sSid = sS.ownerNode.id;
-			alert('var sSid = sS.ownerNode.id; = > ' + sSid);
+			console.log('var sSid = sS.ownerNode.id; = > ' + sSid);
 			var sScssRl = sS.cssRules.length;
-			alert('var sScssRl = sS.cssRules.length; => ' + sScssRl);
+			console.log('var sScssRl = sS.cssRules.length; => ' + sScssRl);
 			if (sScssRl == 0) {
 				alert('Belli ki Rule lar daha okunmamış. Eval et');
-			} else {
-				alert('Belli ki Rule lar okunmuş. Buraya girmemeli.');
-				var sScssR0 = sS.cssRules[0];
-				alert('var sScssR0 = sS.cssRules[0];');
-				alert(sScssR0.selectorText);
 			}
 		}
 	}
