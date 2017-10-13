@@ -54,7 +54,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 	 
 	// later, you can stop observing
 	//observer.disconnect();	
-} else {
+} elseif (document.body.contentEditable == 'true /*Bir de ilk giriş mi ona baksın*/) {
 	//Acaba iOS 'ta iken jquiCss 'in yüklenip yüklenmediğini kontrol etse mi?
 	//1710110925 denemeler yapıyorum
 	/*
@@ -64,6 +64,7 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 		---
 		aşağıdaki if 'i buraya alalım. hatta elseif 'i deneyelim.
 	*/
+	sSisAlert();
 }
 
 function sSisAlert() {
@@ -78,9 +79,4 @@ function sSisAlert() {
 			alert(sScssR0.selectorText);
 		}
 	}
-}
-
-if (isiOS() && document.body.contentEditable == 'true' /*Bir de ilk giriş mi ona baksın*/) {
-	alert('iOS tayız ve body editable');
-	sSisAlert();
 }
