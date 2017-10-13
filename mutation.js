@@ -86,11 +86,10 @@ function sSisAlert() {
 function isFirstEdit() {
 	alert('isFirstEdit Start');
 	var strDefCmt = '<!--mark |wiz_custom_css| for wizeditor replace it-->';
-	alert('isFirstEdit Before End 3');
-	var isDefCmtExs = document.documentElement.outerHTML.indexOf(strDefCmt) != -1;
 	alert('isFirstEdit Before End 2');
-	var isCntEd = document.body.contentEditable == 'true'?true:false;
+	var isDefCmtExs = document.documentElement.outerHTML.indexOf(strDefCmt) != -1;
 	alert('isFirstEdit Before End 1');
+	var isCntEd = document.body.contentEditable == 'true'?true:false;
+	alert('isFirstEdit Before End 0');
 	return isCntEd && isDefCmtExs;
-	alert('isFirstEdit End');
 }
