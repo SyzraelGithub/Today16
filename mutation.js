@@ -79,8 +79,9 @@ function sSisAlert() {
 function isFirstEdit() {
 	alert('isFirstEdit Start');
 	var strDefCmt = '<!--mark |wiz_custom_css| for wizeditor replace it-->';
-	var isDefCmtExs = document.documentElement.outerHTML.indexOf(strDefCmt) != -1;
 	alert('isFirstEdit Before End');
+	var isDefCmtExs = document.documentElement.outerHTML.indexOf(strDefCmt) != -1;
+	alert('isFirstEdit Before End 2');
 	return document.body.contentEditable == 'true' && isDefCmtExs;
 	alert('isFirstEdit End');
 }
