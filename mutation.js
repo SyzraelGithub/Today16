@@ -61,10 +61,12 @@ function sSisAlert() {
 	alert('sSisAlert() Start');
 	var sSis = '';
 	for (var sSi = 0; sSi < document.styleSheets.length; sSi++) {
+		alert('sSisAlert() for Start');
 		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
-		//alert(document.styleSheets[sSi].ownerNode.id);
+		alert('sSisAlert() for if Start');
 		if (document.styleSheets[sSi].ownerNode.id == 'jquery-ui.min_lnk') {
 			//ui-helper-hidden-accessible
+			alert('sSisAlert() for if true Start');
 			var sS = document.styleSheets[sSi];
 			var sSid = sS.ownerNode.id;
 			var sScssR0 = sS.cssRules[0];
@@ -78,6 +80,7 @@ function isFirstEdit() {
 	alert('isFirstEdit Start');
 	var strDefCmt = '<!--mark |wiz_custom_css| for wizeditor replace it-->';
 	var isDefCmtExs = document.documentElement.outerHTML.indexOf(strDefCmt) != -1;
+	alert('isFirstEdit Before End');
 	return document.body.contentEditable == 'true' && isDefCmtExs;
 	alert('isFirstEdit End');
 }
