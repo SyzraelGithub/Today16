@@ -70,9 +70,14 @@ function sSisAlert() {
 			alert('var sSid = sS.ownerNode.id;');
 			var sScssRl = sS.cssRules.length;
 			alert('var sScssRl = sS.cssRules.length; => ' + sScssRl);
-			var sScssR0 = sS.cssRules[0];
-			alert('var sScssR0 = sS.cssRules[0];');
-			alert(sScssR0.selectorText);
+			if (sScssRl == 0) {
+				alert('Belli ki Rule lar daha okunmamış');
+			} else {
+				alert('Belli ki Rule lar okunmuş');
+				var sScssR0 = sS.cssRules[0];
+				alert('var sScssR0 = sS.cssRules[0];');
+				alert(sScssR0.selectorText);
+			}
 		}
 	}
 	alert('sSisAlert() End');
