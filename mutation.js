@@ -68,8 +68,11 @@ function sSisAlert() {
 			//ui-helper-hidden-accessible
 			alert('sSisAlert() for if true Start');
 			var sS = document.styleSheets[sSi];
+			alert('var sS = document.styleSheets[sSi];');
 			var sSid = sS.ownerNode.id;
+			alert('var sSid = sS.ownerNode.id;');
 			var sScssR0 = sS.cssRules[0];
+			alert('var sScssR0 = sS.cssRules[0];');
 			alert(sScssR0.selectorText);
 		}
 	}
