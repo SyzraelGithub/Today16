@@ -54,8 +54,12 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 	 
 	// later, you can stop observing
 	//observer.disconnect();	
-} /*else*/ if (isFirstEdit()) {sSisAlert()}
-console.log('if (isFirstEdit()) {sSisAlert()}');
+}
+
+console.log('if (isFirstEdit()) {sSisAlert()} Start');
+/*else*/
+if (isFirstEdit()) {sSisAlert()}
+console.log('if (isFirstEdit()) {sSisAlert()} End');
 
 function sSisAlert() {
 	console.log('sSisAlert() Start');
