@@ -33,6 +33,8 @@ autLasyF = function(urlF,cbFnc) {
 				if (typeof cbFnc == 'function') {
 					cbFnc.apply(this);
 					beeLasyF(30,300,0.3,'triangle');
+					//urlF 'nin uzantısına göre select ile ses değişebilir.
+					//css html js veya boş veya başka uzantı
 				}
 			}
 		}
