@@ -66,7 +66,6 @@ function sSisMan() { // Manually fill the empty styleSheet
 	for (var sSi = 0; sSi < document.styleSheets.length; sSi++) {
 		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
 		if (document.styleSheets[sSi].ownerNode.id == 'jquery-ui.min_lnk') {
-			//ui-helper-hidden-accessible
 			var sS = document.styleSheets[sSi];
 			var sSid = sS.ownerNode.id;
 			var sScssRl = sS.cssRules.length;
