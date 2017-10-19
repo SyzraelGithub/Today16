@@ -56,9 +56,12 @@ if (!isiOS()) { //iOS dayken zaten sayfayı baştan yüklüyor.
 	 
 	// later, you can stop observing
 	//observer.disconnect();	
-} else if (isFirstEdit()) {sSisLog()}
+} else if (isFirstEdit()) {sSisMan()}
 
-function sSisLog() {
+function sSisMan() { // Manually fill the empty styleSheet
+	// onLoadInit 'den de çözülebilir direk.
+	// Hatta daha bile mantıklı olur. İleride sonradan not açıkken haricen css eklendiğinde 
+	// Standart bir kontrolün olmuş olur fena mı
 	var sSis = '';
 	for (var sSi = 0; sSi < document.styleSheets.length; sSi++) {
 		sSis += document.styleSheets[sSi].ownerNode.id + '\n';
@@ -66,11 +69,8 @@ function sSisLog() {
 			//ui-helper-hidden-accessible
 			var sS = document.styleSheets[sSi];
 			var sSid = sS.ownerNode.id;
-			console.log('var sSid = sS.ownerNode.id; = > ' + sSid);
 			var sScssRl = sS.cssRules.length;
-			console.log('var sScssRl = sS.cssRules.length; => ' + sScssRl);
 			if (sScssRl == 0) {
-				alert('Belli ki Rule lar daha okunmamış. Eval et');
 				autLasyF(
 					sS.href,
 					function(){
@@ -86,8 +86,9 @@ function sSisLog() {
 						.slice(0,-1)
 						.map(
 							function(el){
-								//console.log(this.cssRules.length + ' <=> ' + el);
 								if (el.indexOf('moz') == -1) {
+									// moz lar :: barıdırıyor uğraşmak istemedim.
+									// split ederken '}' baz alıyoruz ya uymadı işte 
 									this.insertRule(
 										el,
 										this.cssRules.length
