@@ -25,7 +25,7 @@ function autAd2() {
 	if (!isOddTar(Tar)) {
 		var PreSib = getSib(Tar.previousElementSibling);
 		if (
-				TarSib.innerText.length < 6
+				(TarSib.innerText.length < 6)
 			&&
 				PreSib.innerText.substring(7,10) == '...'
 			&&
