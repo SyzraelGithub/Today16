@@ -1,17 +1,17 @@
 var TarSib, oldTar;
 
-function autoAll() {
-	autoTar();
-	autoNow();
+function autAll() {
+	autTar();
+	autNow();
 }
 
-function autoTar() {
+function autTar() {
 	Tar = getTar();
 	setoldTar();
 	setTar();
 	TarSib = getSib(Tar);
 }
-function autoNow() {
+function autNow() {
 	if (TarSib.innerText.length == 10 || TarSib.innerText.length == 9) {
 		var myRepeat = TarSib.innerText.length - 6;
 		if (TarSib.innerText.substring(7,10) == '...' || TarSib.innerText.substring(7,9) == '..') {
@@ -68,4 +68,9 @@ function getSib(parSib) {
 		Şimdilik bulduğum en başarılı query zinciri şu
 	*/
 	return $($(parSib).children('p')[0]).children('span').filter(cO.f1)[0];
+}
+function aniTar() {
+	if (!Tar) {
+		$(cO.q1).animate({ scrollTop: $(document).height() }, cO.n2*cO.r3);
+    }
 }
