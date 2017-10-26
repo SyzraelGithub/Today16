@@ -13,7 +13,7 @@ var scrArr = [
 	['autLasyF',false],
 	['autLsynF',false],
 	['autLasyHDoc',false],
-	['autoAll',true],
+	['autAll',true],
 	['docRea',true],
 	['http://code.jquery.com/ui/1.10.3/jquery-ui.min.js',true],
 	['autCmpPrpVarTag',true],
