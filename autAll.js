@@ -25,7 +25,7 @@ function autAd2() {
 	if (!isOddTar(Tar)) {
 		var PreSib = getSib(Tar.previousElementSibling);
 		if (TarSib.innerText.length < 6 && PreSib.innerText.substring(7,10) == '...') {
-			preSib.innerText = new getdDt(new Date()).newHourMinute + ' A' + Array(myRepeat).join('.');
+			PreSib.innerText = new getdDt(new Date()).newHourMinute + ' A' + Array(myRepeat).join('.');
 			var sel = document.getSelection();
 			sel.collapse(TarSib,1);
 		}
