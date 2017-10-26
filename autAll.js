@@ -24,15 +24,7 @@ function autNow() {
 function autAd2() {
 	if (!isOddTar(Tar)) {
 		var PreSib = getSib(Tar.previousElementSibling);
-		if (
-				(TarSib.innerText.length < 6)
-			&&
-				PreSib.innerText.substring(7,10) == '...'
-			&&
-				TarSib.innerText.substring(0,4) == 'a...'
-			&&
-				document.body.contentEditable = 'true'
-		) {
+		if (TarSib.innerText.length < 6 && PreSib.innerText.substring(7,10) == '...') {
 			PreSib.innerText = new getdDt(new Date()).newHourMinute + ' Ad2';
 			var sel = document.getSelection();
 			sel.collapse(TarSib,1);
