@@ -174,7 +174,7 @@ creLnk = function(hrf,id,par,rel,typ) {
 			Mesela nerede? video otomasyonu için.
 		*/
 		par = par || document.head;
-		console.log('[STARTED] {LNK}' + newLnk.id);
+		console.log('[STARTED] {LNK}' + id);
 		par.appendChild(newLnk);
 		
 		newLnk.id = id;
@@ -188,6 +188,7 @@ creLnk = function(hrf,id,par,rel,typ) {
 		console.log('[STARTED] {LNK}' + newLnk.id);
 		par.appendChild(newLnk);
 		*/
+		console.log('[APPENDED] {LNK}' + newLnk.id);
 	}
 }
 
