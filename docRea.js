@@ -5,12 +5,4 @@ $(document).ready(function () {
 	setTimeout(aniTar,cO.n2*cO.r2);
 });
 $(document).on({mouseenter: hovIn, mouseleave: hovOu}, cO.q0);
-$(document).on(cO.q2, function (e) {
-  	autoTar();
-	autoNow()
-});
-function aniTar() {
-	if (!Tar) {
-		$(cO.q1).animate({ scrollTop: $(document).height() }, cO.n2*cO.r3);
-    }
-}
+$(document).on(cO.q2, function (e) {autAll()});
