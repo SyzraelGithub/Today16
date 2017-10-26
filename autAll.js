@@ -1,4 +1,10 @@
 var TarSib, oldTar;
+
+function autoAll() {
+	autoTar();
+	autoNow();
+}
+
 function autoTar() {
 	Tar = getTar();
 	setoldTar();
