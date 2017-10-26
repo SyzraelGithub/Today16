@@ -3,8 +3,8 @@ var TarSib, oldTar;
 function autAll() {
 	autTar();
 	autNow();
+	autAd2();
 }
-
 function autTar() {
 	Tar = getTar();
 	setoldTar();
@@ -20,6 +20,9 @@ function autNow() {
 			sel.collapse(TarSib,1);
 		}
 	}
+}
+function autAd2() {
+
 }
 function isOddTar(oTar) {
 	var cNI= 0;
