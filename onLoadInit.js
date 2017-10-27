@@ -48,6 +48,16 @@ cnvUrl = function(txt) {
 
 scrArr = scrArr.map(cnvUrl);
 
+/*
+	1710271021
+	Bu noktada istersen, 
+	link preload olayını deneyebiliriz.
+	Ancak denemeden önce, deneme başarılı bile olsa,
+	Bu özelliğin açılabilir kapanabilir bir özellik olması gerekmez mi sence?
+	Belki ileride depreched olacak veya yeni js ler ile uyumsuzluk yapacak.
+	Bundan dolayı tamamiyle reliable saymak ne kadar doğru? %100 doğru mu?
+*/
+
 var scrArrSrl = [];
 var scrArrPrl = [];
 
