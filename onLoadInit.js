@@ -37,9 +37,29 @@ var scrArr = [
 	}
 	scrArr = swtElArr(scrArr,0,1);
 */
-var preLoaEna = false;
+var preLoaEna = true;
 if (preLoaEna) { // true ise link tag lar ile preload edilecek js ler
 	console.log('preLoaEna = true');
+	creLnkPre = function(hrf,id,par,rel,as) {
+	id = id || hrf.split('/').pop().split('.').slice(0,-1).join('.');
+	id += '_pre';
+	var newLnk =  document.getElementById(id);
+	if (!newLnk) {
+		newLnk = document.createElement('link');
+		par = par || document.head;
+		console.log('[STARTED] {PRE}' + id);
+		newLnk.id = id;
+		rel = rel || 'preload';
+		newLnk.rel = rel;
+		as = as || 'script';
+		newLnk.as = as;
+		newLnk.href = hrf;
+		par.appendChild(newLnk);
+		console.log('[APPENDED] {PRE}' + newLnk.id);
+	}
+	var scrArrPre = scrArr.slice(0);
+	while (scrArrPre.length) {creLnkPre(scrArrPre.shift())}
+}
 } else {
 	console.log('preLoaEna = false');
 }
