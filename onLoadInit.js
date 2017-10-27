@@ -57,9 +57,9 @@ if (preLoaEna) { // true ise link tag lar ile preload edilecek js ler
 			par.appendChild(newLnk);
 			console.log('[APPENDED] {PRE}' + newLnk.id);
 		}
-		var scrArrPre = scrArr.slice(0);
-		while (scrArrPre.length) {creLnkPre(scrArrPre.shift())}
 	}
+	var scrArrPre = scrArr.slice(0);
+	while (scrArrPre.length) {creLnkPre(scrArrPre.shift())}
 } else {
 	console.log('preLoaEna = false');
 }
