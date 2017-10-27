@@ -56,6 +56,10 @@ scrArr = scrArr.map(cnvUrl);
 	bu özelliğin açılabilir kapanabilir bir özellik olması gerekmez mi sence?
 	Belki ileride depreched olacak veya yeni js ler ile uyumsuzluk yapacak.
 	Bundan dolayı tamamiyle reliable saymak ne kadar doğru? %100 doğru mu?
+	---
+	https://stackoverflow.com/questions/11102625/preload-script-without-execute
+	
+	---
 */
 
 var scrArrSrl = [];
