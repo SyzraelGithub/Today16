@@ -63,7 +63,7 @@ scrArr = scrArr.map(cnvUrl);
 	---
 */
 
-var preLoaEna = false; //preLoadEnabled
+var preLoaEna = true; //preLoadEnabled
 if (preLoaEna) { // true ise link tag lar ile preload edilecek js ler
 	console.log('preLoaEna = true');
 	creLnkPre = function(hrf,id,par,rel,as) {
