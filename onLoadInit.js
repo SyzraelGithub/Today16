@@ -58,7 +58,8 @@ scrArr = scrArr.map(cnvUrl);
 	Bundan dolayı tamamiyle reliable saymak ne kadar doğru? %100 doğru mu?
 	---
 	https://stackoverflow.com/questions/11102625/preload-script-without-execute
-	
+	https://stackoverflow.com/questions/3588117/preload-script-file/46121439#46121439
+	https://w3c.github.io/preload/#x2.link-type-preload
 	---
 */
 
