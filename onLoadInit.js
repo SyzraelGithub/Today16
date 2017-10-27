@@ -37,7 +37,12 @@ var scrArr = [
 	}
 	scrArr = swtElArr(scrArr,0,1);
 */
-	
+var preLoaEna = false;
+if preLoaEna {
+	console.log('preLoaEna = true');
+} else {
+	console.log('preLoaEna = false');
+}
 /*
 	1702052048
 */
