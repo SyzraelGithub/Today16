@@ -3,7 +3,7 @@ getdDt = function(varDate) {
 	with (this) {
 		this.dYear = twoDigit(dDate.getYear()-100);
 		this.dMonth = twoDigit(dDate.getMonth() + 1);
-		this.dWeek = twoDigit(dDate.getWeek()); 
+		this.dWeek = twoDigit(dDate.getWeek2()); 
 		this.dDay = twoDigit(dDate.getDate());
 		this.dWay = twoDigit(dDate.getDay());
 		this.dHour = twoDigit(dDate.getHours());
