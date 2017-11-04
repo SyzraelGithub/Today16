@@ -4,6 +4,7 @@ Date.prototype.getWeek = function() {
 }
 
 Date.prototype.getWeek2 = function() {
+	//https://stackoverflow.com/questions/6117814/get-week-of-year-in-javascript-like-in-php
 	var d = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
 	var dayNum = d.getUTCDay() || 7;
 	d.setUTCDate(d.getUTCDate() + 4 - dayNum);
