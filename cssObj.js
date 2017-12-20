@@ -7,7 +7,7 @@ cssObj = function() {
 	this.c1 = 'LightGray';
 	this.c2 = 'WhiteSmoke';
 	this.c3 = 'White';
-	this.c4 = 'rgb(0, 0, 255)';
+	this.c4 = 'rgb(94, 154, 252)';
 	with (this) {
 		this.a1 = [[c0,c1],[b0,b1]];
 		this.a2 = [[c0,c2],[b0,b2]];
@@ -46,7 +46,7 @@ cssObj = function() {
 	*/
 	this.q4 = 'div>p'; // 1707311519 yeni geldi blueSpans için. Önceki q lardan da türetebilirdik. Daha şık olurdu.
 	this.f0 = function() {
-		return $(this).css('color')=='rgb(0, 0, 255)' // this.c4
+		return $(this).css('color')=='rgb(94, 154, 252)' // this.c4
 	}
 	this.f1 = function(){
 		return $(this).attr('role')!='status'
@@ -61,7 +61,7 @@ cssObj = function() {
 		---
 		var blueSpans = 
 			$('div>p')
-			.filter(function(){return $(this).css('color')=='rgb(0, 0, 255)'})
+			.filter(function(){return $(this).css('color')=='rgb(94, 154, 252)'})
 			.children()
 			.filter(function(){return $(this).attr('role')!='status'});
 		---
