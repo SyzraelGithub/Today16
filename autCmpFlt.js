@@ -4,7 +4,7 @@
 	---
 	var blueSpans = 
 		$('div>p').
-		filter(function(){return $(this).css('color')=='rgb(0, 0, 255)'}).
+		filter(function(){return $(this).css('color')=='rgb(94, 154, 252)'}).
 		children().
 		filter(function(){return $(this).attr('role')!='status'});
 */
