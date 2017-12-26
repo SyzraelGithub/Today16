@@ -34,6 +34,13 @@ cssObj = function() {
 		Onu çok düşünmeden r2 'ye eşitledim. Bu 12 değerlerinin amacını irdele ileride. 
 		---
 		Daha doğrusu n 'ler ne iş yapar r 'ler ne iş yapar?
+		---
+		Az önce söylediklerimi düzeltiyorum. r2 önceden kullanılmış. 
+		docRea.js içinde setTimeout(aniTar,cO.n2*cO.r2); olarak kullanılmış.
+		Yani demek oluyor ki, r2 gerçekten fontSize için 12 değerini taşıyor.
+		---
+		Bu noktada r2 'nin fontSize için 12 değerini taşıdığını anladığımıza göre,
+		n1 için ne yapacaksın?
 	*/
 	/*
 		1707311422
