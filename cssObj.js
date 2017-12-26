@@ -23,11 +23,18 @@ cssObj = function() {
 	this.e0 /*f0*/ = 'defDiv';
 	this.r0 = 2;
 	this.r1 = 1.5;
-	this.r2 = 12;
+	this.r2 = 12; // 1712260855 nota bak
 	this.r3 = 5;
 	this.n0 = 7;
-	this.n1 = 12;
+	this.n1 = 12; // 1712260855 nota bak
 	this.n2 = 100;
+	/*
+		1712260855 not
+		Farkettim ki, r2 ve n1 hiçbiryerde kullanılmamış. Sonra hov içinde bir yerde 12 nin kaldığını gördüm.
+		Onu çok düşünmeden r2 'ye eşitledim. Bu 12 değerlerinin amacını irdele ileride. 
+		---
+		Daha doğrusu n 'ler ne iş yapar r 'ler ne iş yapar?
+	*/
 	/*
 		1707311422
 		blueSpans için kullanılan filtreler,
