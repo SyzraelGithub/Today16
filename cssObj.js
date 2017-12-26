@@ -41,6 +41,9 @@ cssObj = function() {
 		---
 		Bu noktada r2 'nin fontSize için 12 değerini taşıdığını anladığımıza göre,
 		n1 için ne yapacaksın?
+		---
+		Tekrar baktım. Fikrim tekrardan biraz değişti. n 'ler ve r 'ler karışmış
+		Hepsinin nerelerde kullaıldığına bakman lazım. 
 	*/
 	/*
 		1707311422
