@@ -21,7 +21,7 @@ hovOE = function(el, tN, pX, t) {
 	$(el).find(tN).animate({fontSize:pX+'px'},t);
 }
 hovOe = function(el, k, t) {
-	k=k||1;t=t||cO.n2;hovOE(el,cO.t0,12*k,t);
+	k=k||1;t=t||cO.n2;hovOE(el,cO.t0,cO.r2*k,t);
 }
 var Tar; 
 hovEA = function(el, t, k){
