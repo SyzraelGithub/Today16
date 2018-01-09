@@ -64,7 +64,9 @@ function lstTar(lTar, lNum) {
 		1801090922
 		A... 'lar otomatil Ad2 'e dönüştüğünden beridir yeni bir ihtiyaç oluştu.
 		Burada if yerine switch olmalı. < lNum ise sadece oddTar div ekler ama
-		< 2 ise odd olsa da olmasa da ekler. 
+		< 2 ise odd olsa da olmasa da ekler.
+		---
+		elseif de olur
 	*/
 }
 function getTar() {
