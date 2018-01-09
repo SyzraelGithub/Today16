@@ -60,6 +60,12 @@ function lstTar(lTar, lNum) {
 	{
 		(isOddTar(lTar))?autLasyHDoc(cO.e0,cbFncCur):null
 	}
+	/*
+		1801090922
+		A... 'lar otomatil Ad2 'e dönüştüğünden beridir yeni bir ihtiyaç oluştu.
+		Burada if yerine switch olmalı. < lNum ise sadece oddTar div ekler ama
+		< 2 ise odd olsa da olmasa da ekler. 
+	*/
 }
 function getTar() {
 	var yerTar = conTar();
