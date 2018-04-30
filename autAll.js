@@ -4,6 +4,7 @@ function autAll() {
 	autTar();
 	autNow();
 	autAd2();
+	document.body.contentEditable = true
 }
 function autTar() {
 	Tar = getTar();
