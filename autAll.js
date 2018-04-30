@@ -5,7 +5,7 @@ function autAll() {
 	autNow();
 	autAd2();
 	document.body.contentEditable = true;
-	alert('cntedtbl true');
+	//alert('cntedtbl true');
 
 }
 function autTar() {
