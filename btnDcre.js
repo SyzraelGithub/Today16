@@ -28,8 +28,14 @@ function btnDcre(idNum,innerText,isBold,guid) {
 		}
 	} else {
 		btnD.onclick = function(){
-			//opeDoc(guid); // Operate Doc. Contains Repair Doc and View Doc
-			vieDoc(guid);
+			/*
+				1805051731
+				opeDoc decomment olacak, vieDoc comment olacak. 
+				opeDoc içinde vieDoc barındırıyor artık.
+				// Operate Doc. Contains Repair Doc and View Doc
+			*/
+			opeDoc(guid);
+			//vieDoc(guid);
 		}
 	}
 	prgB.appendChild(btnD);
