@@ -25,6 +25,8 @@ function opeDoc(guid) {
 		objWizDoc.GetHtml()
 		---
 		objWizDoc
+		---
+		( docQry : guid ) ile gelecek doc
 	*/
 	/*
 		1805051727
