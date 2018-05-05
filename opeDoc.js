@@ -1,5 +1,5 @@
 function opeDoc(guid) {
-	alert('opeDoc içine guid = "' + guid + '" için girildi');
+	console.log('opeDoc içine guid = "' + guid + '" için girildi');
 	/*
 		1805051727
 		Gerekli müdaheleyi yaptıktan sonra görevi pointer 'ı tekrar vieDoc 'a bırakıyorum. Eskiden olduğu gibi
