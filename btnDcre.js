@@ -28,6 +28,7 @@ function btnDcre(idNum,innerText,isBold,guid) {
 		}
 	} else {
 		btnD.onclick = function(){
+			//opeDoc(guid); // Operate Doc. Contains Repair Doc and View Doc
 			vieDoc(guid);
 		}
 	}
