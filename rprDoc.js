@@ -5,7 +5,7 @@ function rprDoc(guid) {
 	var imp2Rpr = document.implementation.createHTMLDocument('');
 	imp2Rpr.documentElement.innerHTML = htm2Rpr;
 	scr2Rpr = conInLine(autLsynF(urlPF + 'onLoadnewDoc.js'));
-	if (imp2Rpr.body.getAttribute('onload') == '') {
+	if (imp2Rpr.body.getAttribute('onload') == null) {
 		var txtIfBos = 'body.onload boş. İçerik değiştirelecek.';
 		console.log(txtIfBos);
 		alert(txtIfBos);
