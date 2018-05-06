@@ -16,4 +16,5 @@ function rprDoc(guid) {
 		console.log(txtIfDolu);
 		alert(txtIfDolu);
 	}
+	doc2Rpr.SetHtml(imp2Rpr.documentElement.outerHTML);
 }
