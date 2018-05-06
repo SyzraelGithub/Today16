@@ -15,7 +15,5 @@ function rprDoc(guid) {
 		var txtIfDol = 'body.onload dolu. İçeriğe bakarak karar verebilmeli';
 		console.log(txtIfDol);
 		alert(txtIfDol);
-		imp2Rpr.body.setAttribute('onload',scr2Rpr);
-		doc2Rpr.SetHtml(imp2Rpr.documentElement.outerHTML);
 	}
 }
