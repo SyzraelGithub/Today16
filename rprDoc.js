@@ -4,7 +4,7 @@ function rprDoc(guid) {
 	var htm2Rpr = doc2Rpr.GetHtml();
 	var imp2Rpr = document.implementation.createHTMLDocument('');
 	imp2Rpr.documentElement.innerHTML = htm2Rpr;
-	vaR scr2Rpr;
+	var scr2Rpr;
 	if (imp2Rpr.body.getAttribute('onload') == '') {
 		scr2Rpr = conInLine(autLsynF(urlPF + 'onLoadnewDoc.js'));
 		var txtIfBos = 'body.onload boş. İçerik değiştirelecek.';
