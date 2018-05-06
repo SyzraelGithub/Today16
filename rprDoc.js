@@ -1,5 +1,5 @@
 function rprDoc(guid) {
-	console.log('rprDoc içine guid = "' + guid + '" için girildi');
+	//console.log('rprDoc içine guid = "' + guid + '" için girildi');
 	var doc2Rpr = docQry([['GUID',guid]]).Item(0); // Document to Repair. Tamir edilecek Dosya
 	var htm2Rpr = doc2Rpr.GetHtml();
 	var imp2Rpr = document.implementation.createHTMLDocument('');
