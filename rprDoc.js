@@ -32,12 +32,16 @@ function rprDoc(guid) {
 	var htm2Rpr = doc2Rpr.GetHtml();
 	var imp2Rpr = document.implementation.createHTMLDocument('');
 	imp2Rpr.documentElement.innerHTML = htm2Rpr;
+	vaR scr2Rpr;
 	if (imp2Rpr.body.getAttribute('onload') == '') {
-		console.log('body.onload boş');
-		alert('body.onload boş');
+		scr2Rpr = conInLine(autLsynF(urlPF + 'onLoadnewDoc.js'));
+		var txtIfBos = 'body.onload boş. İçerik değiştirelecek.';
+		console.log(txtIfBos);
+		imp2Rpr.body.setAttribute('onload') = scr2Rpr;
 	} else {
-		console.log('body.onload dolu');
-		alert('body.onload dolu');
+		var txtIfDol = 'body.onload dolu. İçeriğe bakarak karar verebilmeli';
+		console.log(txtIfDolu);
+		alert(txtIfDolu);
 	}
 	
 }
