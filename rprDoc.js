@@ -13,8 +13,8 @@ function rprDoc(guid) {
 		imp2Rpr.body.setAttribute('onload') = scr2Rpr;
 	} else {
 		var txtIfDol = 'body.onload dolu. İçeriğe bakarak karar verebilmeli';
-		console.log(txtIfDolu);
-		alert(txtIfDolu);
+		console.log(txtIfDol);
+		alert(txtIfDol);
 	}
 	doc2Rpr.SetHtml(imp2Rpr.documentElement.outerHTML);
 }
