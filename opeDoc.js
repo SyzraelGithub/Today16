@@ -1,4 +1,5 @@
 function opeDoc(guid) {
+	rprDoc(guid);
 	/*
 		1805051727
 		Gerekli müdaheleyi yaptıktan sonra görevi pointer 'ı tekrar vieDoc 'a bırakıyorum. Eskiden olduğu gibi
