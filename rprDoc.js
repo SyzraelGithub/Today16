@@ -9,13 +9,13 @@ function rprDoc(guid) {
 		var txtIfBos = 'body.onload boş. İçerik değiştirelecek.';
 		console.log(txtIfBos);
 		alert(txtIfBos);
-		imp2Rpr.body.setAttribute('onload') = scr2Rpr;
+		imp2Rpr.body.setAttribute('onload',scr2Rpr);
 		doc2Rpr.SetHtml(imp2Rpr.documentElement.outerHTML);
 	} else {
 		var txtIfDol = 'body.onload dolu. İçeriğe bakarak karar verebilmeli';
 		console.log(txtIfDol);
 		alert(txtIfDol);
-		imp2Rpr.body.setAttribute('onload') = scr2Rpr;
+		imp2Rpr.body.setAttribute('onload',scr2Rpr);
 		doc2Rpr.SetHtml(imp2Rpr.documentElement.outerHTML);
 	}
 }
