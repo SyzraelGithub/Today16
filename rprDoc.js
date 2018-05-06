@@ -9,6 +9,7 @@ function rprDoc(guid) {
 		scr2Rpr = conInLine(autLsynF(urlPF + 'onLoadnewDoc.js'));
 		var txtIfBos = 'body.onload boş. İçerik değiştirelecek.';
 		console.log(txtIfBos);
+		alert(txtIfBos);
 		imp2Rpr.body.setAttribute('onload') = scr2Rpr;
 	} else {
 		var txtIfDol = 'body.onload dolu. İçeriğe bakarak karar verebilmeli';
