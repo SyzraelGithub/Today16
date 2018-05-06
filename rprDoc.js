@@ -10,11 +10,12 @@ function rprDoc(guid) {
 		console.log(txtIfBos);
 		alert(txtIfBos);
 		imp2Rpr.body.setAttribute('onload') = scr2Rpr;
+		doc2Rpr.SetHtml(imp2Rpr.documentElement.outerHTML);
 	} else {
 		var txtIfDol = 'body.onload dolu. İçeriğe bakarak karar verebilmeli';
 		console.log(txtIfDol);
 		alert(txtIfDol);
 		imp2Rpr.body.setAttribute('onload') = scr2Rpr;
+		doc2Rpr.SetHtml(imp2Rpr.documentElement.outerHTML);
 	}
-	doc2Rpr.SetHtml(imp2Rpr.documentElement.outerHTML);
 }
