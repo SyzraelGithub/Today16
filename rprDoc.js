@@ -1,4 +1,4 @@
-function rproc(guid) {
+function rprDoc(guid) {
 	console.log('rprDoc içine guid = "' + guid + '" için girildi');
 	/*
 		1805052002
@@ -28,4 +28,16 @@ function rproc(guid) {
 		---
 		( docQry : guid ) ile gelecek doc
 	*/
+	var doc2Rpr = docQry([['GUID',guid]]).Item(0); // Document to Repair. Tamir edilecek Dosya
+	var htm2Rpr = doc2Rpr.GetHtml();
+	var imp2Rpr = document.implementation.createHTMLDocument('');
+	imp2Rpr.documentElement.innerHTML = htm2Rpr;
+	if (imp2Rpr.body.getAttribute('onload') == '') {
+		console.log('body.onload boş');
+		alert('body.onload boş');
+	} else {
+		console.log('body.onload dolu');
+		alert('body.onload dolu');
+	}
+	
 }
