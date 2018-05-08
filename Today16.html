@@ -8,7 +8,10 @@
 		<script>
 			document.getElementsByTagName('base')[0].href = window.location.href.replace(/[^/]*$/, '')
 		</script>
-		
+		<!--
+			Burada bir detay var. link src değil href alıyor ve rel=preload da barındırması gerektiriyor.
+			Bundan dolayı burası değişecek.
+		-->
 		<link id="GenDec_pre" src="GenDec.js"></link>
 		<link id="ProtoT_getWeek_pre" src="ProtoT_getWeek.js"></link>
 		<link id="twoDigit_pre" src="twoDigit.js"></link>
