@@ -96,7 +96,7 @@ function getSib(parSib) {
 	//return $($(parSib).children('p')[0]).children('span').filter(cO.f1)[0];
 	//return $($(parSib).children('p')[0]).children('span[class!="ui-helper-hidden-accessible"]').filter(cO.f1)[0];
 	return $($(parSib).children('p')[0])
-		.children('span[class!="ui-helper-hidden-accessible"]')
+		.children('span[class!="ui-helper-hidden-accessible ui-autocomplete-input"]')
 		.filter(cO.f1)[0];
 	/*
 		1805101939
