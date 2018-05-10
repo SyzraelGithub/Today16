@@ -106,6 +106,10 @@ function getSib(parSib) {
 		ile değişince
 		<span style="font-size: 12px;" class="ui-autocomplete-input">19:02 A...</span>
 		döndürecek. Aslında sondaki filtre ye de gerek yok ama yine de dursun.
+		---
+		Yarın öbürsü gün, bu da hata verebilir belki span sayısı daha da artar. o zaman diğer class lar için de
+		class!=... koymak gerekir. Veya class 'ı olmayan span diye de aratabiliriz. Ama class 'ı olmayan ifadesi
+		hem sanki biraz güvenilmez hem de bulamadım aradığım kodu.
 	*/
 }
 function aniTar() {
