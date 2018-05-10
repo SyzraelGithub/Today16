@@ -93,7 +93,20 @@ function getSib(parSib) {
 		1707311539
 		Şimdilik bulduğum en başarılı query zinciri şu
 	*/
-	return $($(parSib).children('p')[0]).children('span').filter(cO.f1)[0];
+	//return $($(parSib).children('p')[0]).children('span').filter(cO.f1)[0];
+	return $($(parSib).children('p')[0]).children('span[class!="ui-helper-hidden-accessible"]').filter(cO.f1)[0];
+	/*
+		1805101939
+		yukarıdaki code bir pc 'den diğerine body.onload silindiğinde,
+		selector olarak kullanıldığında
+		<span class="ui-helper-hidden-accessible" style="font-size: 12px;"></span>
+		döndürüyor. Bundan dolayı
+		return $($(parSib).children('p')[0]).children('span').filter(cO.f1)[0];
+		return $($(parSib).children('p')[0]).children('span[class!="ui-helper-hidden-accessible"]').filter(cO.f1)[0];
+		ile değişince
+		<span style="font-size: 12px;" class="ui-autocomplete-input">19:02 A...</span>
+		döndürecek. Aslında sondaki filtre ye de gerek yok ama yine de dursun.
+	*/
 }
 function aniTar() {
 	if (!Tar) {
