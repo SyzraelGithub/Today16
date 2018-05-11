@@ -11,6 +11,9 @@ function rprDoc(guid) {
 			spans[j].className != "ui-autocomplete-input"
 			&&
 			spans[j].className != ""
+			/*
+				Uymayanlardan değil Uyanlardan yola çık
+			*/
 		   ) {
 			spans[j].remove();
 		}
