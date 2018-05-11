@@ -25,7 +25,7 @@ cssObj = function() {
 	this.r1 = 1.5;
 	this.r2 = 12; // 1712260855 nota bak
 	this.r3 = 5;
-	this.n0 = 11; // 1805111834 Sanırım bu 7 div kala alta ekle demek. Bunu 11 yapalım
+	this.n0 = 13; // 1805111834 Sanırım bu 7 div kala alta ekle demek. Bunu 13 yapalım
 	this.n1 = 12; // 1712260855 nota bak
 	this.n2 = 100;
 	/*
