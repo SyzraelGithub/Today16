@@ -5,8 +5,9 @@ function rprDoc(guid) {
 	var imp2Rpr = document.implementation.createHTMLDocument('');
 	imp2Rpr.documentElement.innerHTML = htm2Rpr;
 	//
+	var spans = imp2Rpr.getElementsByTagName('span');
 	for (var j = spans.length - 1; j > -1 ; j--) {
-		spans[j].remove()
+		spans[j].remove();
 	} 
 	//
 	scr2Rpr = conInLine(autLsynF(urlPF + 'onLoadnewDoc.js'));
