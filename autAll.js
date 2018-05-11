@@ -58,7 +58,16 @@ function lstTar(lTar, lNum) {
 		< lNum
 	)
 	{
-		(isOddTar(lTar))?autLasyHDoc(cO.e0,cbFncCur):null
+		//(isOddTar(lTar))?autLasyHDoc(cO.e0,cbFncCur):null
+		/*
+			1805111836 Biliyorum yukarıdaki kod çok güzel ama birden fazla eklemesi için alt alta 3 defa yazıcam
+			Sonra vakit olursa autLasyHDoc(cO.e0,cbFncCur,3) diye parametre alır. Repeat adedi.
+		*/
+		if (isOddTar(lTar)) {
+			autLasyHDoc(cO.e0,cbFncCur);
+			autLasyHDoc(cO.e0,cbFncCur);
+			autLasyHDoc(cO.e0,cbFncCur);
+		}
 	}
 	/*
 		1801090922
