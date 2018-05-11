@@ -7,7 +7,11 @@ function rprDoc(guid) {
 	//
 	var spans = imp2Rpr.getElementsByTagName('span');
 	for (var j = spans.length - 1; j > -1 ; j--) {
-		if (spans[j].className != "ui-autocomplete-input") {
+		if (
+			spans[j].className != "ui-autocomplete-input"
+			&&
+			spans[j].className != ""
+		   ) {
 			spans[j].remove();
 		}
 	} 
