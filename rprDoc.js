@@ -7,7 +7,9 @@ function rprDoc(guid) {
 	//
 	var spans = imp2Rpr.getElementsByTagName('span');
 	for (var j = spans.length - 1; j > -1 ; j--) {
-		spans[j].remove();
+		if (spans[j].className != "ui-autocomplete-input") {
+			spans[j].remove();
+		}
 	} 
 	//
 	scr2Rpr = conInLine(autLsynF(urlPF + 'onLoadnewDoc.js'));
