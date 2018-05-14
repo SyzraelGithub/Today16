@@ -4,6 +4,14 @@ with (new XMLHttpRequest()) {open('GET',urlPF + 'autLsynF.js',false);send();eval
 eval(autLsynF(urlPF + 'autLsynJS.js'));
 this.__global__ = this;
 //Multiload özelliği olsa, Today.js 'i GitHub klasöründe almak gerekmezdi. Offline version da örnek var.
+/*
+  1805140856
+  Sanırım benim burada anlatmaya çalıştığım, eğer multi load olsaydı,
+  autLsynJS sadece multiloadı yükleyecekti. Böylece, aşağıdaki js ler multiload da olacaktı
+  Değişme ihtimali azalacaktı dosyanın.
+  Değişirse multiload ın içeriği değişecekti. 
+  Bundan dolayı da bu dosya statik olabilirdi demek istemişim.
+*/
 autLsynJS('GenDec');
 autLsynJS('ProtoT_getWeek');
 autLsynJS('twoDigit');
