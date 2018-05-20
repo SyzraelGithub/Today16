@@ -67,6 +67,13 @@ function lstTar(lTar, lNum) {
 			autLasyHDoc(cO.e0,cbFncCur);
 			autLasyHDoc(cO.e0,cbFncCur);
 			autLasyHDoc(cO.e0,cbFncCur);
+		} else {
+			autLasyHDoc(cO.e0,cbFncCur);
+			/*
+				1805202020
+				isOddTar false ise, demekki mavi Div değil.
+				Öyleyse 1 adet ekle.
+			*/
 		}
 	}
 	/*
