@@ -68,11 +68,17 @@ function lstTar(lTar, lNum) {
 			autLasyHDoc(cO.e0,cbFncCur);
 			autLasyHDoc(cO.e0,cbFncCur);
 		} else {
-			autLasyHDoc(cO.e0,cbFncCur);
+			//autLasyHDoc(cO.e0,cbFncCur);
 			/*
 				1805202020
 				isOddTar false ise, demekki mavi Div değil.
 				Öyleyse 1 adet ekle.
+				---
+				1805231346
+				yukarıda yazdığım kodu iptal ediyorum.
+				//autLasyHDoc(cO.e0,cbFncCur);
+				Benim için esas gereken konu şu,
+				son div 'e geldiğim de, sadece 1 seferliğine çalışmalıydı. 
 			*/
 		}
 	}
