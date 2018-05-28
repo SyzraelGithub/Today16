@@ -50,29 +50,13 @@ function conTar() {
 	return cTar
 }
 function lstTar(lTar, lNum) {
-	switch (
-		($(cO.q0).length) - (
-			$(lTar).index()
-			+ $('body>ul').length - ($(cO.q0).length / 2) // Bu kısım ul karmaşasından
-		)
-	) {
-		case < 2:
-			autLasyHDoc(cO.e0,cbFncCur);
-			break;	
-		case < lNum:
-			(isOddTar(lTar))?autLasyHDoc(cO.e0,cbFncCur):null
-			break;
-	}
-}
-function lstTarOrj(lTar, lNum) {
-	if (
-		($(cO.q0).length) - (
-			$(lTar).index()
-			+ $('body>ul').length - ($(cO.q0).length / 2) // Bu kısım ul karmaşasından
-		)
-		< lNum
-	)
-	{
+	var lNumInd = ($(cO.q0).length) - (
+				$(lTar).index()
+				+ $('body>ul').length - ($(cO.q0).length / 2) // Bu kısım ul karmaşasından
+			);
+	if (lNumInd < 2) {
+		autLasyHDoc(cO.e0,cbFncCur)
+	} else if (lNumInd < lNum) {
 		(isOddTar(lTar))?autLasyHDoc(cO.e0,cbFncCur):null
 	}
 	/*
