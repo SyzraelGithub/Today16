@@ -58,29 +58,7 @@ function lstTar(lTar, lNum) {
 		< lNum
 	)
 	{
-		//(isOddTar(lTar))?autLasyHDoc(cO.e0,cbFncCur):null
-		/*
-			1805111836 Biliyorum yukarıdaki kod çok güzel ama birden fazla eklemesi için alt alta 3 defa yazıcam
-			Sonra vakit olursa autLasyHDoc(cO.e0,cbFncCur,3) diye parametre alır. Repeat adedi.
-		*/
-		if (isOddTar(lTar)) {
-			autLasyHDoc(cO.e0,cbFncCur);
-			autLasyHDoc(cO.e0,cbFncCur);
-			autLasyHDoc(cO.e0,cbFncCur);
-		} else {
-			//autLasyHDoc(cO.e0,cbFncCur);
-			/*
-				1805202020
-				isOddTar false ise, demekki mavi Div değil.
-				Öyleyse 1 adet ekle.
-				---
-				1805231346
-				yukarıda yazdığım kodu iptal ediyorum.
-				//autLasyHDoc(cO.e0,cbFncCur);
-				Benim için esas gereken konu şu,
-				son div 'e geldiğim de, sadece 1 seferliğine çalışmalıydı. 
-			*/
-		}
+		(isOddTar(lTar))?autLasyHDoc(cO.e0,cbFncCur):null
 	}
 	/*
 		1801090922
