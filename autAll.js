@@ -50,6 +50,14 @@ function conTar() {
 	return cTar
 }
 function lstTar(lTar, lNum) {
+	if (
+		$(Tar).next() == []
+		||
+		$(Tar).next().prop('tagName') != 'DIV'
+	) {
+		autLasyHDoc(cO.e0,cbFncCur)
+	}
+	/*
 	var lNumInd = ($(cO.q0).length) - (
 				$(lTar).index()
 				+ $('body>ul').length - ($(cO.q0).length / 2) // Bu kısım ul karmaşasından
@@ -59,6 +67,7 @@ function lstTar(lTar, lNum) {
 	} else if (lNumInd < lNum) {
 		(isOddTar(lTar))?autLasyHDoc(cO.e0,cbFncCur):null
 	}
+	*/
 	/*
 		1801090922
 		A... 'lar otomatil Ad2 'e dönüştüğünden beridir yeni bir ihtiyaç oluştu.
