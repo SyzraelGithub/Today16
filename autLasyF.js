@@ -26,6 +26,16 @@ beeLasyF = function (duration, frequency, volume, type, callback) {
     setTimeout(function(){oscillator.stop()}, (duration ? duration : 500));
 };
 
+/*
+    1805311743
+    Burada bir değişken var olacak. İsmi;
+    var rptLasyF = 1
+    Bu değer 1 ise tek sefer çalışır.
+    Ancak 3 ise mesela, cbFnc tamamlanınca
+    fnc kendini recursive çağırır.
+
+*/
+
 autLasyF = function(urlF,cbFnc) {
 	with (new XMLHttpRequest()) {
 		onreadystatechange = function() {
