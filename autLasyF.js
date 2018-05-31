@@ -33,7 +33,18 @@ beeLasyF = function (duration, frequency, volume, type, callback) {
     Bu değer 1 ise tek sefer çalışır.
     Ancak 3 ise mesela, cbFnc tamamlanınca
     fnc kendini recursive çağırır.
-
+    —-
+    Hatta global olmasın değişken. 2 değişken alsın fnc optional.
+    rptLasyFCrr ve rptLasyFTtl
+    4 defa toplamda çalışacak şu an 3 üncü
+    4 - 3 = 1 sesi 1 tık incelt.
+    3 > 1 olduğu için, 4, 3 - 1 = 2 ile
+    4, 2 ile tekrar recursive fnc çağır
+    4, 1 olduğunda bu son kez çalışmadır.
+    ses 4 - 1 = 3 kadar incelir ve 
+    1 > 1 != true olduğu için,
+    fnc tekrar çalışmaz.
+    Optional var ‘lar = 1 default
 */
 
 autLasyF = function(urlF,cbFnc) {
