@@ -51,9 +51,7 @@ function conTar() {
 }
 function lstTar(lTar, lNum) {
 	if (
-		$(Tar).next() == []
-		||
-		$(Tar).next().prop('tagName') != 'DIV'
+		$('div:last-of-type')[0] == Tar
 	) {
 		autLasyHDoc(cO.e0,cbFncCur)
 	}
