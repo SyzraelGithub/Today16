@@ -19,5 +19,9 @@ cbFncCur = function () {
 			spanComplete($(cO.q4).filter(cO.f0).last().children().filter(cO.f1));
 		}
 	}
-
+	/*
+		1805311658
+		Her yeni div eklendiğinde aşağı scroll olsun
+	*/
+	$(cO.q1).animate({ scrollTop: $(document).height() }, cO.n2*cO.r3);
 }
