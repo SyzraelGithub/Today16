@@ -1,6 +1,8 @@
-autLasyHDoc = function(urlLF,cbFnc) {
+autLasyHDoc = function(urlLF,cbFnc,cbFncRptTtl,cbFncRptCrr) {
+	cbFncRptTtl = cbFncRptTtl || 1;
+	cbFncRptCrr = cbFncRptCrr || 1;
 	urlF = urlPF + urlLF + '.htm';
-	autLasyF(urlF,cbFnc);
+	autLasyF(urlF,cbFnc,cbFncRptTtl,cbFncRptCrr);
 }
 
 cbFncCur = function () {
