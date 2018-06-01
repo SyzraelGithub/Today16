@@ -47,15 +47,26 @@ beeLasyF = function (duration, frequency, volume, type, callback) {
     Optional var ‘lar = 1 default
 */
 
-autLasyF = function(urlF,cbFnc) {
+autLasyF = function(urlF,cbFnc,cbFncRptTtl,cbFncRptCrr) {
+	cbFncRptTtl = cbFncRptTtl || 1;
+	cbFncRptCrr = cbFncRptCrr || 1;
 	with (new XMLHttpRequest()) {
 		onreadystatechange = function() {
 			if (readyState == 4 && status == 200) {
 				if (typeof cbFnc == 'function') {
 					cbFnc.apply(this);
-					beeLasyF(30,300,0.3,'triangle');
+					beeLasyF(
+						30,
+						(300 + (cbFncRptCrr * 50)),
+						(0.3 + (cbFncRptCrr * 0.1)),
+						'triangle'
+					);
 					//urlF 'nin uzantısına göre select ile ses değişebilir.
 					//css html js veya boş veya başka uzantı
+					if (cbFncRptTtl > cbFncRptCrr) {
+						cbFncRptCrr++;
+						autLasyF(urlF,cbFnc,cbFncRptTtl,cbFncRptCrr);
+					}
 				}
 			}
 		}
