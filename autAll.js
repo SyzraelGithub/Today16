@@ -53,7 +53,9 @@ function lstTar(lTar, lNum) {
 	if (
 		$('div:last-of-type').toArray().includes(Tar)
 	) {
-		autLasyHDoc(cO.e0,cbFncCur)
+		autLasyHDoc(cO.e0,cbFncCur);
+		autLasyHDoc(cO.e0,cbFncCur);
+		autLasyHDoc(cO.e0,cbFncCur);
 	}
 	/*
 	var lNumInd = ($(cO.q0).length) - (
