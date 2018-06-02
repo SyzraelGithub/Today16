@@ -183,6 +183,9 @@ for (
 					.margin
 				=
 				'0px'
+				/*
+					$('body>p').css('margin','0px') //diyecektim olmasaydı
+				*/
 			}
 		}
 	}
