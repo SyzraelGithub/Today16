@@ -53,7 +53,7 @@ function lstTar(lTar, lNum) {
 	if (
 		$('div:last-of-type').toArray().includes(Tar)
 		||
-		$('p:last-of-type').toArray().includes(Tar)
+		$('p:last').toArray().includes(Tar)
 	) {
 		autLasyHDoc(cO.e0,cbFncCur,3);
 	}
