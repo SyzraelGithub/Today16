@@ -4,6 +4,7 @@ function autAll() {
 	autTar();
 	autNow();
 	autAd2();
+	autBtm();
 }
 function autTar() {
 	Tar = getTar();
