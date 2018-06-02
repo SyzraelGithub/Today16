@@ -15,7 +15,7 @@ cssObj = function() {
 		this.a0 = [a1,a2,a3];
 	}
 	this.t0 = 'span';
-	this.q0 = 'body>div';
+	this.q0 = 'body>div, body>p'; //'body>div'; //1806021841 Wiznote Güncellemesi body>div>p 'i body>p 'e çevirdi otomatik.
 	this.q1 = 'html, body';
 	this.q2 = 'keyup click';
 	this.q3 = 'BODY';
@@ -61,7 +61,7 @@ cssObj = function() {
 		Zaten sadece burası dışında
 		autoTarNow.js 'de lstTar fnc da varmış.
 	*/
-	this.q4 = 'div>p'; // 1707311519 yeni geldi blueSpans için. Önceki q lardan da türetebilirdik. Daha şık olurdu.
+	this.q4 = 'div>p, body>p'; //'div>p'; //1806021841 Wiznote Güncellemesi body>div>p 'i body>p 'e çevirdi otomatik. // 1707311519 yeni geldi blueSpans için. Önceki q lardan da türetebilirdik. Daha şık olurdu.
 	this.f0 = function() {
 		return $(this).css('color')=='rgb(94, 154, 252)' // this.c4
 	}
