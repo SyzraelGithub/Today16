@@ -51,7 +51,7 @@ function autBtm() { // En aşağıya yakın isen ama en aşağıda değilsen, a�
 		scroll ile uğraşıyorum bundan dolayı.
 	*/
 	if (
-		$(window).scrollTop() + $(window).height() > $(document).height() - 100
+		$(window).scrollTop() + $(window).height() > $(document).height() - 180
 		&&
 		$(window).scrollTop() + $(window).height() != $(document).height()
 	) {
