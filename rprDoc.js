@@ -31,6 +31,6 @@ function rprDoc(guid) {
 	} else {
 		var txtIfDol = 'body.onload dolu. İçeriğe bakarak karar verebilmeli';
 		console.log(txtIfDol);
-		alert(txtIfDol);
+		//alert(txtIfDol);
 	}
 }
