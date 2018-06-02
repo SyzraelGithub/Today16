@@ -27,7 +27,7 @@ function autAd2() {
 		if (
 				TarSib.innerText.length < 6
 			&&
-				PreSib.innerText.substring(7,10) == '...'
+				(PreSib.innerText.substring(7,10) == '...' || PreSib.innerText.substring(6,9) == 'Ad2')
 			&&
 				TarSib.innerText.substring(0,4) == 'a...'
 			&&
