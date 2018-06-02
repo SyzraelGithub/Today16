@@ -101,9 +101,27 @@ function getSib(parSib) {
 	*/
 	//return $($(parSib).children('p')[0]).children('span').filter(cO.f1)[0];
 	//return $($(parSib).children('p')[0]).children('span[class!="ui-helper-hidden-accessible"]').filter(cO.f1)[0];
-	return $($(parSib).children('p')[0])
+	var rsltSib;
+	if ($(parSib).children('p')[0] == undefined) {
+		rsltSib = $(parSib);
+	} else {
+		rsltSib = $($(parSib).children('p')[0]);
+	}
+	return $(rsltSib)
 		.children('span[class!="ui-helper-hidden-accessible ui-autocomplete-input"]')
 		.filter(cO.f1)[0];
+	/*
+		1805021700
+		WizNote güncellenince div leri silip direk p 'i dışarıya aldı. 
+		Bu da parSib 'te sorun yaratıyor.
+		Bundan dolayı yukarıdaki code 'u biraz değiştiricem.
+		Eski hali şu idi:
+		return $($(parSib).children('p')[0])
+			.children('span[class!="ui-helper-hidden-accessible ui-autocomplete-input"]')
+			.filter(cO.f1)[0];
+		---
+		Burada dursun.
+	*/
 	/*
 		1805101939
 		yukarıdaki code bir pc 'den diğerine body.onload silindiğinde,
