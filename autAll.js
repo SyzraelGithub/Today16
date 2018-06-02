@@ -44,6 +44,15 @@ function autAd2() {
 		}
 	}
 }
+function autBtm() { // En aşağıya yakın isen, aşağıya sürükle
+	if (
+		$(window).scrollTop() + $(window).height() > $(document).height() - 100
+		&&
+		$(window).scrollTop() + $(window).height() != $(document).height()
+	) {
+		$(cO.q1).animate({ scrollTop: $(document).height() }, cO.n2*cO.r3);
+	}
+}
 function isOddTar(oTar) {
 	var cNI= 0;
 	if (oTar.childNodes[cNI].nodeType == 3) {cNI++}
