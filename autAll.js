@@ -44,7 +44,12 @@ function autAd2() {
 		}
 	}
 }
-function autBtm() { // En aşağıya yakın isen, aşağıya sürükle
+function autBtm() { // En aşağıya yakın isen ama en aşağıda değilsen, aşağıya sürükle
+	/*
+		1806022052
+		Telefondan Teamviewer ile yazarken en aşağıda olmayınca 
+		scroll ile uğraşıyorum bundan dolayı.
+	*/
 	if (
 		$(window).scrollTop() + $(window).height() > $(document).height() - 100
 		&&
@@ -184,7 +189,12 @@ for (
 					cssRules[cssi].
 					selectorText
 				==
-					'.wiz-editor-body div, .wiz-editor-body p, .wiz-editor-body ul, .wiz-editor-body ol, .wiz-editor-body dl, .wiz-editor-body li'
+					'.wiz-editor-body div, ' + 
+					'.wiz-editor-body p, ' + 
+					'.wiz-editor-body ul, ' + 
+					'.wiz-editor-body ol, ' + 
+					'.wiz-editor-body dl, ' + 
+					'.wiz-editor-body li'
 			) {
 				document
 					.styleSheets['wiz_custom_css']
