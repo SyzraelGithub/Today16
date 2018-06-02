@@ -150,3 +150,39 @@ function aniTar() {
 		$(cO.q1).animate({ scrollTop: $(document).height() }, cO.n2*cO.r3);
     }
 }
+
+for (
+		var cssi=0;
+		cssi<document
+			.styleSheets['wiz_custom_css']
+			.cssRules
+			.length; 
+		cssi++
+	) {
+		if (
+			document
+				.styleSheets['wiz_custom_css']
+				.cssRules[cssi]
+				.style
+				.margin
+			==
+			'8px 0px'
+		) {
+			if (
+				document.
+					styleSheets['wiz_custom_css'].
+					cssRules[cssi].
+					selectorText
+				==
+					'.wiz-editor-body div, .wiz-editor-body p, .wiz-editor-body ul, .wiz-editor-body ol, .wiz-editor-body dl, .wiz-editor-body li'
+			) {
+				document
+					.styleSheets['wiz_custom_css']
+					.cssRules[cssi]
+					.style
+					.margin
+				=
+				''
+			}
+		}
+	}
