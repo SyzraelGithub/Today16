@@ -37,10 +37,12 @@ function rprDoc(guid) {
 		imp2Rpr.body.setAttribute('onload',scr2Rpr);
 		//bluePs.children('span[class!=""]').remove();
 		//autAd2 eski haline de gelebilir böylece.
-		if (!objWindow.CurrentDocument.Downloaded) {
-			alert('Downloaded = false. SetHtml beklemeliydi');
-		} else {
-			console.log('Downloaded = true. Demekki SetHtml çalışacak');
+		if (!!objWindow.CurrentDocument) {
+			if (!objWindow.CurrentDocument.Downloaded) {
+				alert('Downloaded = false. SetHtml beklemeliydi');
+			} else {
+				console.log('Downloaded = true. Demekki SetHtml çalışacak');
+			}
 		}
 		doc2Rpr.SetHtml(imp2Rpr.documentElement.outerHTML);
 	} else {
