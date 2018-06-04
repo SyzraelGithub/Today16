@@ -1,4 +1,4 @@
-//github be fast please
+//github be fast please ... thanks ..
 function rprDoc(guid) {
 	//console.log('rprDoc içine guid = "' + guid + '" için girildi');
 	var doc2Rpr = docQry([['GUID',guid]]).Item(0); // Document to Repair. Tamir edilecek Dosya
