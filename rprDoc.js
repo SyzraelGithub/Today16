@@ -31,6 +31,10 @@ function rprDoc(guid) {
 		if (!!objWindow.CurrentDocument) {
 			while (!objWindow.CurrentDocument.Downloaded) {
 				alert('Downloaded = false. SetHtml beklemeli');
+				/*
+					1806041307
+					Burada aslında settimeout cleartimeout eklicem.
+				*/
 			}
 		}
 		console.log('Downloaded = true. Demekki SetHtml çalışacak');
