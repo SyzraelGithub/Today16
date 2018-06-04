@@ -33,7 +33,7 @@ function rprDoc(guid) {
 	if (imp2Rpr.body.getAttribute('onload') == null) {
 		var txtIfBos = 'body.onload boş. İçerik değiştirelecek.';
 		console.log(txtIfBos);
-		alert(txtIfBos);
+		//alert(txtIfBos);
 		imp2Rpr.body.setAttribute('onload',scr2Rpr);
 		//bluePs.children('span[class!=""]').remove();
 		//autAd2 eski haline de gelebilir böylece.
