@@ -1,14 +1,3 @@
-if (!!objWindow.CurrentDocument) {
-	if (
-		objWindow.CurrentDocument.Location.substring(0,18) == '/.Kay/Akı/Yaz/Dat/'
-		||
-		objWindow.CurrentDocument.Location.split('/').length == 10
-		||
-		objWindow.CurrentDocument.Name.substring(13,20) == 'yaz.gun'
-	) {
-		rprDoc(objWindow.CurrentDocument.GUID);
-	}
-}
 function rprDoc(guid) {
 	//console.log('rprDoc içine guid = "' + guid + '" için girildi');
 	var doc2Rpr = docQry([['GUID',guid]]).Item(0); // Document to Repair. Tamir edilecek Dosya
@@ -50,5 +39,16 @@ function rprDoc(guid) {
 		var txtIfDol = 'body.onload dolu. İçeriğe bakarak karar verebilmeli';
 		console.log(txtIfDol);
 		//alert(txtIfDol);
+	}
+}
+if (!!objWindow.CurrentDocument) {
+	if (
+		objWindow.CurrentDocument.Location.substring(0,18) == '/.Kay/Akı/Yaz/Dat/'
+		||
+		objWindow.CurrentDocument.Location.split('/').length == 10
+		||
+		objWindow.CurrentDocument.Name.substring(13,20) == 'yaz.gun'
+	) {
+		rprDoc(objWindow.CurrentDocument.GUID);
 	}
 }
