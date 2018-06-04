@@ -29,12 +29,11 @@ function rprDoc(guid) {
 		//bluePs.children('span[class!=""]').remove();
 		//autAd2 eski haline de gelebilir böylece.
 		if (!!objWindow.CurrentDocument) {
-			if (!objWindow.CurrentDocument.Downloaded) {
-				alert('Downloaded = false. SetHtml beklemeliydi');
-			} else {
-				console.log('Downloaded = true. Demekki SetHtml çalışacak');
+			while (!objWindow.CurrentDocument.Downloaded) {
+				alert('Downloaded = false. SetHtml beklemeli');
 			}
 		}
+		console.log('Downloaded = true. Demekki SetHtml çalışacak');
 		doc2Rpr.SetHtml(imp2Rpr.documentElement.outerHTML);
 	} else {
 		var txtIfDol = 'body.onload dolu. İçeriğe bakarak karar verebilmeli';
