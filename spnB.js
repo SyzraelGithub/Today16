@@ -11,3 +11,21 @@ prgB.appendChild(spnB);
 var dDt = new getdDt(new Date());
 
 spnB.innerText = dDt.myLocation;
+
+///
+
+var btnB = document.createElement('button');
+btnB.innerText = 'onL';
+btnB.id = 'btnB';
+btnB.class = 'btnBcls';
+btnB.style.fontSize = '8pt';
+btnB.style.fontWeight = 'bold';
+//btnB.disabled = true;
+
+prgB.appendChild(btnB);
+
+//b4br(btnB);
+
+btnB.onclick = function () {
+  alert('aferin btnB e bastın tebrikler');
+}
