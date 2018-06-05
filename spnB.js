@@ -15,7 +15,7 @@ spnB.innerText = dDt.myLocation;
 ///
 
 var btnB = document.createElement('button');
-btnB.innerText = 'onL';
+btnB.innerText = 'onLoad';
 btnB.id = 'btnB';
 btnB.class = 'btnBcls';
 btnB.style.fontSize = '8pt';
