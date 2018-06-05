@@ -27,5 +27,5 @@ prgB.appendChild(btnB);
 //b4br(btnB);
 
 btnB.onclick = function () {
-  alert('aferin btnB e bastın tebrikler');
+	alert('aferin btnB e bastın tebrikler');
 }
