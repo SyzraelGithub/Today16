@@ -62,6 +62,7 @@ function rprDoc(guid) {
 		//alert(txtIfDol);
 	}
 }
+/*
 if (!!objWindow.CurrentDocument) {
 	if (
 		objWindow.CurrentDocument.Location.substring(0,18) == '/.Kay/Akı/Yaz/Dat/'
@@ -76,3 +77,4 @@ if (!!objWindow.CurrentDocument) {
 		}
 	}
 }
+*/
