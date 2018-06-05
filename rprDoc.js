@@ -70,6 +70,9 @@ if (!!objWindow.CurrentDocument) {
 		||
 		objWindow.CurrentDocument.Name.substring(13,20) == 'yaz.gun'
 	) {
-		rprDoc(objWindow.CurrentDocument.GUID);
+		var autoRprDoc = prompt('Tamir edeyim mi Document i?','Kalsın tşk');
+		if (autoRprDoc != 'Kalsın tşk') {
+			rprDoc(objWindow.CurrentDocument.GUID);
+		}
 	}
 }
