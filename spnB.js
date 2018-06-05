@@ -27,5 +27,23 @@ prgB.appendChild(btnB);
 //b4br(btnB);
 
 btnB.onclick = function () {
-	alert('aferin btnB e bastın tebrikler');
+	if (!!objWindow.CurrentDocument) {
+		if (
+			objWindow.CurrentDocument.Location.substring(0,18) == '/.Kay/Akı/Yaz/Dat/'
+			||
+			objWindow.CurrentDocument.Location.split('/').length == 10
+			||
+			objWindow.CurrentDocument.Name.substring(13,20) == 'yaz.gun'
+		) {
+			var htm2Rpr = objWindow.CurrentDocument.GetHtml();
+			var imp2Rpr = document.implementation.createHTMLDocument('');
+			imp2Rpr.documentElement.innerHTML = htm2Rpr;
+			if (imp2Rpr.body.getAttribute('onload') == null) {
+				var autoRprDoc = prompt('Tamir edeyim mi Document i?','Kalsın tşk');
+				if (autoRprDoc != 'Kalsın tşk') {
+					rprDoc(objWindow.CurrentDocument.GUID);
+				}
+			}
+		}
+	}
 }
