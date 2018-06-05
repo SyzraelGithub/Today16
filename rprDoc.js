@@ -62,7 +62,6 @@ function rprDoc(guid) {
 		//alert(txtIfDol);
 	}
 }
-/*
 if (!!objWindow.CurrentDocument) {
 	if (
 		objWindow.CurrentDocument.Location.substring(0,18) == '/.Kay/Akı/Yaz/Dat/'
@@ -71,10 +70,14 @@ if (!!objWindow.CurrentDocument) {
 		||
 		objWindow.CurrentDocument.Name.substring(13,20) == 'yaz.gun'
 	) {
-		var autoRprDoc = prompt('Tamir edeyim mi Document i?','Kalsın tşk');
-		if (autoRprDoc != 'Kalsın tşk') {
-			rprDoc(objWindow.CurrentDocument.GUID);
+		var htm2Rpr = objWindow.CurrentDocument.GetHtml();
+		var imp2Rpr = document.implementation.createHTMLDocument('');
+		imp2Rpr.documentElement.innerHTML = htm2Rpr;
+		if (imp2Rpr.body.getAttribute('onload') == null) {
+			var autoRprDoc = prompt('Tamir edeyim mi Document i?','Kalsın tşk');
+			if (autoRprDoc != 'Kalsın tşk') {
+				rprDoc(objWindow.CurrentDocument.GUID);
+			}
 		}
 	}
 }
-*/
