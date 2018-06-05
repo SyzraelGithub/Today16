@@ -38,6 +38,14 @@ function rprDoc(guid) {
 		//bluePs.children('span[class!=""]').remove();
 		//autAd2 eski haline de gelebilir böylece.
 		if (!!objWindow.CurrentDocument) {
+			/*
+				1806051134
+				CurrentDocument 'in body.onload 'a sahip olmamasını araştırması
+				Geçmiş tarihli notlar için. 
+				Mevcut notun yüklenmeme problemi ise başka pc 'de güncellenen
+				Bugünün notu ile ilgili.
+				Bu ikisini ayırt etmek lazım.
+			*/
 			while (!objWindow.CurrentDocument.Downloaded) {
 				alert('Downloaded = false. SetHtml beklemeli');
 				/*
