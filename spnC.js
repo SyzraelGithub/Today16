@@ -7,4 +7,4 @@ spnC.innerText = 'Toplam ' + fldLGen.Documents.Count + ' Document var';
 
 prgB.appendChild(spnC);
 
-b4br(spnC);
+//b4br(spnC);
