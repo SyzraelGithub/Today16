@@ -2,6 +2,15 @@
 function rprDoc(guid) {
 	//console.log('rprDoc içine guid = "' + guid + '" için girildi');
 	var doc2Rpr = docQry([['GUID',guid]]).Item(0); // Document to Repair. Tamir edilecek Dosya
+	/*
+		1806051058
+		Aslında bu noktada da bakmak lazım Downloaded = true mu?
+	*/
+	if (!doc2Rpr.Downloaded) {
+		alert('Tamir edilecek dosya daha yüklenmemiş ki!');
+	} else {
+	
+	}
 	var htm2Rpr = doc2Rpr.GetHtml();
 	var imp2Rpr = document.implementation.createHTMLDocument('');
 	imp2Rpr.documentElement.innerHTML = htm2Rpr;
