@@ -111,7 +111,7 @@ btnESty.disabled = true;
 
 prgE.appendChild(btnESty);
 
-b4br(btnESty);
+//b4br(btnESty);
 
 try {slcEonchange()} catch(err) {document.write(err.message)}
 
