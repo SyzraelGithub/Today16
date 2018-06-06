@@ -39,10 +39,10 @@ btnB.onclick = function () {
 			var imp2Rpr = document.implementation.createHTMLDocument('');
 			imp2Rpr.documentElement.innerHTML = htm2Rpr;
 			if (imp2Rpr.body.getAttribute('onload') == null) {
-				var autoRprDoc = prompt('Tamir edeyim mi Document i?','Kalsın tşk');
-				if (autoRprDoc != 'Kalsın tşk') {
+				//var autoRprDoc = prompt('Tamir edeyim mi Document i?','Kalsın tşk');
+				//if (autoRprDoc != 'Kalsın tşk') {
 					rprDoc(objWindow.CurrentDocument.GUID);
-				}
+				//}
 			}
 		}
 	}
