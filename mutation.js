@@ -7,6 +7,7 @@ fncCntntEdtbl = function (trgt) {
 			bluePs.attr('contentEditable','false');
 			blueSpans.attr('contentEditable','true');
 			spanComplete(blueSpans);
+			zeroMarginBottom(); // 1806070943 scroll down ettiğimde fazla iniyor.
 			break;
 		case 'false' || 'inherit':
 			bluePs.removeAttr('contentEditable');
