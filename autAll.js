@@ -76,7 +76,7 @@ function lstTar(lTar, lNum) {
 	) {
 		if (!TarSib) {
 			autLasyHDoc(cO.e0,cbFncCur);
-		} else if (TarSib.innerText.length < 6) {
+		} else if (TarSib.innerText.length < 7) {
 			autLasyHDoc(cO.e0,cbFncCur);
 		} 
 	}
