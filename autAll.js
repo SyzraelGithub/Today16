@@ -74,9 +74,13 @@ function lstTar(lTar, lNum) {
 		||
 		$('p:last').toArray().includes(Tar)
 		||
-		TarSib.innerText.length < 6
+		
 	) {
-		autLasyHDoc(cO.e0,cbFncCur);
+		if (!TarSib) {
+			autLasyHDoc(cO.e0,cbFncCur);
+		} else if (TarSib.innerText.length < 6) {
+			autLasyHDoc(cO.e0,cbFncCur);
+		} 
 	}
 	/*
 	var lNumInd = ($(cO.q0).length) - (
