@@ -74,7 +74,7 @@ function lstTar(lTar, lNum) {
 		||
 		$('p:last').toArray().includes(Tar)
 	) {
-		autLasyHDoc(cO.e0,cbFncCur,3);
+		autLasyHDoc(cO.e0,cbFncCur);
 	}
 	/*
 	var lNumInd = ($(cO.q0).length) - (
