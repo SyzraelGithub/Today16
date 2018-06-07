@@ -3,7 +3,7 @@ var fldLGen = objDatabase.GetFolderByLocation(dDt.myLocation,true);
 
 spnC.id = 'spnC';
 spnC.class = 'spnCcls';
-spnC.innerText = 'Toplam ' + fldLGen.Documents.Count + ' Document var';
+spnC.innerText = 'Tplm ' + fldLGen.Documents.Count + ' Doc var';
 
 prgB.appendChild(spnC);
 
