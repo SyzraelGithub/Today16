@@ -110,3 +110,7 @@ function isFirstEdit() {
 	var isCntEd = document.body.contentEditable == 'true'?true:false;
 	return isCntEd && isDefCmtExs;
 }
+
+function zeroMarginBottom() { //edit ederken aşağıda boşluk bırakıyor. ScrollDown da sorun
+	$('.wiz-editing.wiz-editor-body').css('margin-bottom','0px')
+}
