@@ -2,7 +2,7 @@
 	1806111054
 	Yaptığım değişikliğe göre kronolojik sıralama.
 	---
-	autAll.js		|	 4 days ago
+	autAll.js		|	 4 days ago (4 yerine 0 oldu tabi)
 	mutation.js		|	 4 days ago
 	spnC.js			|	 4 days ago
 	objFSOjob.js		|	 5 days ago
