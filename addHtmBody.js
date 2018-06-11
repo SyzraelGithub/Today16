@@ -8,7 +8,7 @@ function addHtmBody(htmDoc) {
 			}
 		}
 	}
-	htmDoc.body.innerHTML = Array(6).join(inBodyDoc.body.innerHTML);
+	htmDoc.body.innerHTML = Array(3).join(inBodyDoc.body.innerHTML);
 	//Eski Today.html Satır: 649
 	return htmDoc;
 }
