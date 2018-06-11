@@ -1,21 +1,24 @@
 /*
-	autAll.js		 4 days ago
-	mutation.js		 4 days ago
-	spnC.js			 4 days ago
-	objFSOjob.js		 5 days ago
-	spnB.js			 5 days ago
-	OnTodayBtnClicked16.js	 6 days ago
-	Today16.html		 6 days ago
-	rprDoc.js		 6 days ago
-	autLasyF.js		10 days ago
-	autLasyHDoc.js		10 days ago
-	addHtmBody.js		20 days ago
-	Today16.js		28 days ago
-	btnDcre.js		a month ago
-	ifrmh.html		a month ago
-	onLoadInit.js		a month ago
-	opeDoc.js		a month ago
-	smpHtm.html		a month ago
+	1806111054
+	Yaptığım değişikliğe göre kronolojik sıralama.
+	---
+	autAll.js		|	 4 days ago
+	mutation.js		|	 4 days ago
+	spnC.js			|	 4 days ago
+	objFSOjob.js		|	 5 days ago
+	spnB.js			|	 5 days ago
+	OnTodayBtnClicked16.js	|	 6 days ago
+	Today16.html		|	 6 days ago
+	rprDoc.js		|	 6 days ago
+	autLasyF.js		|	10 days ago
+	autLasyHDoc.js		|	10 days ago
+	addHtmBody.js		|	20 days ago
+	Today16.js		|	28 days ago
+	btnDcre.js		|	a month ago
+	ifrmh.html		|	a month ago
+	onLoadInit.js		|	a month ago
+	opeDoc.js		|	a month ago
+	smpHtm.html		|	a month ago
 */
 
 var TarSib, oldTar;
