@@ -22,6 +22,7 @@ with(thisTmp.strObj){
 			ShowHtmlDialog yapmam lazım.
 			Ancak sadece ViewDoc gibi sayfa açan code lar kapatıyor.
 			Yani onLoad ve Style buttonları kapatmıyor.
+			Yani o kadar da elzem değil ama yine de burada bulunsun.
 		*/
 	}
 }
