@@ -68,6 +68,14 @@ scrArr = scrArr.map(cnvUrl);
 	STARTED		->	STARTD
 	APPENDED	->	APPEND
 	LOADED		->	LOADED
+	---
+	1806111140
+	Bir Array veya 3 değişken olsun. Onlara atama yapalım. 
+	Orada ne yazıyorsa, ona göre belirlesin.
+	Ne dersin? Mesela;
+	objLog = {str:'[STARTD]',app:'[APPEND]',loa:'[LOADED]',pre:'{PRE}',prl:'{PRL}',srl:'{SRL}'}
+	console.log(objLog.str + ' ' + objLog.pre + ' ' + id);
+	console.log('[STARTED] {PRE}' + id);
 */
 
 var preLoaEna = true; //preLoadEnabled
