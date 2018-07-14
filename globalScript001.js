@@ -1,1 +1,1 @@
-alert('OK');
+alert('OK this is global script');
