@@ -3,7 +3,8 @@ if (typeof __global__ != 'undefined') {thisTmp = __global__}
 
 thisTmp.objFSO = objApp.CreateActiveXObject("Scripting.FileSystemObject");
 
-strObj.swapFileName = strObj.pluginPath + 'swapFile.json';
+//strObj.swapFileName = strObj.pluginPath + 'swapFile.json';
+strObj.swapFileName = strObj.pluginPath + 'swapFile.json.lnk'; //GitHub klasörüne taşıma fikri
 
 var swapFileJSON = {};
 swapFileJSON['Users'] = {};
