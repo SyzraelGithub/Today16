@@ -19,3 +19,5 @@ autLsynJS('GenDec_dDt');
 autLsynJS('varLoadF');
 autLsynJS('varLoadFPrc'); //Eğer GitHub klasöründen alınmıyorsa bu gözükmeyecek.
 autLsynJS('OnTodayBtnClicked16');
+
+//Sync Control
