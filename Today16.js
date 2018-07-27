@@ -5,3 +5,5 @@ with (new XMLHttpRequest()) {open('GET',urlPF + 'autLsynF.js',false);send();eval
 alert('OK 2inci satır');
 eval(autLsynF(urlPF + 'autLsynJS.js'));
 alert('OK 3uncu satır');
+this.__global__ = this;
+alert('OK 4uncu satır');
