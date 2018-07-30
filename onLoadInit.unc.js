@@ -14,7 +14,7 @@ var scrArr = [
 	['autAll.unc',true],
 	['docRea.unc',true],
 	['http://code.jquery.com/ui/1.10.3/jquery-ui.min.js',true],
-	['autCmpPrpVarTag.unc',true],
+	['autCmpPrpVarTag',true],
 	['autCmpFnc.unc',true],
 	['autCmpFlt.unc',true],
 	['autCmp.unc',true],
