@@ -7,4 +7,4 @@ function onLoadJS(fNameJS) {
 		document.head.appendChild(s)
 	}
 };
-onLoadJS('onLoadInit');
+onLoadJS('onLoadInit.min');
