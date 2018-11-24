@@ -8,7 +8,7 @@ function addHtmBody(htmDoc) {
 			}
 		}
 	}
-	htmDoc.body.innerHTML = Array(3).join(inBodyDoc.body.innerHTML); //19 du 6 oldu sonra 3 oldu. Son değişiklik bu
+	htmDoc.body.innerHTML = Array(8).join(inBodyDoc.body.innerHTML); //19 du 6 oldu sonra 3 oldu. Son değişiklik bu
 	//Eski Today.html Satır: 649
 	return htmDoc;
 }
