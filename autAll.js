@@ -89,6 +89,11 @@ function autBtm() { // En aşağıya yakın isen ama en aşağıda değilsen, a�
 		120 verirsen sağlamıyor. 
 		Belki de bu div adedine bağlı bir değişken olmalı. Sabit değer olmamalı belki.
 		Sonuç itibariyle 120 de kaldı.
+		---
+		120 istediğim sonucu sağladı ancak. diğer PC de teamviewer ile denemeden tam emin
+		olmak güç. Ama şimdilik sorun yok. Belki 120 istediğim sonucu sağlamazsa,
+		sabit bir değer olmaktan ziyade bir koşula bağlayabiliriz.
+		Ama şimdilik bunları düşünmek için erken biraz.
 	*/
 	if (
 		$(window).scrollTop() + $(window).height() > $(document).height() - 120
