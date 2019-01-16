@@ -72,9 +72,13 @@ function autBtm() { // En aşağıya yakın isen ama en aşağıda değilsen, a�
 		1806022052
 		Telefondan Teamviewer ile yazarken en aşağıda olmayınca 
 		scroll ile uğraşıyorum bundan dolayı.
+		1901161342 $€₺ Bu Senenin İlk Notu ₺€$
+		Aşağıdaki 180 değeri yüksek. Bundan dolayı onu 120 ile değiştireceğim. 
+		Neden dersen,
+		iOS ta js desteği
 	*/
 	if (
-		$(window).scrollTop() + $(window).height() > $(document).height() - 180
+		$(window).scrollTop() + $(window).height() > $(document).height() - 120
 		&&
 		$(window).scrollTop() + $(window).height() != $(document).height()
 	) {
