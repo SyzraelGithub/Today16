@@ -47,7 +47,7 @@ function autAd2() {
 }
 function autBtm() { 
 	if (
-		$(window).scrollTop() + $(window).height() > $(document).height() - 180
+		$(window).scrollTop() + $(window).height() > $(document).height() - 120
 		&&
 		$(window).scrollTop() + $(window).height() != $(document).height()
 	) {
