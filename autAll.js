@@ -75,7 +75,20 @@ function autBtm() { // En aşağıya yakın isen ama en aşağıda değilsen, a�
 		1901161342 $€₺ Bu Senenin İlk Notu ₺€$
 		Aşağıdaki 180 değeri yüksek. Bundan dolayı onu 120 ile değiştireceğim. 
 		Neden dersen,
-		iOS ta js desteği
+		iOS ta js desteği olmadığı için, çok sayıda div oluşturmam gerekti.
+		Telefondayken yeni div oluşturamadığım için. Yani;
+		addHtmBody.js de;
+		htmDoc.body.innerHTML = Array(19).join(inBodyDoc.body.innerHTML);
+		19 rakamı PC de iken sayfa boyutunu aşıyor.
+		$(window).scrollTop() + $(window).height() > $(document).height() - 180 => true
+ 		$(document).height() => 762
+		$(document).height() - 180 => 582
+		$(window).scrollTop() + $(window).height() => 640
+		bu true sağlamamalı başlangıçta.
+		$(window).scrollTop() + $(window).height() > $(document).height() - 122 => false
+		120 verirsen sağlamıyor. 
+		Belki de bu div adedine bağlı bir değişken olmalı. Sabit değer olmamalı belki.
+		Sonuç itibariyle 120 de kaldı.
 	*/
 	if (
 		$(window).scrollTop() + $(window).height() > $(document).height() - 120
