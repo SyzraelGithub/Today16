@@ -67,8 +67,16 @@ function addHtmBody(htmDoc) {
 		for (iMinute = jMinute; iMinute <60; iMinute++) {
 			if (iMinute == dDt.dMinute && iHour == dDt.dHour) {
 				htmDoc.body.innerHTML = Array(6).join(clBodyDoc.body.innerHTML); 
-				console.log(twoDigit(iHour) + ':' + twoDigit(iMinute) + '5 times');
+				console.log(twoDigit(iHour) + ':' + twoDigit(iMinute) + ' | 5 times');
 			} else if (iMinute % 15 == 0) {
+				var cLBodyDoc = inBodyDoc.cloneNode(true);
+				if (cLBodyDoc.getElementsByTagName('span').length > 0) {
+					var spn = cLBodyDoc.getElementsByTagName('span')[0];
+					if (spn.innerHTML.indexOf('00:00') != -1) {
+						spn.innerHTML = spn.innerHTML.replace('00:00',twoDigit(iHour) + ':' + twoDigit(iMinute));
+					}
+				}
+				htmDoc.body.innerHTML += cLBodyDoc.body.innerHTML;
 				console.log(twoDigit(iHour) + ':' + twoDigit(iMinute))
 			}
 		}
