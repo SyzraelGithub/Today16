@@ -20,6 +20,18 @@ function addHtmBody(htmDoc) {
 			htmDoc.body.innerHTML = Array(26).join(inBodyDoc.body.innerHTML);
 		bu code daki inBodyDoc ları clBodyDoc ile değiştireceğim öncelikle.
 	*/
+	/*
+		1904291226
+		for (iHour = dDt.dHour; iHour < 24; iHour++) {
+			var jMinute = 0;
+			if (iHour == dDt.dHour) {jMinute = dDt.dMinute}
+			for (iMinute = jMinute; iMinute <60; iMinute++) {
+				if ((iMinute == dDt.dMinute && iHour == dDt.dHour) || (iMinute % 15 == 0)) {
+					console.log(twoDigit(iHour) + ':' + twoDigit(iMinute))	
+				}
+			}
+		}
+	*/
 	if (htmDoc.title == dDt.newFileName) {
 		if (clBodyDoc.getElementsByTagName('span').length > 0) {
 			var spn = clBodyDoc.getElementsByTagName('span')[0];
