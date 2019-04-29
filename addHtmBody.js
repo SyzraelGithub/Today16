@@ -21,13 +21,26 @@ function addHtmBody(htmDoc) {
 		bu code daki inBodyDoc ları clBodyDoc ile değiştireceğim öncelikle.
 	*/
 	/*
+		1904291253
+		00:00 ın orj inBodyDoc 'ta kaçıncı indexOf ta olduğunu tutalım
+		Sonra diğer tarafta istersek onu replace ederiz. Veya istersen o şekilde uğraşmak yerine
+		gidelim. firstChild.querySelector('span').innerHTML.substr(0,4) şeklinde de gideriz. ama
+		00:00 ı bulup oradan gitmek daha bir mantıklı sanki. Veya fazla mı güvenli tarafta kaldık?
+	*/
+	/*
 		1904291226
 		for (iHour = dDt.dHour; iHour < 24; iHour++) {
 			var jMinute = 0;
 			if (iHour == dDt.dHour) {jMinute = dDt.dMinute}
 			for (iMinute = jMinute; iMinute <60; iMinute++) {
-				if ((iMinute == dDt.dMinute && iHour == dDt.dHour) || (iMinute % 15 == 0)) {
-					console.log(twoDigit(iHour) + ':' + twoDigit(iMinute))	
+				if (iMinute == dDt.dMinute && iHour == dDt.dHour) {
+					console.log(twoDigit(iHour) + ':' + twoDigit(iMinute));
+					console.log(twoDigit(iHour) + ':' + twoDigit(iMinute));
+					console.log(twoDigit(iHour) + ':' + twoDigit(iMinute));
+					console.log(twoDigit(iHour) + ':' + twoDigit(iMinute));
+					console.log(twoDigit(iHour) + ':' + twoDigit(iMinute));
+				} else if (iMinute % 15 == 0) {
+					console.log(twoDigit(iHour) + ':' + twoDigit(iMinute))
 				}
 			}
 		}
@@ -40,8 +53,26 @@ function addHtmBody(htmDoc) {
 			}
 		}
 	}
-	htmDoc.body.innerHTML = Array(26).join(clBodyDoc.body.innerHTML); //19 du 6 oldu sonra 3 oldu. Son değişiklik bu
+	/*
+		1904291256 aşağıdaki satır artık depreched oldu
+		htmDoc.body.innerHTML = Array(26).join(clBodyDoc.body.innerHTML); //19 du 6 oldu sonra 3 oldu. Son değişiklik bu
+		neden dersen,
+		artık tek tip kopyalama yapmıyoruz. Ama geçiş döneminde olduğum için şimdilik o şekilde devam edebilirim. 
+	*/
+	//htmDoc.body.innerHTML = Array(26).join(clBodyDoc.body.innerHTML); //19 du 6 oldu sonra 3 oldu. Son değişiklik bu
 	//Eski Today.html Satır: 649
+	for (iHour = dDt.dHour; iHour < 24; iHour++) {
+		var jMinute = 0;
+		if (iHour == dDt.dHour) {jMinute = dDt.dMinute}
+		for (iMinute = jMinute; iMinute <60; iMinute++) {
+			if (iMinute == dDt.dMinute && iHour == dDt.dHour) {
+				htmDoc.body.innerHTML = Array(6).join(clBodyDoc.body.innerHTML); 
+				console.log(twoDigit(iHour) + ':' + twoDigit(iMinute) + '5 times');
+			} else if (iMinute % 15 == 0) {
+				console.log(twoDigit(iHour) + ':' + twoDigit(iMinute))
+			}
+		}
+	}
 	/*
 		1904191906
 		iOS 'daki js disabled olması sorununa bir çözüm üretemediğim için,
