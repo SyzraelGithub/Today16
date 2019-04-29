@@ -1,14 +1,34 @@
 function addHtmBody(htmDoc) {
 	var inBodyDoc = autLsynHDoc('defDiv');
+	/*
+		1904291154
+		inBodyDoc 'un orjinalinde 00:00 kalsın istiyorum.
+		Bundan dolayı onu clone layacağım.
+	*/
+	var clBodyDoc = inBodyDoc.cloneNode(true); //clone of inBodyDoc
+	/*
+		1904291157
+		aşağıdaki kod şu an şu şekilde;
+			if (htmDoc.title == dDt.newFileName) {
+				if (inBodyDoc.getElementsByTagName('span').length > 0) {
+					var spn = inBodyDoc.getElementsByTagName('span')[0];
+					if (spn.innerHTML.indexOf('00:00') != -1) {
+						spn.innerHTML = spn.innerHTML.replace('00:00',dDt.newHourMinute);
+					}
+				}
+			}
+			htmDoc.body.innerHTML = Array(26).join(inBodyDoc.body.innerHTML);
+		bu code daki inBodyDoc ları clBodyDoc ile değiştireceğim öncelikle.
+	*/
 	if (htmDoc.title == dDt.newFileName) {
-		if (inBodyDoc.getElementsByTagName('span').length > 0) {
-			var spn = inBodyDoc.getElementsByTagName('span')[0];
+		if (clBodyDoc.getElementsByTagName('span').length > 0) {
+			var spn = clBodyDoc.getElementsByTagName('span')[0];
 			if (spn.innerHTML.indexOf('00:00') != -1) {
 				spn.innerHTML = spn.innerHTML.replace('00:00',dDt.newHourMinute);
 			}
 		}
 	}
-	htmDoc.body.innerHTML = Array(26).join(inBodyDoc.body.innerHTML); //19 du 6 oldu sonra 3 oldu. Son değişiklik bu
+	htmDoc.body.innerHTML = Array(26).join(clBodyDoc.body.innerHTML); //19 du 6 oldu sonra 3 oldu. Son değişiklik bu
 	//Eski Today.html Satır: 649
 	/*
 		1904191906
