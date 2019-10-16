@@ -66,9 +66,9 @@ function addHtmBody(htmDoc) {
 		if (iHour == dDt.dHour) {jMinute = dDt.dMinute}
 		for (iMinute = jMinute; iMinute <60; iMinute++) {
 			if (iMinute == dDt.dMinute && iHour == dDt.dHour) {
-				htmDoc.body.innerHTML = Array(6).join(clBodyDoc.body.innerHTML); 
-				console.log(twoDigit(iHour) + ':' + twoDigit(iMinute) + ' | 5 times');
-			} else if (iMinute % 15 == 0) {
+				htmDoc.body.innerHTML = Array(2).join(clBodyDoc.body.innerHTML); 
+				console.log(twoDigit(iHour) + ':' + twoDigit(iMinute) + ' | 1 times');
+			} else if (iMinute % 30 == 0) {
 				var cLBodyDoc = inBodyDoc.cloneNode(true);
 				if (cLBodyDoc.getElementsByTagName('span').length > 0) {
 					var spn = cLBodyDoc.getElementsByTagName('span')[0];
