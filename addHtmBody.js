@@ -68,7 +68,7 @@ function addHtmBody(htmDoc) {
 			if (iMinute == dDt.dMinute && iHour == dDt.dHour) {
 				htmDoc.body.innerHTML = Array(2).join(clBodyDoc.body.innerHTML); 
 				console.log(twoDigit(iHour) + ':' + twoDigit(iMinute) + ' | 1 times');
-			} else if (iMinute % 30 == 0) {
+			} else if (iMinute % 12 == 0) {
 				var cLBodyDoc = inBodyDoc.cloneNode(true);
 				if (cLBodyDoc.getElementsByTagName('span').length > 0) {
 					var spn = cLBodyDoc.getElementsByTagName('span')[0];
