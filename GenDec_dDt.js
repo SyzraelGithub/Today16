@@ -78,8 +78,8 @@ getdDt = function(varDate) {
 		if (dWay == "00"/* || dWay == "06"*/) {
 		/*if (dWay == "00" || dWay == "06") {*/
 		/*if (dWay == 0 || dWay == 6) {*/
-			dWeek-=1;
-			dWeek = twoDigit(dWeek);
+			//dWeek-=1;
+			//dWeek = twoDigit(dWeek); //211071852 GEREK KALMADI BENCE
 		};
 		this.btnToolName = dYear + '/' + dMonth + '/' + dWeek + '/' + dDay;
 		this.myLocation = '/.Kay/Akı/Yaz/Dat/' + btnToolName + '/';
