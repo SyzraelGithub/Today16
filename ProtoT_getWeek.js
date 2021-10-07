@@ -1,15 +1,15 @@
 Date.prototype.getWeekOldOld = function() {
-	var onejan = new Date(this.getFullYear(),0,1);
-	return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()+1)/7);
+    var onejan = new Date(this.getFullYear(),0,1);
+    return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()+1)/7);
 }
 
 Date.prototype.getWeekOld = function() {
-	//https://stackoverflow.com/questions/6117814/get-week-of-year-in-javascript-like-in-php
-	var d = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
-	var dayNum = d.getUTCDay() || 7;
-	d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-	var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
-	return Math.ceil((((d - yearStart) / 86400000) + 1)/7);
+    //https://stackoverflow.com/questions/6117814/get-week-of-year-in-javascript-like-in-php
+    var d = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
+    var dayNum = d.getUTCDay() || 7;
+    d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    return Math.ceil((((d - yearStart) / 86400000) + 1)/7);
 }
 
 /* For a given date, get the ISO week number
@@ -30,6 +30,7 @@ Date.prototype.getWeekOld = function() {
  */
 
 Date.prototype.getWeek_Cmmntd = function() {
+    var d;	
     // Copy date so don't modify original
     d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
     // Set to nearest Thursday: current date + 4 - current day number
@@ -44,6 +45,7 @@ Date.prototype.getWeek_Cmmntd = function() {
 }
 
 Date.prototype.getWeek = function() {
+    var d;
     d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
     d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
     var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
