@@ -61,7 +61,27 @@ function addHtmBody(htmDoc) {
 	*/
 	//htmDoc.body.innerHTML = Array(26).join(clBodyDoc.body.innerHTML); //19 du 6 oldu sonra 3 oldu. Son değişiklik bu
 	//Eski Today.html Satır: 649
-	for (iHour = dDt.dHour; iHour < 24; iHour++) {
+	/*
+		2208021444 - START
+		Uzun zaman sonra gelen değişiklik
+		Eğer 
+			dDt.dHour > 9
+		ve 
+			htmDoc.title =! dDt.newFileName
+		ise 
+		iHour = 7 değilse iHour = dDt.Hour
+	*/
+	var iHour;
+	if (htmDoc.title != dDt.newFileName && dDt.dHout > 8) {
+		iHour = 8;
+	} else {
+		iHour = dDt.dHour;
+	}
+	/*
+		2208021444 - END
+	*/
+	
+	for (iHour; iHour < 24; iHour++) {
 		var jMinute = 0;
 		if (iHour == dDt.dHour) {jMinute = dDt.dMinute}
 		for (iMinute = jMinute; iMinute <60; iMinute++) {
