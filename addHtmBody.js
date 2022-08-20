@@ -73,8 +73,8 @@ function addHtmBody(htmDoc) {
 		Nedense gitmedi github a
 	*/
 	var iHour;
-	if (htmDoc.title != dDt.newFileName && dDt.dHout > 8) {
-		iHour = 8;
+	if (htmDoc.title != dDt.newFileName && dDt.dHout > 6) {
+		iHour = 6;
 	} else {
 		iHour = dDt.dHour;
 	}
@@ -84,9 +84,9 @@ function addHtmBody(htmDoc) {
 	
 	for (iHour; iHour < 24; iHour++) {
 		var jMinute = 0;
-		if (iHour == dDt.dHour) {jMinute = dDt.dMinute}
+		if (htmDoc.title == dDt.newFileName && iHour == dDt.dHour) {jMinute = dDt.dMinute}
 		for (iMinute = jMinute; iMinute <60; iMinute++) {
-			if (iMinute == dDt.dMinute && iHour == dDt.dHour) {
+			if (htmDoc.title == dDt.newFileName && iMinute == dDt.dMinute && iHour == dDt.dHour) {
 				htmDoc.body.innerHTML = Array(2).join(clBodyDoc.body.innerHTML); 
 				console.log(twoDigit(iHour) + ':' + twoDigit(iMinute) + ' | 1 times');
 			} else if (iMinute % 12 == 0) {
