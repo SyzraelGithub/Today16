@@ -72,6 +72,7 @@ function addHtmBody(htmDoc) {
 		iHour = 7 değilse iHour = dDt.Hour.
 		Nedense gitmedi github a
 	*/
+	debugger;
 	var iHour;
 	if (htmDoc.title != dDt.newFileName && dDt.dHout > 6) {
 		iHour = 6;
