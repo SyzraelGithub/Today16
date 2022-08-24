@@ -75,8 +75,10 @@ function addHtmBody(htmDoc) {
 	debugger;
 	var iHour;
 	if (htmDoc.title != dDt.newFileName && dDt.dHout > 6) {
+		console.log("iHour = 6;");
 		iHour = 6;
 	} else {
+		console.log("iHour = dDt.dHour;");
 		iHour = dDt.dHour;
 	}
 	/*
