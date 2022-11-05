@@ -92,7 +92,7 @@ function addHtmBody(htmDoc) {
 			if (htmDoc.title == dDt.newFileName && iMinute == dDt.dMinute && iHour == dDt.dHour) {
 				htmDoc.body.innerHTML = Array(2).join(clBodyDoc.body.innerHTML); 
 				console.log(twoDigit(iHour) + ':' + twoDigit(iMinute) + ' | 1 times');
-			} else if (iMinute % 12 == 0) {
+			} else if (iMinute % 6 == 0) { /*60 ın bölüneni olacak 30,20,15,12,10,6,5*/
 				var cLBodyDoc = inBodyDoc.cloneNode(true);
 				if (cLBodyDoc.getElementsByTagName('span').length > 0) {
 					var spn = cLBodyDoc.getElementsByTagName('span')[0];
